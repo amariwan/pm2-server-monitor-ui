@@ -17,11 +17,12 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <!--=============== favicons ===============-->
         <link rel="shortcut" href="./assets/img/svg/logo.svg">
-        <link rel="icon" href="./assets/src/img/svg/logo.svg">
-        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./assets/img/svg/logo.svg">
+        <link rel="icon" href="./assets/img/svg/logo.svg">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/svg/logo.svg">
         <link rel="apple-touch-startup-image" sizes="180x180" href="./assets/img/svg/logo.svg">
         <link rel="manifest" href="./assets/img/manifest.json">
         <link rel="shortcut icon" href="./assets/img/svg/logo.svg" type="image/x-icon">
+        <!--=============== CSS  ===============-->
         <!-- Library / Plugin Css Build -->
         <link rel="stylesheet" href="./assets/css/core/libs.min.css" />
         <!-- Aos Animation Css -->
@@ -40,10 +41,9 @@
         <link rel="stylesheet" href="./assets/css/iconfont.css" />
         <!--=============== JS  ===============-->
         <!-- VueJs JavaScript-Framework  -->
-        <script src="./assets/js/plugins/vue.min.js"></script>
+        <script src="./assets/js/plugins/vue.global.js"></script>
+        <script src="./assets/js/plugins/axios.min.js"></script>
         <script src="./assets/js/plugins/socket.io.min.js"></script>
-        <script src="./assets/js/plugins/vue-tippy.min.js"></script>
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script> -->
 
     </head>
 
@@ -59,9 +59,9 @@
                     </div>
                     <!-- loader END -->
 
-                    <aside class="sidebar sidebar-default navs-rounded-all ">
+                    <aside class="sidebar sidebar-default navs-rounded-all blur">
                         <div class="sidebar-header d-flex align-items-center justify-content-start">
-                            <a href="index.html" class="navbar-brand">
+                            <a href="/" class="navbar-brand">
                                 <!--Logo start-->
                                 <span class="icon logo" aria-hidden="true"></span>
                                 <!--logo End-->
@@ -90,7 +90,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.html">
+                                        <a class="nav-link active" aria-current="page" href="/">
                                             <i class="icon">
                                                 <svg width="20" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@
                             <!--Nav Start-->
                             <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar blur">
                                 <div class="container-fluid navbar-inner">
-                                    <a href="index.html" class="navbar-brand">
+                                    <a href="/" class="navbar-brand">
                                         <!--Logo start-->
                                         <svg width="30" class="text-primary" viewBox="0 0 30 30" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +130,7 @@
                                                 transform="rotate(45 10.5562 -0.556152)" fill="currentColor" />
                                         </svg>
                                         <!--logo End-->
-                                        <h4 class="logo-title">Hope UI</h4>
+                                        <h4 class="logo-title">PAD</h4>
                                     </a>
                                     <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
                                         <i class="icon">
@@ -141,7 +141,7 @@
                                         </i>
                                     </div>
                                     <div class="input-group search-input">
-                                        <span class="input-group-text" id="search-input">
+                                        <span class="input-group-text blur" id="search-input">
                                             <svg width="18" viewBox="0 0 24 24" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor"
@@ -152,7 +152,7 @@
                                                 </path>
                                             </svg>
                                         </span>
-                                        <input type="search" class="form-control" placeholder="Search...">
+                                        <input type="search" class="form-control blur" placeholder="Search...">
                                     </div>
                                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -281,8 +281,8 @@
                                                     <img src="./assets/images/avatars/avtar_3.png" alt="User-Profile"
                                                         class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                                                     <div class="caption ms-3 d-none d-md-block ">
-                                                        <h6 class="mb-0 caption-title">Aland Mariwan</h6>
-                                                        <p class="mb-0 caption-sub-title">Administrator</p>
+                                                        <h6 class="mb-0 caption-title">{{UserFirstName}} {{UserLastName}}</h6>
+                                                        <p class="mb-0 caption-sub-title">{{UserRole}}</p>
                                                     </div>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-menu-end"
@@ -296,7 +296,7 @@
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="auth/sign-in.html">Logout</a>
+                                                    <li><a class="dropdown-item" href="/" @click="logout">Logout</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -313,9 +313,18 @@
                                     <span>{{hostname}}</span>
                                 </span>
                                 <span class="ipAddress" title="Server Address"
-                                    v-tippy="{ theme : 'mytheme' }">{{item.host}}:{{item.port}}</span>
-                                <span class="godid" desc="god pid">{{godid}}</span>
-                                <span title="os Type" desc="Os Type" v-tippy="{ theme : 'mytheme' }">{{platform}}</span>
+                                    v-tippy="{ theme : 'mytheme' }">
+                                    <i class="iconfont icon-ip"></i>
+                                    <span>{{item.host}}:{{item.port}}</span>
+                                </span>
+                                <span class="godid" desc="god pid">
+                                    <i class="iconfont icon-pid"></i>
+                                    <span>{{godid}}</span>
+                                </span>
+                                <span title="os Type" desc="Os Type" v-tippy="{ theme : 'mytheme' }">
+                                    <i class="iconfont icon-platform"></i>
+                                    <span>{{platform}}</span>
+                                </span>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -965,8 +974,7 @@
             </div>
         </div>
         <script src="./assets/config.js"></script>
-        <script src="./assets/js/index.js"></script>
-
+        <script src="./assets/js/pages/index.js"></script>
         <!-- Library Bundle Script -->
         <script src="./assets/js/core/libs.min.js"></script>
 

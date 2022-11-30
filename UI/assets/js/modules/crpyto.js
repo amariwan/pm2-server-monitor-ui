@@ -153,7 +153,7 @@ function decode(code) {
 		code[i] *= 1;
 		// code character must be in range
 		if (code[i] < 0 || code[i] > 25) {
-			// console.error('Code character out of range');
+			console.error('Code character out of range');
 		}
 		// get corresponding character from codebook
 		text[i] = codebook[code[i]];
@@ -299,12 +299,4 @@ const decrypt = (cipher) => {
 
 	var text = otp(cipher.content, cipher.iv, 'decrypt');
 	return text;
-};
-
-/* Exporting the functions `encrypt`, `decrypt`, and `otp` so that they can be used in other files. */
-
-module.exports = {
-	encrypt,
-	decrypt,
-	otp
 };

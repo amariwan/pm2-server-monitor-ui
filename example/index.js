@@ -6,19 +6,24 @@ const option = {
 	name: 'Monitoring',
 	// your server listening port
 	port: 4003,
-	loginsystem: false, // false or localstorage or db
+	BOT_TOKEN: 'MTA0NzIxODAwNDY4Mjg4NzE2OA.GaPI6s.wXl5xtOi6h_hGGergXY25KfdA7Rlowvt8ozVi0',
+	loginsystem: 'localstorage', // false or localstorage or db
 	users: [
 		{
 			username: 'admin',
 			name: 'admin',
 			lastname: 'admin',
-			password: 'admin',
-			role: 'admin'
+			password: 'Tolasm99',
+			role: 'admin',
+			id: '0'
 		},
 		{
-			username: 'user',
-			password: 'user',
-			role: 'user'
+			username: 'amariwan',
+			name: 'Aland',
+			lastname: 'Mariwan',
+			password: 'Tolasm99',
+			role: 'admin',
+			id: '1'
 		}
 	],
 	databank: [
@@ -48,6 +53,14 @@ const option = {
 			// If a connection object is passed to the constructor, the default value for this option is false.
 			endConnectionOnClose: true,
 			charset: 'utf8mb4_bin'
+		}
+	],
+	mailAuth: [
+		{
+			host: 'smtp.ionos.de',
+			port: 465,
+			secure: true,
+			auth: { user: 'kontakt@aland-mariwan.de', pass: 'Riking#99#$$' }
 		}
 	],
 	https: true,

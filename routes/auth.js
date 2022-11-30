@@ -6,7 +6,7 @@ const { encrypt, decrypt } = require('../modules/crpyto');
 const { isEmail, checkUsername } = require('../modules/check_userOrEmail');
 const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
 const config_data = require('../.config/config.json');
-const isLocalOrDB = config_data.loginSystem;
+const isLocalOrDB = config_data.loginsystem;
 const { checkDBTable, createUserTable } = require('../modules/check_db');
 const saltRounds = 10; // The number of rounds to use when generating a salt
 
@@ -98,30 +98,49 @@ router.post('/register', (req, res) => {
 	}
 });
 
+router.get('/login', (req, res) => {
+	if (req.session.user) {
+		global.sessionUser = req.session.user;
+		res.status(200).send({
+			msg: 'User already logged in',
+			user: req.session.user,
+			islogged: true,
+			code: 200
+		});
+	} else {
+		console.log('User not logged in');
+		global.sessionUser = null;
+		res.status(203).send({
+			msg: 'User not logged in',
+			islogged: false,
+			code: 102
+		});
+	}
+});
+
 /* This is a post request that is used to login a user. */
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
 	// Unless we explicitly write to the session (and resave is false), the
 	// store is never updated, even though a new session is generated on each
 	// request. After we modify that session and during req.end(), it gets
 	// persisted. On subsequent writes, it's updated and synced with the store.
 
-	const email = decrypt(req.body.email).toLowerCase();
+	let username = decrypt(req.body.username);
 	const password = decrypt(req.body.password);
-	var userOrEmail = 'username';
+	console.log(username, password);
 
-	/* This is checking if the email or username. */
-	if (isEmail(email)) {
-		userOrEmail = 'email';
-	} else {
-		if (!checkUsername(email)) {
-			res.status(203).send({
-				msg:
-					'Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.',
-				code: 102
-			});
-			return;
-		}
+	if (!checkUsername(username)) {
+		res.status(203).send({
+			msg:
+				'Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.',
+			code: 102
+		});
+		return;
 	}
+	username = username.toLowerCase();
+	console.log(config_data, '182');
+	console.log(isLocalOrDB, '183');
+
 	/* This is checking if the user is registered. */
 	if (isLocalOrDB === 'db') {
 		db.query('SELECT * FROM users WHERE ' + userOrEmail + ' = ?', [ email ], (err, result) => {
@@ -152,6 +171,7 @@ router.post('/login', (req, res) => {
 							res.status(200).send({
 								msg: 'successfully',
 								user: req.session.user,
+								islogged: true,
 								code: 105
 							});
 						}
@@ -169,52 +189,59 @@ router.post('/login', (req, res) => {
 				});
 			}
 		});
-	} else if (isLocalOrDB == 'localstorage') {
-		var users = config_data.users;
-		console.log(users);
-
-		for (let i = 0; i < users.length; i++) {
-			const user = users[i];
-			const name = user.name;
-			const lastname = user.lastname;
-			const usernameLocal = user.username.toLowerCase();
-			const passwordLocal = user.password;
-			const role = user.role;
-			if (usernameLocal === email) {
-				bcrypt.compare(password, passwordLocal, (error, response) => {
-					if (error) {
-						res.status(500).send(error);
-					}
-					if (response) {
-						getSessionIDCookie(req, res);
-						req.session.user = {
-							name: name,
-							lastname: lastname,
-							username: email,
-							role: role,
-							loggedIn: true
-						};
-						res.status(200).send({
-							msg: 'successfully',
-							user: req.session.user,
-							code: 105
-						});
-					} else {
-						res.status(203).send({
-							msg: 'password incorrect',
-							code: 105
-						});
-					}
-				});
-			} else {
-				res.status(203).send({
-					msg: 'Email incorrect',
-					code: 105
-				});
-			}
+	} else if (isLocalOrDB === 'localstorage') {
+		const user = findUser(config_data.users, username, password);
+		console.log(user, '213');
+		if (typeof user === 'object') {
+			getSessionIDCookie(req, res);
+			req.session.user = user;
+			global.sessionUser = user;
+			res.send({
+				msg: 'successfully',
+				islogged: true,
+				code: 105
+			});
+			return;
+		} else {
+			res.status(203).send({
+				msg: user,
+				code: 104
+			});
+			return;
 		}
 	}
+	res.status(203).send({
+		msg: 'User not logged in',
+		code: 102
+	});
+	return;
 });
+
+const findUser = (users, username, password) => {
+	var resule;
+	for (let i = 0; i < users.length; i++) {
+		const user = users[i];
+		const name = user.name;
+		const lastname = user.lastname;
+		const usernameLocal = user.username.toLowerCase();
+		const passwordLocal = user.password;
+		const role = user.role;
+		if (usernameLocal === username) {
+			console.log('usernameLocal', usernameLocal);
+			if (passwordLocal === password) {
+				return {
+					UserFirstName: name,
+					UserLastName: lastname,
+					userName: username,
+					UserRole: role,
+					UserId: user.id,
+					loggedIn: true
+				};
+			} else resule = 'password incorrect';
+		} else resule = 'Username incorrect';
+	}
+	return resule;
+};
 
 router.get('/logout', (req, res, next) => {
 	// Upon logout, we can destroy the session and unset req.session.
