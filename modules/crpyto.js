@@ -1,13 +1,7 @@
 'use strict';
-
+const uuidv4 = require('./uuidv4');
 // Generate a v4 (random) UUID
-function createGuid() {
-	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-		var r = (Math.random() * 16) | 0,
-			v = c === 'x' ? r : (r & 0x3) | 0x8;
-		return v.toString(16);
-	});
-}
+
 var codebook = [];
 codebook[0] = 'a';
 codebook[1] = 'b';
@@ -267,9 +261,9 @@ function otp(message, key, mode, keyRepetition) {
 8. It defines a "cipher" variable as the output of the "otp" function, which takes the "plainText" argument, the "iv" variable, the string "encrypt" and the "isLonger" variable as arguments.
 9. It then logs the value of "cipher" to the console.
 10. It then returns an object with the properties "iv" and "content", both of which are set to the "iv" variable and the "cipher" variable respectively. */
-const iv = createGuid();
 
 const encrypt = (plainText) => {
+	const iv = uuidv4();
 	// Check if the plain text is null or empty
 	if (plainText === null && plainText.length === 0) return null;
 	// Check if the iv is longer than the plain text

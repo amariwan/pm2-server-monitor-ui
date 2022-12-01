@@ -39,11 +39,16 @@
         <link rel="stylesheet" href="./assets/css/rtl.min.css" />
         <link rel="stylesheet" href="./assets/css/animate.min.css" />
         <link rel="stylesheet" href="./assets/css/iconfont.css" />
+        <link rel="stylesheet" href="./assets/css/progress-water.css" />
+        <link rel="stylesheet" href="./assets/css/progress-bar.css" />
+
         <!--=============== JS  ===============-->
         <!-- VueJs JavaScript-Framework  -->
         <script src="./assets/js/plugins/vue.global.js"></script>
         <script src="./assets/js/plugins/axios.min.js"></script>
         <script src="./assets/js/plugins/socket.io.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     </head>
 
@@ -281,7 +286,8 @@
                                                     <img src="./assets/images/avatars/avtar_3.png" alt="User-Profile"
                                                         class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
                                                     <div class="caption ms-3 d-none d-md-block ">
-                                                        <h6 class="mb-0 caption-title">{{UserFirstName}} {{UserLastName}}</h6>
+                                                        <h6 class="mb-0 caption-title">{{UserFirstName}}
+                                                            {{UserLastName}}</h6>
                                                         <p class="mb-0 caption-sub-title">{{UserRole}}</p>
                                                     </div>
                                                 </a>
@@ -312,8 +318,7 @@
                                     <i class="iconfont icon-server"></i>
                                     <span>{{hostname}}</span>
                                 </span>
-                                <span class="ipAddress" title="Server Address"
-                                    v-tippy="{ theme : 'mytheme' }">
+                                <span class="ipAddress" title="Server Address" v-tippy="{ theme : 'mytheme' }">
                                     <i class="iconfont icon-ip"></i>
                                     <span>{{item.host}}:{{item.port}}</span>
                                 </span>
@@ -352,12 +357,13 @@
                                                     <div class="card-body">
                                                         <span title="System CPU" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
-                                                                <div class="text-center circle-progress-01
-                                                                    circle-progress
-                                                                    circle-progress-cpuUsage circle-progress-info">
-
-                                                                    <i class="iconfont icon-chip "></i>
-                                                                </div>
+                                                                  <div class="c100 p10 blue">
+      <span class="iconfont icon-chip "></span>
+      <div class="slice">
+        <div class="bar"></div>
+        <div class="fill"></div>
+      </div>
+  </div>
                                                                 <div class="progress-detail">
                                                                     <p class="mb-2">System CPU</p>
                                                                     <h4 class="counter" :class="cpuUsageCls">
@@ -381,7 +387,8 @@
                                                                         <span>{{memUsage}}</span>
                                                                         (<span>{{freemem}}</span>
                                                                         /
-                                                                        <span>{{totalmem}}</span>)</h6>
+                                                                        <span>{{totalmem}}</span>)
+                                                                    </h6>
                                                                 </div>
                                                             </div>
                                                         </span>
@@ -546,6 +553,43 @@
 
                                     </div>
                                 </div>
+                                <!-- start with test  -->
+                                <div class="col-md-12 col-xl-6">
+                                    <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="900">
+                                        <div class="flex-wrap card-header d-flex justify-content-between">
+                                            <div class="header-title">
+                                                <h4 class="card-title">Earnings</h4>
+                                            </div>
+
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="flex-wrap d-flex align-items-center justify-content-between">
+                                                <div id="testmy"></div>
+                                                <div class="green">
+                                                    <div class="progress_dick cpuUsage">
+                                                        <div class="inner">
+                                                            <div class="percent"><span>7</span>%</div>
+                                                            <div class="water"></div>
+                                                            <div class="glare"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="green">
+                                                    <div class="progress_dick memUsage">
+                                                        <div class="inner">
+                                                            <div class="percent"><span>7</span>%</div>
+                                                            <div class="water"></div>
+                                                            <div class="glare"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- end with test -->
                                 <!-- start -->
                                 <div class="col-md-12 col-lg-12">
                                     <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
@@ -638,7 +682,7 @@
                         </footer>
                         <!-- Footer Section End -->
                     </main>
-                    <a class="btn btn-fixed-end btn-warning btn-icon btn-setting" data-bs-toggle="offcanvas"
+                    <a class="btn btn-fixed-end green btn-icon btn-setting blur" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                         <svg width="24" viewBox="0 0 24 24" class="animated-rotate" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -652,7 +696,7 @@
                     </a>
                     <!-- Wrapper End-->
                     <!-- offcanvas start -->
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" data-bs-scroll="true"
+                    <div class="offcanvas offcanvas-end blur" tabindex="-1" id="offcanvasExample" data-bs-scroll="true"
                         data-bs-backdrop="true" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
                             <div class="d-flex align-items-center">
@@ -718,7 +762,8 @@
                                             <svg class="customizer-btn" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" width="32" height="32">
                                                 <circle cx="12" cy="12" r="10" fill="#00C3F9" />
-                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#573BFF" /></svg>
+                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#573BFF" />
+                                            </svg>
                                         </div>
                                         <div class="btn-border" data-value="theme-color-gray" data-info="#FD8D00"
                                             data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip"
@@ -726,7 +771,8 @@
                                             <svg class="customizer-btn" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" width="32" height="32">
                                                 <circle cx="12" cy="12" r="10" fill="#91969E" />
-                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#FD8D00" /></svg>
+                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#FD8D00" />
+                                            </svg>
                                         </div>
                                         <div class="btn-border" data-value="theme-color-red" data-info="#366AF0"
                                             data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip"
@@ -734,7 +780,8 @@
                                             <svg class="customizer-btn" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" width="32" height="32">
                                                 <circle cx="12" cy="12" r="10" fill="#DB5363" />
-                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#366AF0" /></svg>
+                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#366AF0" />
+                                            </svg>
                                         </div>
                                         <div class="btn-border" data-value="theme-color-yellow" data-info="#6410F1"
                                             data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip"
@@ -742,7 +789,8 @@
                                             <svg class="customizer-btn" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" width="32" height="32">
                                                 <circle cx="12" cy="12" r="10" fill="#EA6A12" />
-                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#6410F1" /></svg>
+                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#6410F1" />
+                                            </svg>
                                         </div>
                                         <div class="btn-border" data-value="theme-color-pink" data-info="#25C799"
                                             data-setting="color-mode1" data-name="color" data-bs-toggle="tooltip"
@@ -750,7 +798,8 @@
                                             <svg class="customizer-btn" xmlns="http://www.w3.org/2000/svg"
                                                 viewBox="0 0 24 24" width="32" height="32">
                                                 <circle cx="12" cy="12" r="10" fill="#E586B3" />
-                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#25C799" /></svg>
+                                                <path d="M2,12 a1,1 1 1,0 20,0" fill="#25C799" />
+                                            </svg>
                                         </div>
 
                                     </div>

@@ -70,7 +70,7 @@ const app = createApp({
 						this.UserFirstName = user.UserFirstName;
 						this.UserLastName = user.UserLastName;
 					} else {
-						window.location.href = '/';
+						// window.location.href = '/';
 					}
 				})
 				.catch((error) => {
@@ -89,7 +89,7 @@ const app = createApp({
 					method: 'GET'
 				})
 				.then((response) => {
-					window.location.href = '/';
+					// window.location.href = '/';
 				})
 				.catch((error) => {
 					console.error(error);
@@ -163,15 +163,25 @@ const app = createApp({
 				const onAction = (type, appName) => {
 					socket.emit(type + 'App', appName);
 				};
-				const createActionItem = function(onclick, appName, type) {
-					const actionBtn = document.createElement('input');
-					actionBtn.value = type;
-					actionBtn.type = 'button';
-					actionBtn.className = 'btn_' + type;
-					actionBtn.addEventListener('click', function handleClick(event) {
-						onclick(type, appName);
+				const createAppItem = function(onclick, appName, types) {
+					// Create a container for the button and app name
+					const appItem = document.createElement('div');
+					appItem.className = 'appItem';
+
+					// Create a label for the app name
+					const appLabel = document.createElement('label');
+					appLabel.innerHTML = appName;
+
+					// Add the app name label to the container
+					appItem.appendChild(appLabel);
+
+					// Add the buttons for each type
+					types.forEach(function(type) {
+						const actionBtn = createActionItem(onclick, appName, type);
+						appItem.appendChild(actionBtn);
 					});
-					return actionBtn;
+
+					return appItem;
 				};
 
 				socket.on('stats', (data) => {
@@ -179,7 +189,7 @@ const app = createApp({
 					this.cpuUsage = data.totalData.cpuUsage + '%';
 					this.cpus = data.totalData.cpus;
 					this.cpuUsageCls = data.totalData.cpuCls ? 'red' : 'green';
-					this.memUsage = data.totalData.memUsage;
+					this.memUsage = data.totalData.memUsage + '%';
 					this.memUsageCls = data.totalData.memUsageCls ? 'red' : 'green';
 					this.freemem = data.totalData.freemem;
 					this.totalmem = data.totalData.totalmem;
@@ -193,7 +203,8 @@ const app = createApp({
 					this.memory = data.totalData.memory;
 					this.restart = data.totalData.restart;
 					this.totalUptime = data.totalData.totalUptime;
-
+					progress_dick(data.totalData.cpuUsage, false, 'cpuUsage');
+					progress_dick(data.totalData.memUsage, false, 'memUsage');
 					const processList = [];
 					// stats-panel-list
 					let html = '';
@@ -262,3 +273,39 @@ const app = createApp({
 
 const vm = app.mount('.start');
 vm.checkLogger();
+
+//   <div class="green">
+//     <div class="progress_dick">
+//       <div class="inner">
+//         <div class="percent"><span>0</span>%</div>
+//         <div class="water"></div>
+//         <div class="glare"></div>
+//       </div>
+//     </div>
+//   </div>
+
+const progress_dick = (val, x, id) => {
+	id = '.' + id;
+	if (val != '' && !isNaN(val) && val <= 100 && val >= 0) {
+		var valOrig = val;
+		val = 100 - val;
+		if (valOrig == 0) {
+			document.querySelectorAll(id + ' .percent')[0].innerHTML = 0 + '%';
+		} else document.querySelectorAll(id + ' .percent')[0].innerHTML = valOrig + '%';
+		document.querySelector(id).parentElement.classList = '';
+		document.querySelectorAll(id + '  .water')[0].style.top = val + '%';
+		if (x) {
+			if (valOrig < 80) document.querySelector(id).parentElement.classList.add('red');
+			else if (valOrig < 50) document.querySelector(id).parentElement.classList.add('orange');
+			else document.querySelector(id).parentElement.classList.add('green');
+		} else {
+			if (80 < valOrig) document.querySelector(id).parentElement.classList.add('red');
+			else if (50 < valOrig) document.querySelector(id).parentElement.classList.add('orange');
+			else document.querySelector(id).parentElement.classList.add('green');
+		}
+	} else {
+		document.querySelector(id).parentElement.classList = '';
+		document.querySelector(id).parentElement.classList.add('green');
+		document.querySelectorAll(id + ' .water')[0].style.top = 100 - 80 + '%';
+	}
+};

@@ -5,18 +5,17 @@
 const nodemailer = require('nodemailer');
 const config = require('../.config/config.json');
 
-const sendMail = async () => {
+const sendMail = async (to, subject, text) => {
 	var auth = config.mailAuth;
-	console.log(auth, '10');
+	auth = auth[0];
 	if (typeof auth === 'object') {
-		let transporter = nodemailer.createTransport(auth[0]);
-
+		let transporter = nodemailer.createTransport(auth);
 		// Message object
 		let message = {
-			from: 'kontakt@aland-mariwan.de', // Sender address
-			to: 'dev@aland-mariwan.de', // List of recipients
-			subject: 'Node Mailer', // Subject line
-			html: '<h2 style="color:#ff6600;">Hello People!, Welcome to Bacancy!</h2>'
+			from: auth.auth.user, // Sender address
+			to: to, // List of recipients
+			subject: subject, // Subject line
+			html: text
 		};
 
 		let info = await transporter.sendMail(message, function(err, info) {
