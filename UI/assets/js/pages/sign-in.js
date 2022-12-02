@@ -77,6 +77,9 @@ const app = createApp({
 								this.UserName = response.data.UserName;
 								this.Userlast = response.data.Userlast;
 								window.location.href = '/';
+							} else {
+								console.log(response.data.msg);
+								notif('error', 'Server', response.data.msg, false);
 							}
 						})
 						.catch((err) => {
@@ -106,10 +109,22 @@ const isUserNameValidFunc = (username) => {
 			if (username.length >= 5) {
 				if (username.length <= 20) {
 					resule = true;
-				} else resule = 'Username is too long';
-			} else resule = 'username is not too long';
-		} else resule = 'Username is not valid';
-	} else resule = 'username is empty';
+				} else {
+					resule = 'Username is too long';
+					notif('warning', 'Loging Info', 'Username is too long', true);
+				}
+			} else {
+				resule = 'username is not too long';
+				notif('warning', 'Loging Info', 'username is not too long', true);
+			}
+		} else {
+			resule = 'Username is not valid';
+			notif('warning', 'Loging Info', 'Username is not valid', true);
+		}
+	} else {
+		resule = 'username is empty';
+		notif('warning', 'Loging Info', 'username is empty', true);
+	}
 	return resule;
 };
 
@@ -122,9 +137,21 @@ const isPasswordValidFunc = (password) => {
 			if (password.length >= 8) {
 				if (password.length <= 20) {
 					resule = true;
-				} else resule = 'Password is too long';
-			} else resule = 'Password is not too long';
-		} else resule = 'Password is not valid';
-	} else resule = 'Password is empty';
+				} else {
+					resule = 'Password is too long';
+					notif('warning', 'Loging Info', 'Password is too long', true);
+				}
+			} else {
+				resule = 'Password is not too long';
+				notif('warning', 'Loging Info', 'Password is not too long', true);
+			}
+		} else {
+			resule = 'Password is not valid';
+			notif('warning', 'Loging Info', 'Password is not valid', true);
+		}
+	} else {
+		resule = 'Password is empty';
+		notif('warning', 'Loging Info', 'Password is empty', true);
+	}
 	return resule;
 };

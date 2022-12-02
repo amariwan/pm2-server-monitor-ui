@@ -7,7 +7,7 @@ const option = {
 	// your server listening port
 	port: 4003,
 	BOT_TOKEN: 'MTA0NzIxODAwNDY4Mjg4NzE2OA.GaPI6s.wXl5xtOi6h_hGGergXY25KfdA7Rlowvt8ozVi0',
-	loginsystem: false, // false or localstorage or db
+	loginsystem: 'localstorage', // false or localstorage or db
 	users: [
 		{
 			username: 'admin',

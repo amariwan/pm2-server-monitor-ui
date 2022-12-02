@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="./assets/css/iconfont.css" />
         <link rel="stylesheet" href="./assets/css/progress-water.css" />
         <link rel="stylesheet" href="./assets/css/progress-bar.css" />
+        <link rel="stylesheet" href="./assets/css/notify.css" />
 
         <!--=============== JS  ===============-->
         <!-- VueJs JavaScript-Framework  -->
@@ -65,56 +66,76 @@
                     <!-- loader END -->
 
                     <aside class="sidebar sidebar-default navs-rounded-all blur">
-                        <div class="sidebar-header d-flex align-items-center justify-content-start">
-                            <a href="/" class="navbar-brand">
-                                <!--Logo start-->
-                                <span class="icon logo" aria-hidden="true"></span>
-                                <!--logo End-->
-                                <h6 class="logo-title">PM2 admin Dashboard</h6>
+                        <div class="start">
+                            <div class="sidebar-header d-flex align-items-center justify-content-start">
+                                <a href="/" class="navbar-brand">
+                                    <!--Logo start-->
+                                    <span class="icon logo" aria-hidden="true"></span>
+                                    <!--logo End-->
+                                    <h6 class="logo-title">PM2 admin Dashboard</h6>
+                                </a>
+                                <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
+                                    <i class="icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.25 12.2744L19.25 12.2744" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            </path>
+                                            <path d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </i>
+                                </div>
+                            </div>
+                            <div class="sidebar-body pt-0 data-scrollbar">
+                                <div class="sidebar-list">
+                                    <!-- Sidebar Menu Start -->
+                                    <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
+                                        <li class="nav-item static-item">
+                                            <a class="nav-link static-item disabled" href="#" tabindex="-1">
+                                                <span class="default-icon">Home</span>
+                                                <span class="mini-icon">-</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/">
+                                                <i class="icon">
+                                                    <svg width="20" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path opacity="0.4"
+                                                            d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z"
+                                                            fill="currentColor"></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M4.53852 2H7.92449C9.32676 2 10.463 3.14585 10.463 4.55996V7.97452C10.463 9.38864 9.32676 10.5345 7.92449 10.5345H4.53852C3.13626 10.5345 2 9.38864 2 7.97452V4.55996C2 3.14585 3.13626 2 4.53852 2ZM4.53852 13.4655H7.92449C9.32676 13.4655 10.463 14.6114 10.463 16.0255V19.44C10.463 20.8532 9.32676 22 7.92449 22H4.53852C3.13626 22 2 20.8532 2 19.44V16.0255C2 14.6114 3.13626 13.4655 4.53852 13.4655ZM19.4615 13.4655H16.0755C14.6732 13.4655 13.537 14.6114 13.537 16.0255V19.44C13.537 20.8532 14.6732 22 16.0755 22H19.4615C20.8637 22 22 20.8532 22 19.44V16.0255C22 14.6114 20.8637 13.4655 19.4615 13.4655Z"
+                                                            fill="currentColor"></path>
+                                                    </svg>
+                                                </i>
+                                                <span class="item-name">Dashboard</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- Sidebar Menu End -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-footer">
+                            <a href="##" class="sidebar-user ">
+                                <span class="sidebar-user-img">
+                                    <picture>
+                                        <source srcset="./assets/img/avatar/avatar-illustrated-03.webp"
+                                            type="image/webp"><img src="./assets/img/avatar/avatar-illustrated-03.png"
+                                            alt="User name">
+                                    </picture>
+                                </span>
+                                <!-- <div class="sidebar-user-info">
+                                    <span class="item-name sidebar-user__title">{{UserFirstName}}
+                                        {{UserLastName}}</span>
+                                    <span class="item-name sidebar-user__subtitle">{{UserRole}}</span>
+                                </div> -->
                             </a>
-                            <div class="sidebar-toggle" data-toggle="sidebar" data-active="true">
-                                <i class="icon">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4.25 12.2744L19.25 12.2744" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976" stroke="currentColor"
-                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </i>
-                            </div>
                         </div>
-                        <div class="sidebar-body pt-0 data-scrollbar">
-                            <div class="sidebar-list">
-                                <!-- Sidebar Menu Start -->
-                                <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
-                                    <li class="nav-item static-item">
-                                        <a class="nav-link static-item disabled" href="#" tabindex="-1">
-                                            <span class="default-icon">Home</span>
-                                            <span class="mini-icon">-</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="/">
-                                            <i class="icon">
-                                                <svg width="20" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path opacity="0.4"
-                                                        d="M16.0756 2H19.4616C20.8639 2 22.0001 3.14585 22.0001 4.55996V7.97452C22.0001 9.38864 20.8639 10.5345 19.4616 10.5345H16.0756C14.6734 10.5345 13.5371 9.38864 13.5371 7.97452V4.55996C13.5371 3.14585 14.6734 2 16.0756 2Z"
-                                                        fill="currentColor"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M4.53852 2H7.92449C9.32676 2 10.463 3.14585 10.463 4.55996V7.97452C10.463 9.38864 9.32676 10.5345 7.92449 10.5345H4.53852C3.13626 10.5345 2 9.38864 2 7.97452V4.55996C2 3.14585 3.13626 2 4.53852 2ZM4.53852 13.4655H7.92449C9.32676 13.4655 10.463 14.6114 10.463 16.0255V19.44C10.463 20.8532 9.32676 22 7.92449 22H4.53852C3.13626 22 2 20.8532 2 19.44V16.0255C2 14.6114 3.13626 13.4655 4.53852 13.4655ZM19.4615 13.4655H16.0755C14.6732 13.4655 13.537 14.6114 13.537 16.0255V19.44C13.537 20.8532 14.6732 22 16.0755 22H19.4615C20.8637 22 22 20.8532 22 19.44V16.0255C22 14.6114 20.8637 13.4655 19.4615 13.4655Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </i>
-                                            <span class="item-name">Dashboard</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- Sidebar Menu End -->
-                            </div>
-                        </div>
-                        <div class="sidebar-footer"></div>
                     </aside>
                     <main class="main-content">
                         <div class="sticky-top iq-banner" style="z-index: 909;top: 1rem;">
@@ -123,17 +144,8 @@
                                 <div class="container-fluid navbar-inner">
                                     <a href="/" class="navbar-brand">
                                         <!--Logo start-->
-                                        <svg width="30" class="text-primary" viewBox="0 0 30 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2"
-                                                transform="rotate(-45 -0.757324 19.2427)" fill="currentColor" />
-                                            <rect x="7.72803" y="27.728" width="28" height="4" rx="2"
-                                                transform="rotate(-45 7.72803 27.728)" fill="currentColor" />
-                                            <rect x="10.5366" y="16.3945" width="16" height="4" rx="2"
-                                                transform="rotate(45 10.5366 16.3945)" fill="currentColor" />
-                                            <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2"
-                                                transform="rotate(45 10.5562 -0.556152)" fill="currentColor" />
-                                        </svg>
+                                        <span class="icon logo" aria-hidden="true"></span>
+
                                         <!--logo End-->
                                         <h4 class="logo-title">PAD</h4>
                                     </a>
@@ -273,36 +285,21 @@
                                                 <a class="py-0 nav-link d-flex align-items-center" href="#"
                                                     id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
-                                                    <img src="./assets/img/avatar/avatar.svg" alt="User-Profile"
-                                                        class="theme-color-default-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <img src="./assets/images/avatars/avtar_1.png" alt="User-Profile"
-                                                        class="theme-color-purple-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <img src="./assets/images/avatars/avtar_2.png" alt="User-Profile"
-                                                        class="theme-color-blue-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <img src="./assets/images/avatars/avtar_4.png" alt="User-Profile"
-                                                        class="theme-color-green-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <img src="./assets/images/avatars/avtar_5.png" alt="User-Profile"
-                                                        class="theme-color-yellow-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <img src="./assets/images/avatars/avtar_3.png" alt="User-Profile"
-                                                        class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded">
-                                                    <div class="caption ms-3 d-none d-md-block ">
-                                                        <h6 class="mb-0 caption-title">{{UserFirstName}}
-                                                            {{UserLastName}}</h6>
-                                                        <p class="mb-0 caption-sub-title">{{UserRole}}</p>
-                                                    </div>
+                                                    <img src="./assets/img/avatar/avatar-illustrated-03.png"
+                                                        alt="User-Profile"
+                                                        class="img-fluid avatar avatar-40 avatar-rounded">
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-menu-end"
                                                     aria-labelledby="navbarDropdown">
-                                                    <li><a class="dropdown-item"
-                                                            href="app/user-profile.html">Profile</a></li>
-                                                    <li><a class="dropdown-item"
-                                                            href="app/user-privacy-setting.html">Privacy
-                                                            Setting</a>
+                                                    <li>
+                                                        <p class="item-name sidebar-user__title">{{UserFirstName}}
+                                                            {{UserLastName}}</p>
+                                                        <p class="item-name sidebar-user__subtitle">{{UserRole}}</p>
                                                     </li>
                                                     <li>
                                                         <hr class="dropdown-divider">
                                                     </li>
-                                                    <li><a class="dropdown-item" href="/" @click="logout">Logout</a>
+                                                    <li><a class="dropdown-item" @click="logout">Logout</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -357,13 +354,13 @@
                                                     <div class="card-body">
                                                         <span title="System CPU" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
-                                                                  <div class="c100 p10 blue">
-      <span class="iconfont icon-chip "></span>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-  </div>
+                                                                <div class="c100 p10 blue">
+                                                                    <span class="iconfont icon-chip "></span>
+                                                                    <div class="slice">
+                                                                        <div class="bar"></div>
+                                                                        <div class="fill"></div>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="progress-detail">
                                                                     <p class="mb-2">System CPU</p>
                                                                     <h4 class="counter" :class="cpuUsageCls">
@@ -414,145 +411,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="card" data-aos="fade-up" data-aos-delay="800">
-                                                <div
-                                                    class="flex-wrap card-header d-flex justify-content-between align-items-center">
-                                                    <div class="header-title">
-                                                        <h4 class="card-title">$855.8K</h4>
-                                                        <p class="mb-0">Gross Sales</p>
-                                                    </div>
-                                                    <div class="d-flex align-items-center align-self-center">
-                                                        <div class="d-flex align-items-center text-primary">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12"
-                                                                viewBox="0 0 24 24" fill="currentColor">
-                                                                <g>
-                                                                    <circle cx="12" cy="12" r="8" fill="currentColor">
-                                                                    </circle>
-                                                                </g>
-                                                            </svg>
-                                                            <div class="ms-2">
-                                                                <span class="text-secondary">Sales</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center ms-3 text-info">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12"
-                                                                viewBox="0 0 24 24" fill="currentColor">
-                                                                <g>
-                                                                    <circle cx="12" cy="12" r="8" fill="currentColor">
-                                                                    </circle>
-                                                                </g>
-                                                            </svg>
-                                                            <div class="ms-2">
-                                                                <span class="text-secondary">Cost</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="text-secondary dropdown-toggle"
-                                                            id="dropdownMenuButton22" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
-                                                            This Week
-                                                        </a>
-                                                        <ul class="dropdown-menu dropdown-menu-end"
-                                                            aria-labelledby="dropdownMenuButton22">
-                                                            <li><a class="dropdown-item" href="#">This Week</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Month</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Year</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div id="d-main" class="d-main"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-xl-6">
-                                            <div class="card" data-aos="fade-up" data-aos-delay="900">
-                                                <div class="flex-wrap card-header d-flex justify-content-between">
-                                                    <div class="header-title">
-                                                        <h4 class="card-title">Earnings</h4>
-                                                    </div>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="text-secondary dropdown-toggle"
-                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
-                                                            This Week
-                                                        </a>
-                                                        <ul class="dropdown-menu dropdown-menu-end"
-                                                            aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">This Week</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Month</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Year</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div
-                                                        class="flex-wrap d-flex align-items-center justify-content-between">
-                                                        <div id="myChart" class="col-md-8 col-lg-8 myChart"></div>
-                                                        <div class="d-grid gap col-md-4 col-lg-4">
-                                                            <div class="d-flex align-items-start">
-                                                                <svg class="mt-2" xmlns="http://www.w3.org/2000/svg"
-                                                                    width="14" viewBox="0 0 24 24" fill="#3a57e8">
-                                                                    <g>
-                                                                        <circle cx="12" cy="12" r="8" fill="#3a57e8">
-                                                                        </circle>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="ms-3">
-                                                                    <span class="text-secondary">Fashion</span>
-                                                                    <h6>251K</h6>
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex align-items-start">
-                                                                <svg class="mt-2" xmlns="http://www.w3.org/2000/svg"
-                                                                    width="14" viewBox="0 0 24 24" fill="#4bc7d2">
-                                                                    <g>
-                                                                        <circle cx="12" cy="12" r="8" fill="#4bc7d2">
-                                                                        </circle>
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="ms-3">
-                                                                    <span class="text-secondary">Accessories</span>
-                                                                    <h6>176K</h6>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-xl-6">
-                                            <div class="card" data-aos="fade-up" data-aos-delay="1000">
-                                                <div class="flex-wrap card-header d-flex justify-content-between">
-                                                    <div class="header-title">
-                                                        <h4 class="card-title">Conversions</h4>
-                                                    </div>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="text-secondary dropdown-toggle"
-                                                            id="dropdownMenuButton3" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
-                                                            This Week
-                                                        </a>
-                                                        <ul class="dropdown-menu dropdown-menu-end"
-                                                            aria-labelledby="dropdownMenuButton3">
-                                                            <li><a class="dropdown-item" href="#">This Week</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Month</a></li>
-                                                            <li><a class="dropdown-item" href="#">This Year</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div id="d-activity" class="d-activity"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                                 <!-- start with test  -->
                                 <div class="col-md-12 col-xl-6">
                                     <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="900">
@@ -560,7 +418,6 @@
                                             <div class="header-title">
                                                 <h4 class="card-title">Earnings</h4>
                                             </div>
-
                                         </div>
                                         <div class="card-body">
                                             <div class="flex-wrap d-flex align-items-center justify-content-between">
@@ -568,7 +425,7 @@
                                                 <div class="green">
                                                     <div class="progress_dick cpuUsage">
                                                         <div class="inner">
-                                                            <div class="percent"><span>7</span>%</div>
+                                                            <div class="percent"><span>0</span>%</div>
                                                             <div class="water"></div>
                                                             <div class="glare"></div>
                                                         </div>
@@ -577,12 +434,14 @@
                                                 <div class="green">
                                                     <div class="progress_dick memUsage">
                                                         <div class="inner">
-                                                            <div class="percent"><span>7</span>%</div>
+                                                            <div class="percent"><span>0</span>%</div>
                                                             <div class="water"></div>
                                                             <div class="glare"></div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <p>test</p>
+                                                <div id="gauge1" class="gauge-container"></div>
 
                                             </div>
                                         </div>
@@ -1022,42 +881,43 @@
                 </div>
             </div>
         </div>
-        <script src="./assets/config.js"></script>
-        <script src="./assets/js/pages/index.js"></script>
         <!-- Library Bundle Script -->
         <script src="./assets/js/core/libs.min.js"></script>
-
+        <script src="./assets/config.js"></script>
+        <script src="./assets/js/pages/index.js"></script>
+        <script src="./assets/js/plugins/notify.js"></script>
+        <script src="./assets/js/plugins/gauge.js"></script>
+        <script>
+            var gauge1 = Gauge(
+                document.getElementById("gauge1"),
+                {
+                    max: 100,
+                    dialStartAngle: -90,
+                    dialEndAngle: -90.001,
+                    value: 100,
+                    label: function (value)
+                    {
+                        return Math.round(value) + "/" + this.max;
+                    }
+                }
+            );
+        </script>
         <!-- External Library Bundle Script -->
         <script src="./assets/js/core/external.min.js"></script>
-
-        <!-- Widgetchart Script -->
-        <script src="./assets/js/charts/widgetcharts.js"></script>
-
         <!-- mapchart Script -->
-        <script src="./assets/js/charts/vectore-chart.js"></script>
         <script src="./assets/js/charts/dashboard.js"></script>
-
         <!-- fslightbox Script -->
         <script src="./assets/js/plugins/fslightbox.js"></script>
-
         <!-- Settings Script -->
         <script src="./assets/js/plugins/setting.js"></script>
-
         <!-- Slider-tab Script -->
         <script src="./assets/js/plugins/slider-tabs.js"></script>
-
         <!-- Form Wizard Script -->
         <script src="./assets/js/plugins/form-wizard.js"></script>
-
         <!-- AOS Animation Plugin-->
         <script src="./assets/vendor/aos/dist/aos.js"></script>
-
         <!-- App Script -->
         <script src="./assets/js/hope-ui.js" defer></script>
-
-
-
-
     </body>
 
 </html>

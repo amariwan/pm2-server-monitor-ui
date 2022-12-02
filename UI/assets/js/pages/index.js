@@ -62,6 +62,7 @@ const app = createApp({
 					method: 'GET'
 				})
 				.then((response) => {
+					console.log(response);
 					if (response.data.islogged) {
 						var user = response.data.user;
 						this.UserId = user.UserId;
@@ -71,6 +72,9 @@ const app = createApp({
 						this.UserLastName = user.UserLastName;
 					} else {
 						// window.location.href = '/';
+					}
+					if (response.data.isFirst === 1) {
+						notif('success', '👋Hey, ' + response.data.user.UserFirstName, 'Welcome back😉', true);
 					}
 				})
 				.catch((error) => {
@@ -89,7 +93,7 @@ const app = createApp({
 					method: 'GET'
 				})
 				.then((response) => {
-					// window.location.href = '/';
+					window.location.href = '/';
 				})
 				.catch((error) => {
 					console.error(error);
@@ -163,25 +167,17 @@ const app = createApp({
 				const onAction = (type, appName) => {
 					socket.emit(type + 'App', appName);
 				};
-				const createAppItem = function(onclick, appName, types) {
-					// Create a container for the button and app name
-					const appItem = document.createElement('div');
-					appItem.className = 'appItem';
-
-					// Create a label for the app name
-					const appLabel = document.createElement('label');
-					appLabel.innerHTML = appName;
-
-					// Add the app name label to the container
-					appItem.appendChild(appLabel);
-
-					// Add the buttons for each type
-					types.forEach(function(type) {
-						const actionBtn = createActionItem(onclick, appName, type);
-						appItem.appendChild(actionBtn);
+				const createActionItem = function(onclick, appName, type) {
+					const actionBtn = document.createElement('input');
+					// Create a button for each action type
+					actionBtn.value = type;
+					actionBtn.type = 'button';
+					actionBtn.className = 'btn_' + type;
+					actionBtn.addEventListener('click', function handleClick(event) {
+						// When the button is clicked, call the onclick function
+						onclick(type, appName);
 					});
-
-					return appItem;
+					return actionBtn;
 				};
 
 				socket.on('stats', (data) => {

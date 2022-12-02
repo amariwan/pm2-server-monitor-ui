@@ -97,13 +97,16 @@ router.post('/register', (req, res) => {
 	} else if (isLocalOrDB === 'localstorage') {
 	}
 });
+var index_kk = 0;
 
 router.get('/login', (req, res) => {
 	if (req.session.user) {
 		global.sessionUser = req.session.user;
+		req.session.user.isFirst = ++index_kk;
 		res.status(200).send({
 			msg: 'User already logged in',
 			user: req.session.user,
+			isFirst: req.session.user.isFirst,
 			islogged: true,
 			code: 200
 		});
@@ -191,10 +194,10 @@ router.post('/login', (req, res, next) => {
 		});
 	} else if (isLocalOrDB === 'localstorage') {
 		const user = findUser(config_data.users, username, password);
-		console.log(user, '213');
 		if (typeof user === 'object') {
 			getSessionIDCookie(req, res);
 			req.session.user = user;
+			req.session.user.isFirst = true;
 			global.sessionUser = user;
 			res.send({
 				msg: 'successfully',
@@ -209,12 +212,12 @@ router.post('/login', (req, res, next) => {
 			});
 			return;
 		}
+	} else {
+		res.status(203).send({
+			msg: 'User not logged in',
+			code: 102
+		});
 	}
-	res.status(203).send({
-		msg: 'User not logged in',
-		code: 102
-	});
-	return;
 });
 
 const findUser = (users, username, password) => {
@@ -227,7 +230,6 @@ const findUser = (users, username, password) => {
 		const passwordLocal = user.password;
 		const role = user.role;
 		if (usernameLocal === username) {
-			console.log('usernameLocal', usernameLocal);
 			if (passwordLocal === password) {
 				return {
 					UserFirstName: name,
@@ -244,11 +246,13 @@ const findUser = (users, username, password) => {
 };
 
 router.get('/logout', (req, res, next) => {
+	console.log('logout');
 	// Upon logout, we can destroy the session and unset req.session.
 	req.session.destroy();
 	clearAllcookie(req, res);
-	res.status(200);
+	res.status(200).send('logout');
 	next(); // this will give you the above exception
+	global.sessionUser = null;
 });
 
 /* This is exporting the router object. */
