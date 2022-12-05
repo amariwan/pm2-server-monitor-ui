@@ -94,6 +94,18 @@ const app = createApp({
 				this.isUserNameValidCls = 'border-color-red';
 				this.emptyFields = true;
 			}
+		},
+		show_hide_password() {
+			var input = document.getElementById('password-input');
+			var eIcon = document.querySelector('.password-control');
+			if (input.getAttribute('type') == 'password') {
+				eIcon.classList.add('view');
+				input.setAttribute('type', 'text');
+			} else {
+				eIcon.classList.remove('view');
+				input.setAttribute('type', 'password');
+			}
+			return false;
 		}
 	}
 });
@@ -131,23 +143,17 @@ const isUserNameValidFunc = (username) => {
 // isPasswordValid
 const isPasswordValidFunc = (password) => {
 	var resule;
-	var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 	if (password != '') {
-		if (re.test(password)) {
-			if (password.length >= 8) {
-				if (password.length <= 20) {
-					resule = true;
-				} else {
-					resule = 'Password is too long';
-					notif('warning', 'Loging Info', 'Password is too long', true);
-				}
+		if (password.length >= 8) {
+			if (password.length <= 50) {
+				resule = true;
 			} else {
-				resule = 'Password is not too long';
-				notif('warning', 'Loging Info', 'Password is not too long', true);
+				resule = 'Password is too long';
+				notif('warning', 'Loging Info', 'Password is too long', true);
 			}
 		} else {
-			resule = 'Password is not valid';
-			notif('warning', 'Loging Info', 'Password is not valid', true);
+			resule = 'Password is not too long';
+			notif('warning', 'Loging Info', 'Password is not too long', true);
 		}
 	} else {
 		resule = 'Password is empty';

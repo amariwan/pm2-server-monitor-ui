@@ -235,7 +235,7 @@
 	height: 1em;
 	border-radius: 50%;
 	float: left;
-	background-color: #dfe8ed;
+	background-color: #dfe8ed1a;
 }
 .c100 *,
 .c100 *:before,
@@ -249,12 +249,10 @@
 	width: 100%;
 	z-index: 1;
 	left: 0;
-	top: 0;
-	width: 5em;
-	line-height: 5em;
-	font-size: 0.2em;
-	color: #3c4761;
-	display: block;
+	top: 10px;
+	font-size: 21px;
+	color: #01cea2;
+	display: flex;
 	text-align: center;
 	white-space: nowrap;
 	-moz-transition-property: all;
@@ -269,6 +267,7 @@
 	-o-transition-timing-function: ease-out;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
+	flex-direction: column;
 }
 .c100:after {
 	position: absolute;
@@ -277,7 +276,7 @@
 	display: block;
 	content: " ";
 	border-radius: 50%;
-	background-color: #ffffff;
+	background-color: rgb(255 255 255 / 14%);
 	width: 0.82em;
 	height: 0.82em;
 	-moz-transition-property: all;
@@ -902,12 +901,7 @@
 .c100:hover {
 	cursor: default;
 }
-.c100:hover > span {
-	width: 3.33em;
-	line-height: 3.33em;
-	font-size: 0.3em;
-	color: #3c4761;
-}
+
 .c100:hover:after {
 	top: 0.07em;
 	left: 0.07em;
@@ -916,7 +910,7 @@
 }
 .c100.blue .bar,
 .c100.blue .fill {
-	border-color: #30bae7 !important;
+	border-color: var(--bs-primary) !important;
 }
 .c100.blue:hover > span {
 	color: #3c4761;

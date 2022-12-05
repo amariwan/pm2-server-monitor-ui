@@ -4271,7 +4271,7 @@ var Vue = (function(exports) {
 				} else if (
 					!isVNode(rawVNode) ||
 					(!(rawVNode.shapeFlag & 4) /* ShapeFlags.STATEFUL_COMPONENT */ &&
-						!(rawVNode.shapeFlag & 128) /* ShapeFlags.SUSPENSE */)
+						!(rawVNode.shapeFlag & 128)) /* ShapeFlags.SUSPENSE */
 				) {
 					current = null;
 					return rawVNode;
@@ -7260,7 +7260,7 @@ var Vue = (function(exports) {
 						// which also requires the correct parent container
 						!isSameVNodeType(oldVNode, newVNode) ||
 						// - In the case of a component, it could contain anything.
-						oldVNode.shapeFlag & (6 /* ShapeFlags.COMPONENT */ | 64) /* ShapeFlags.TELEPORT */)
+						oldVNode.shapeFlag & (6 /* ShapeFlags.COMPONENT */ | 64)) /* ShapeFlags.TELEPORT */
 						? hostParentNode(oldVNode.el)
 						: // In other cases, the parent container is not actually used so we
 							// just pass the block element here to avoid a DOM parentNode call.
@@ -8130,13 +8130,13 @@ var Vue = (function(exports) {
 				} else if (
 					dynamicChildren &&
 					// #1153: fast path should not be taken for non-stable (v-for) fragments
-					(type !== Fragment || (patchFlag > 0 && patchFlag & 64) /* PatchFlags.STABLE_FRAGMENT */)
+					(type !== Fragment || (patchFlag > 0 && patchFlag & 64)) /* PatchFlags.STABLE_FRAGMENT */
 				) {
 					// fast path for block nodes: only need to unmount dynamic children.
 					unmountChildren(dynamicChildren, parentComponent, parentSuspense, false, true);
 				} else if (
 					(type === Fragment &&
-						patchFlag & (128 /* PatchFlags.KEYED_FRAGMENT */ | 256) /* PatchFlags.UNKEYED_FRAGMENT */) ||
+						patchFlag & (128 /* PatchFlags.KEYED_FRAGMENT */ | 256)) /* PatchFlags.UNKEYED_FRAGMENT */ ||
 					(!optimized && shapeFlag & 16) /* ShapeFlags.ARRAY_CHILDREN */
 				) {
 					unmountChildren(children, parentComponent, parentSuspense);
@@ -12413,10 +12413,10 @@ var Vue = (function(exports) {
 								(shouldCondense &&
 									((prev.type === 3 /* NodeTypes.COMMENT */ &&
 										next.type === 3) /* NodeTypes.COMMENT */ ||
-										(prev.type === 3 /* NodeTypes.COMMENT */ &&
-											next.type === 1) /* NodeTypes.ELEMENT */ ||
-										(prev.type === 1 /* NodeTypes.ELEMENT */ &&
-											next.type === 3) /* NodeTypes.COMMENT */ ||
+									(prev.type === 3 /* NodeTypes.COMMENT */ &&
+										next.type === 1) /* NodeTypes.ELEMENT */ ||
+									(prev.type === 1 /* NodeTypes.ELEMENT */ &&
+										next.type === 3) /* NodeTypes.COMMENT */ ||
 										(prev.type === 1 /* NodeTypes.ELEMENT */ &&
 										next.type === 1 /* NodeTypes.ELEMENT */ &&
 											/[\r\n]/.test(node.content))))
@@ -14984,8 +14984,8 @@ var Vue = (function(exports) {
 			if (
 				!(
 					node.type === 1 /* NodeTypes.ELEMENT */ &&
-					(node.tagType === 0 /* ElementTypes.ELEMENT */ || node.tagType === 1) /* ElementTypes.COMPONENT */
-				)
+					(node.tagType === 0 /* ElementTypes.ELEMENT */ || node.tagType === 1)
+				) /* ElementTypes.COMPONENT */
 			) {
 				return;
 			}

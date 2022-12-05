@@ -172,7 +172,7 @@ const app = createApp({
 					// Create a button for each action type
 					actionBtn.value = type;
 					actionBtn.type = 'button';
-					actionBtn.className = 'btn_' + type;
+					actionBtn.className = 'blur btn_' + type;
 					actionBtn.addEventListener('click', function handleClick(event) {
 						// When the button is clicked, call the onclick function
 						onclick(type, appName);
@@ -201,6 +201,8 @@ const app = createApp({
 					this.totalUptime = data.totalData.totalUptime;
 					progress_dick(data.totalData.cpuUsage, false, 'cpuUsage');
 					progress_dick(data.totalData.memUsage, false, 'memUsage');
+					document.querySelector('.cpuUsageClsPss').className =
+						'cpuUsageClsPss c100 blue p' + data.totalData.cpuUsage;
 					const processList = [];
 					// stats-panel-list
 					let html = '';

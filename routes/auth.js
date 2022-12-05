@@ -130,7 +130,6 @@ router.post('/login', (req, res, next) => {
 
 	let username = decrypt(req.body.username);
 	const password = decrypt(req.body.password);
-	console.log(username, password);
 
 	if (!checkUsername(username)) {
 		res.status(203).send({
@@ -204,6 +203,7 @@ router.post('/login', (req, res, next) => {
 				islogged: true,
 				code: 105
 			});
+			// accept(null, true);
 			return;
 		} else {
 			res.status(203).send({

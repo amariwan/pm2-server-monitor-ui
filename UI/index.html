@@ -16,44 +16,45 @@
         <meta name="author" content="Aland Mariwan">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <!--=============== favicons ===============-->
-        <link rel="shortcut" href="./assets/img/svg/logo.svg">
-        <link rel="icon" href="./assets/img/svg/logo.svg">
-        <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/svg/logo.svg">
-        <link rel="apple-touch-startup-image" sizes="180x180" href="./assets/img/svg/logo.svg">
-        <link rel="manifest" href="./assets/img/manifest.json">
-        <link rel="shortcut icon" href="./assets/img/svg/logo.svg" type="image/x-icon">
+        <link rel="shortcut" href="../assets/img/svg/logo.svg">
+        <link rel="icon" href="../assets/img/svg/logo.svg">
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/svg/logo.svg">
+        <link rel="apple-touch-startup-image" sizes="180x180" href="../assets/img/svg/logo.svg">
+        <link rel="manifest" href="../assets/img/manifest.json">
+        <link rel="shortcut icon" href="../assets/img/svg/logo.svg" type="image/x-icon">
         <!--=============== CSS  ===============-->
         <!-- Library / Plugin Css Build -->
-        <link rel="stylesheet" href="./assets/css/core/libs.min.css" />
+        <link rel="stylesheet" href="../assets/css/core/libs.min.css" />
         <!-- Aos Animation Css -->
-        <link rel="stylesheet" href="./assets/vendor/aos/dist/aos.css" />
+        <link rel="stylesheet" href="../assets/vendor/aos/dist/aos.css" />
         <!-- Hope Ui Design System Css -->
-        <link rel="stylesheet" href="./assets/css/hope-ui.min.css" />
+        <link rel="stylesheet" href="../assets/css/hope-ui.min.css" />
         <!-- Custom Css -->
-        <link rel="stylesheet" href="./assets/css/custom.min.css" />
+        <link rel="stylesheet" href="../assets/css/custom.min.css" />
         <!-- Dark Css -->
-        <link rel="stylesheet" href="./assets/css/dark.min.css" />
+        <link rel="stylesheet" href="../assets/css/dark.min.css" />
         <!-- Customizer Css -->
-        <link rel="stylesheet" href="./assets/css/customizer.min.css" />
+        <link rel="stylesheet" href="../assets/css/customizer.min.css" />
         <!-- RTL Css -->
-        <link rel="stylesheet" href="./assets/css/rtl.min.css" />
-        <link rel="stylesheet" href="./assets/css/animate.min.css" />
-        <link rel="stylesheet" href="./assets/css/iconfont.css" />
-        <link rel="stylesheet" href="./assets/css/progress-water.css" />
-        <link rel="stylesheet" href="./assets/css/progress-bar.css" />
-        <link rel="stylesheet" href="./assets/css/notify.css" />
+        <link rel="stylesheet" href="../assets/css/rtl.min.css" />
+        <link rel="stylesheet" href="../assets/css/animate.min.css" />
+        <link rel="stylesheet" href="../assets/css/iconfont.css" />
+        <link rel="stylesheet" href="../assets/css/progress-water.css" />
+        <link rel="stylesheet" href="../assets/css/progress-bar.css" />
+        <link rel="stylesheet" href="../assets/css/notify.css" />
 
         <!--=============== JS  ===============-->
         <!-- VueJs JavaScript-Framework  -->
         <script src="./assets/js/plugins/vue.global.js"></script>
         <script src="./assets/js/plugins/axios.min.js"></script>
         <script src="./assets/js/plugins/socket.io.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     </head>
 
     <body class=" ">
+        <!-- Canvas -->
+        <canvas class="orb-canvas"></canvas>
         <div class="start" v-cloak>
             <div id="wrap-stats">
                 <div class="stats-panel" v-for="item in getIps" v-bind:id="'host' + item.host + ':' + item.port">
@@ -121,20 +122,20 @@
                         </div>
 
                         <div class="sidebar-footer">
-                            <a href="##" class="sidebar-user ">
+                            <!-- <a href="##" class="sidebar-user ">
                                 <span class="sidebar-user-img">
                                     <picture>
-                                        <source srcset="./assets/img/avatar/avatar-illustrated-03.webp"
-                                            type="image/webp"><img src="./assets/img/avatar/avatar-illustrated-03.png"
+                                        <source srcset="../assets/img/avatar/avatar-illustrated-03.webp"
+                                            type="image/webp"><img src="../assets/img/avatar/avatar-illustrated-03.png"
                                             alt="User name">
                                     </picture>
                                 </span>
-                                <!-- <div class="sidebar-user-info">
+                                <div class="sidebar-user-info">
                                     <span class="item-name sidebar-user__title">{{UserFirstName}}
                                         {{UserLastName}}</span>
                                     <span class="item-name sidebar-user__subtitle">{{UserRole}}</span>
-                                </div> -->
-                            </a>
+                                </div>
+                            </a> -->
                         </div>
                     </aside>
                     <main class="main-content">
@@ -218,7 +219,7 @@
                                                             <a href="#" class="iq-sub-card">
                                                                 <div class="d-flex align-items-center">
                                                                     <img class="p-1 avatar-40 rounded-pill bg-soft-primary"
-                                                                        src="./assets/images/shapes/01.png" alt="">
+                                                                        src="../assets/images/shapes/01.png" alt="">
                                                                     <div class="ms-3 w-100">
                                                                         <h6 class="mb-0 ">Emma Watson Bni</h6>
                                                                         <div
@@ -234,7 +235,7 @@
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="">
                                                                         <img class="p-1 avatar-40 rounded-pill bg-soft-primary"
-                                                                            src="./assets/images/shapes/02.png" alt="">
+                                                                            src="../assets/images/shapes/02.png" alt="">
                                                                     </div>
                                                                     <div class="ms-3 w-100">
                                                                         <h6 class="mb-0 ">New customer is join</h6>
@@ -250,7 +251,7 @@
                                                             <a href="#" class="iq-sub-card">
                                                                 <div class="d-flex align-items-center">
                                                                     <img class="p-1 avatar-40 rounded-pill bg-soft-primary"
-                                                                        src="./assets/images/shapes/03.png" alt="">
+                                                                        src="../assets/images/shapes/03.png" alt="">
                                                                     <div class="ms-3 w-100">
                                                                         <h6 class="mb-0 ">Two customer is left</h6>
                                                                         <div
@@ -265,7 +266,7 @@
                                                             <a href="#" class="iq-sub-card">
                                                                 <div class="d-flex align-items-center">
                                                                     <img class="p-1 avatar-40 rounded-pill bg-soft-primary"
-                                                                        src="./assets/images/shapes/04.png" alt="">
+                                                                        src="../assets/images/shapes/04.png" alt="">
                                                                     <div class="w-100 ms-3">
                                                                         <h6 class="mb-0 ">New Mail from Fenny</h6>
                                                                         <div
@@ -285,7 +286,7 @@
                                                 <a class="py-0 nav-link d-flex align-items-center" href="#"
                                                     id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
-                                                    <img src="./assets/img/avatar/avatar-illustrated-03.png"
+                                                    <img src="../assets/img/avatar/avatar-illustrated-03.png"
                                                         alt="User-Profile"
                                                         class="img-fluid avatar avatar-40 avatar-rounded">
                                                 </a>
@@ -333,7 +334,7 @@
                                     <div class="row row-cols-1">
                                         <div class="overflow-hidden d-slider1 ">
                                             <ul class="p-0 m-0 mb-2 swiper-wrapper list-inline">
-                                                <li class="swiper-slide card card-slide" data-aos="fade-up"
+                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
                                                     data-aos-delay="700">
                                                     <div class="card-body">
                                                         <span title="CPU Cores" v-tippy="{ theme : 'mytheme' }">
@@ -349,12 +350,12 @@
                                                 </li>
                                                 <li>
                                                 </li>
-                                                <li class="swiper-slide card card-slide" data-aos="fade-up"
+                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
                                                     data-aos-delay="800">
                                                     <div class="card-body">
                                                         <span title="System CPU" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
-                                                                <div class="c100 p10 blue">
+                                                                <div class="cpuUsageClsPss  c100 p10 blue">
                                                                     <span class="iconfont icon-chip "></span>
                                                                     <div class="slice">
                                                                         <div class="bar"></div>
@@ -371,7 +372,7 @@
                                                         </span>
                                                     </div>
                                                 </li>
-                                                <li class="swiper-slide card card-slide" data-aos="fade-up"
+                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
                                                     data-aos-delay="900">
                                                     <div class="card-body">
                                                         <span title="System Memory (Available / Total)"
@@ -391,7 +392,7 @@
                                                         </span>
                                                     </div>
                                                 </li>
-                                                <li class="swiper-slide card card-slide" data-aos="fade-up"
+                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
                                                     data-aos-delay="1000">
                                                     <div class="card-body">
                                                         <span title="Node.js version" v-tippy="{ theme : 'mytheme' }">
@@ -413,12 +414,7 @@
                                 </div>
                                 <!-- start with test  -->
                                 <div class="col-md-12 col-xl-6">
-                                    <div class="card aos-init aos-animate" data-aos="fade-up" data-aos-delay="900">
-                                        <div class="flex-wrap card-header d-flex justify-content-between">
-                                            <div class="header-title">
-                                                <h4 class="card-title">Earnings</h4>
-                                            </div>
-                                        </div>
+                                    <div class="card aos-init aos-animate blur" data-aos="fade-up" data-aos-delay="900">
                                         <div class="card-body">
                                             <div class="flex-wrap d-flex align-items-center justify-content-between">
                                                 <div id="testmy"></div>
@@ -441,8 +437,12 @@
                                                     </div>
                                                 </div>
                                                 <p>test</p>
-                                                <div id="gauge1" class="gauge-container"></div>
-
+                                                <div id="gauge1" class="gauge-container">
+                                                    <i class="iconfont icon-node-js"></i>
+                                                </div>
+                                                <div id="gauge2" class="gauge-container">
+                                                    <i class="iconfont icon-node-js"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -451,11 +451,15 @@
                                 <!-- end with test -->
                                 <!-- start -->
                                 <div class="col-md-12 col-lg-12">
-                                    <div class="overflow-hidden card" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="overflow-hidden card blur" data-aos="fade-up" data-aos-delay="600">
+                                        <div class="flex-wrap card-header blur d-flex justify-content-between">
+                                            <div class="header-title">
+                                                <h4 class="card-title">Server</h4>
+                                            </div>
+                                        </div>
                                         <div class="p-0 card-body">
-                                            <div class="mt-4 table-responsive">
-
-                                                <div class="stats-panel-row">
+                                            <div class="table-responsive">
+                                                <div class="stats-panel-row blur">
                                                     <span class="app-name-wrap" title="App Name"
                                                         v-tippy="{ theme : 'mytheme' }">
                                                         <i class="app-icon iconfont icon-hexagonoutline"></i>
@@ -490,7 +494,7 @@
                                                         <table id="basic-table" class="table mb-0 table-striped"
                                                             role="grid">
                                                             <thead>
-                                                                <tr>
+                                                                <tr class="blur">
                                                                     <td>id</td>
                                                                     <td>App name</td>
                                                                     <td>mode</td>
@@ -516,8 +520,8 @@
                             </div>
                         </div>
                         <!-- Footer Section Start -->
-                        <footer class="footer">
-                            <div class="footer-body">
+                        <footer class="footer blur">
+                            <div class="footer-body blur">
                                 <ul class="left-panel list-inline mb-0 p-0">
                                     <li class="list-inline-item"><a href="extra/privacy-policy.html">Privacy
                                             Policy</a>
@@ -666,19 +670,19 @@
                                     <h5 class="mb-3 mt-4">Scheme Direction</h5>
                                     <div class="d-grid gap-x-3 grid-cols-2 mb-4">
                                         <div class="text-center">
-                                            <img src="./assets/images/settings/dark/01.png" alt="ltr"
+                                            <img src="../assets/images/settings/dark/01.png" alt="ltr"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column active"
                                                 data-setting="dir-mode" data-name="dir" data-value="ltr">
-                                            <img src="./assets/images/settings/light/01.png" alt="ltr"
+                                            <img src="../assets/images/settings/light/01.png" alt="ltr"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column active"
                                                 data-setting="dir-mode" data-name="dir" data-value="ltr">
                                             <span class=" mt-2"> LTR </span>
                                         </div>
                                         <div class="text-center">
-                                            <img src="./assets/images/settings/dark/02.png" alt=""
+                                            <img src="../assets/images/settings/dark/02.png" alt=""
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="dir-mode" data-name="dir" data-value="rtl">
-                                            <img src="./assets/images/settings/light/02.png" alt=""
+                                            <img src="../assets/images/settings/light/02.png" alt=""
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="dir-mode" data-name="dir" data-value="rtl">
                                             <span class="mt-2 "> RTL </span>
@@ -735,33 +739,33 @@
                                     <h5 class="mt-4 mb-3">Sidebar Types</h5>
                                     <div class="d-grid gap-x-3 grid-cols-3 mb-4">
                                         <div class="text-center">
-                                            <img src="./assets/images/settings/dark/03.png" alt="mini"
+                                            <img src="../assets/images/settings/dark/03.png" alt="mini"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-mini">
-                                            <img src="./assets/images/settings/light/03.png" alt="mini"
+                                            <img src="../assets/images/settings/light/03.png" alt="mini"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-mini">
                                             <span class="mt-2">Mini</span>
                                         </div>
                                         <div class="text-center">
-                                            <img src="./assets/images/settings/dark/04.png" alt="hover"
+                                            <img src="../assets/images/settings/dark/04.png" alt="hover"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-hover" data-extra-value="sidebar-mini">
-                                            <img src="./assets/images/settings/light/04.png" alt="hover"
+                                            <img src="../assets/images/settings/light/04.png" alt="hover"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-hover" data-extra-value="sidebar-mini">
                                             <span class="mt-2">Hover</span>
                                         </div>
                                         <div class="text-center">
-                                            <img src="./assets/images/settings/dark/05.png" alt="boxed"
+                                            <img src="../assets/images/settings/dark/05.png" alt="boxed"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-boxed">
-                                            <img src="./assets/images/settings/light/05.png" alt="boxed"
+                                            <img src="../assets/images/settings/light/05.png" alt="boxed"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-type"
                                                 data-value="sidebar-boxed">
@@ -772,42 +776,42 @@
                                     <h5 class="mt-4 mb-3">Sidebar Active Style</h5>
                                     <div class="d-grid gap-x-3 grid-cols-2 mb-4">
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/06.png" alt="rounded-one-side"
+                                            <img src="../assets/images/settings/dark/06.png" alt="rounded-one-side"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-rounded">
-                                            <img src="./assets/images/settings/light/06.png" alt="rounded-one-side"
+                                            <img src="../assets/images/settings/light/06.png" alt="rounded-one-side"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-rounded">
                                             <span class="mt-2">Rounded One Side</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/07.png" alt="rounded-all"
+                                            <img src="../assets/images/settings/dark/07.png" alt="rounded-all"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column active"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-rounded-all">
-                                            <img src="./assets/images/settings/light/07.png" alt="rounded-all"
+                                            <img src="../assets/images/settings/light/07.png" alt="rounded-all"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column active"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-rounded-all">
                                             <span class="mt-2">Rounded All</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/08.png" alt="pill-one-side"
+                                            <img src="../assets/images/settings/dark/08.png" alt="pill-one-side"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item" data-value="navs-pill">
-                                            <img src="./assets/images/settings/light/09.png" alt="pill-one-side"
+                                            <img src="../assets/images/settings/light/09.png" alt="pill-one-side"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item" data-value="navs-pill">
                                             <span class="mt-2">Pill One Side</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/09.png" alt="pill-all"
+                                            <img src="../assets/images/settings/dark/09.png" alt="pill-all"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-pill-all">
-                                            <img src="./assets/images/settings/light/08.png" alt="pill-all"
+                                            <img src="../assets/images/settings/light/08.png" alt="pill-all"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="sidebar" data-name="sidebar-item"
                                                 data-value="navs-pill-all">
@@ -818,44 +822,44 @@
                                     <h5 class="mt-4 mb-3">Navbar Style</h5>
                                     <div class="d-grid gap-x-3 grid-cols-2">
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/11.png" alt="image"
+                                            <img src="../assets/images/settings/dark/11.png" alt="image"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="nav-glass">
-                                            <img src="./assets/images/settings/light/10.png" alt="image"
+                                            <img src="../assets/images/settings/light/10.png" alt="image"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="nav-glass">
                                             <span class="mt-2">Glass</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/10.png" alt="color"
+                                            <img src="../assets/images/settings/dark/10.png" alt="color"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar-header"
                                                 data-name="navbar-type" data-value="navs-bg-color">
-                                            <img src="./assets/images/settings/light/11.png" alt="color"
+                                            <img src="../assets/images/settings/light/11.png" alt="color"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar-header"
                                                 data-name="navbar-type" data-value="navs-bg-color">
                                             <span class="mt-2">Color</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/12.png" alt="sticky"
+                                            <img src="../assets/images/settings/dark/12.png" alt="sticky"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="navs-sticky">
-                                            <img src="./assets/images/settings/light/12.png" alt="sticky"
+                                            <img src="../assets/images/settings/light/12.png" alt="sticky"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="navs-sticky">
                                             <span class="mt-2">Sticky</span>
                                         </div>
                                         <div class="mb-4 text-center">
-                                            <img src="./assets/images/settings/dark/13.png" alt="transparent"
+                                            <img src="../assets/images/settings/dark/13.png" alt="transparent"
                                                 class="mode dark-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="navs-transparent">
-                                            <img src="./assets/images/settings/light/13.png" alt="transparent"
+                                            <img src="../assets/images/settings/light/13.png" alt="transparent"
                                                 class="mode light-img img-fluid btn-border p-0 flex-column"
                                                 data-setting="navbar" data-target=".iq-navbar" data-name="navbar-type"
                                                 data-value="navs-transparent">
@@ -882,11 +886,11 @@
             </div>
         </div>
         <!-- Library Bundle Script -->
-        <script src="./assets/js/core/libs.min.js"></script>
-        <script src="./assets/config.js"></script>
-        <script src="./assets/js/pages/index.js"></script>
-        <script src="./assets/js/plugins/notify.js"></script>
-        <script src="./assets/js/plugins/gauge.js"></script>
+        <script src="../assets/js/core/libs.min.js"></script>
+        <script src="../assets/config.js"></script>
+        <script src="../assets/js/pages/index.js"></script>
+        <script src="../assets/js/plugins/notify.js"></script>
+        <script src="../assets/js/plugins/gauge.js"></script>
         <script>
             var gauge1 = Gauge(
                 document.getElementById("gauge1"),
@@ -894,30 +898,58 @@
                     max: 100,
                     dialStartAngle: -90,
                     dialEndAngle: -90.001,
-                    value: 100,
+                    value: value77,
                     label: function (value)
                     {
                         return Math.round(value) + "/" + this.max;
                     }
                 }
             );
+            var value77
+            var gauge2 = Gauge(
+                document.getElementById("gauge2"), {
+                min: -50,
+                max: 50,
+                dialStartAngle: 180,
+                dialEndAngle: 0,
+                value: value77,
+                color: function (value)
+                {
+                    if (value < -25)
+                    {
+                        return "#5ee432";
+                    } else if (value < 0)
+                    {
+                        return "#fffa50";
+                    } else if (value < 25)
+                    {
+                        return "#f7aa38";
+                    } else
+                    {
+                        return "#ef4655";
+                    }
+                }
+            }
+            );
+
         </script>
         <!-- External Library Bundle Script -->
-        <script src="./assets/js/core/external.min.js"></script>
+        <script src="../assets/js/core/external.min.js"></script>
         <!-- mapchart Script -->
-        <script src="./assets/js/charts/dashboard.js"></script>
+        <script src="../assets/js/charts/dashboard.js"></script>
         <!-- fslightbox Script -->
-        <script src="./assets/js/plugins/fslightbox.js"></script>
+        <script src="../assets/js/plugins/fslightbox.js"></script>
         <!-- Settings Script -->
-        <script src="./assets/js/plugins/setting.js"></script>
+        <script src="../assets/js/plugins/setting.js"></script>
         <!-- Slider-tab Script -->
-        <script src="./assets/js/plugins/slider-tabs.js"></script>
+        <script src="../assets/js/plugins/slider-tabs.js"></script>
         <!-- Form Wizard Script -->
-        <script src="./assets/js/plugins/form-wizard.js"></script>
+        <script src="../assets/js/plugins/form-wizard.js"></script>
         <!-- AOS Animation Plugin-->
-        <script src="./assets/vendor/aos/dist/aos.js"></script>
+        <script src="../assets/vendor/aos/dist/aos.js"></script>
         <!-- App Script -->
-        <script src="./assets/js/hope-ui.js" defer></script>
+        <script src="../assets/js/hope-ui.js" defer></script>
+        <script type="module" src="../assets/js/plugins/background.js"></script>
     </body>
 
 </html>
