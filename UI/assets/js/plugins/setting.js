@@ -79,7 +79,6 @@ Index Of Script
 
 	// For Dark, RTL & Sidebar Class Update
 	const changeMode = (type, value, target) => {
-		console.log(type, value);
 		let detailObj = {};
 		if (type == 'color-mode') {
 			detailObj = { dark: value };
