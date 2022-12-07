@@ -6,7 +6,7 @@ const option = {
 	name: 'Monitoring',
 	// your server listening port
 	port: 4003,
-	BOT_TOKEN: 'MTA0NzIxODAwNDY4Mjg4NzE2OA.GaPI6s.wXl5xtOi6h_hGGergXY25KfdA7Rlowvt8ozVi0',
+	BOT_TOKEN: 'MTA0NzIxODAwNDY4Mjg4NzE2OA.GaPI6s.wXl5xtOi6h_hGGergXY25KfdA7Rlowvt8ozVi0', // discord
 	loginsystem: 'localstorage', // false or localstorage or db
 	users: [
 		{
