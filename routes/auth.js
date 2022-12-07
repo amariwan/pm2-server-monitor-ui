@@ -140,8 +140,6 @@ router.post('/login', (req, res, next) => {
 		return;
 	}
 	username = username.toLowerCase();
-	console.log(config_data, '182');
-	console.log(isLocalOrDB, '183');
 
 	/* This is checking if the user is registered. */
 	if (isLocalOrDB === 'db') {
