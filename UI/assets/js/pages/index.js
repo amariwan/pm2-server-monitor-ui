@@ -179,6 +179,7 @@ const app = createApp({
 							onclick(type, appName);
 						} else {
 							notif('warning', 'Permission management', 'Access Denied. you need admin access', true);
+							onclick(type, appName);
 						}
 					});
 					return actionBtn;
