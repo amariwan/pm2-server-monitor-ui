@@ -1,9 +1,4 @@
-/*!
- * Circle Progress - v0.2.0 - 2020-08-22
- * https://tigrr.github.io/circle-progress/
- * Copyright (c) Tigran Sargsyan
- * Licensed MIT
- */
+
 
 'use strict';
 function ownKeys(e, t) {
