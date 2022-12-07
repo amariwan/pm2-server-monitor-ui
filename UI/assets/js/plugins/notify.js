@@ -13,7 +13,7 @@ function notif(type, title, message, autoHide) {
 		overflowHide: false, //true | false
 		spacing: 20, //number px
 		theme: 'default-theme', //default | dark-theme
-		autoHide: autoHide, //true | false
+		autoHide: autoHide || true, //true | false
 		delay: 2500, //number ms
 		onShow: null, //function
 		onClick: null, //function

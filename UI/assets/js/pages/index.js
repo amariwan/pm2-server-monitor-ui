@@ -175,12 +175,19 @@ const app = createApp({
 					actionBtn.className = 'blur btn_' + type;
 					actionBtn.addEventListener('click', function handleClick(event) {
 						// When the button is clicked, call the onclick function
-						onclick(type, appName);
+						if (vm.UserRole === 'admin') {
+							onclick(type, appName);
+						} else {
+							notif('warning', 'Permission management', 'Access Denied. you need admin access', true);
+						}
 					});
 					return actionBtn;
 				};
-
+				socket.on('serverInfo', (type, data) => {
+					notif(type, 'serverInfo', data, true);
+				});
 				socket.on('stats', (data) => {
+					// console.log(data);
 					this.hostname = data.totalData.hostname;
 					this.cpuUsage = data.totalData.cpuUsage + '%';
 					this.cpus = data.totalData.cpus;
@@ -191,7 +198,7 @@ const app = createApp({
 					this.totalmem = data.totalData.totalmem;
 					this.nodev = data.totalData.node_version;
 					this.godid = data.totalData.godid;
-					this.platform = data.totalData.platform;
+					this.platform = data.systemInfo.osInfo.codename;
 					this.projectName = data.totalData.projectName;
 					this.instances = data.totalData.instances;
 					this.cpu = data.totalData.cpu;

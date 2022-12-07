@@ -22,7 +22,7 @@ const option = {
 			name: 'Aland',
 			lastname: 'Mariwan',
 			password: 'Tolasm99',
-			role: 'admin',
+			role: 'user',
 			id: '1'
 		}
 	],

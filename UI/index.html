@@ -3,7 +3,7 @@
 
     <head>
         <!--=============== basic  ===============-->
-        <title>Hope UI | Responsive Bootstrap 5 Admin Dashboard Template</title>
+        <title>Dashboard | PM2 Admin Dashboard </title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="robots" content="index" />
@@ -27,8 +27,8 @@
         <link rel="stylesheet" href="../assets/css/core/libs.min.css" />
         <!-- Aos Animation Css -->
         <link rel="stylesheet" href="../assets/vendor/aos/dist/aos.css" />
-        <!-- Hope Ui Design System Css -->
-        <link rel="stylesheet" href="../assets/css/hope-ui.min.css" />
+        <!-- PAD Design System Css -->
+        <link rel="stylesheet" href="../assets/css/PAD-ui.min.css" />
         <!-- Custom Css -->
         <link rel="stylesheet" href="../assets/css/custom.min.css" />
         <!-- Dark Css -->
@@ -54,7 +54,7 @@
 
     <body class=" ">
         <!-- Canvas -->
-        <canvas class="orb-canvas"></canvas>
+        <!-- <canvas class="orb-canvas"></canvas> -->
         <div class="start" v-cloak>
             <div id="wrap-stats">
                 <div class="stats-panel" v-for="item in getIps" v-bind:id="'host' + item.host + ':' + item.port">
@@ -66,7 +66,7 @@
                     </div>
                     <!-- loader END -->
 
-                    <aside class="sidebar sidebar-default navs-rounded-all blur">
+                    <aside class="sidebar sidebar-default navs-rounded-all blur box-shadow-10">
                         <div class="start">
                             <div class="sidebar-header d-flex align-items-center justify-content-start">
                                 <a href="/" class="navbar-brand">
@@ -141,7 +141,7 @@
                     <main class="main-content">
                         <div class="sticky-top iq-banner" style="z-index: 909;top: 1rem;">
                             <!--Nav Start-->
-                            <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar blur">
+                            <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar blur box-shadow-10">
                                 <div class="container-fluid navbar-inner">
                                     <a href="/" class="navbar-brand">
                                         <!--Logo start-->
@@ -170,7 +170,7 @@
                                                 </path>
                                             </svg>
                                         </span>
-                                        <input type="search" class="form-control blur" placeholder="Search...">
+                                        <input type="search" class="form-control blur " placeholder="Search...">
                                     </div>
                                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -334,8 +334,8 @@
                                     <div class="row row-cols-1">
                                         <div class="overflow-hidden d-slider1 ">
                                             <ul class="p-0 m-0 mb-2 swiper-wrapper list-inline">
-                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
-                                                    data-aos-delay="700">
+                                                <li class="swiper-slide card card-slide blur box-shadow-10"
+                                                    data-aos="fade-up" data-aos-delay="700">
                                                     <div class="card-body">
                                                         <span title="CPU Cores" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
@@ -350,8 +350,8 @@
                                                 </li>
                                                 <li>
                                                 </li>
-                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
-                                                    data-aos-delay="800">
+                                                <li class="swiper-slide card card-slide blur box-shadow-10"
+                                                    data-aos="fade-up" data-aos-delay="800">
                                                     <div class="card-body">
                                                         <span title="System CPU" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
@@ -372,8 +372,8 @@
                                                         </span>
                                                     </div>
                                                 </li>
-                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
-                                                    data-aos-delay="900">
+                                                <li class="swiper-slide card card-slide blur box-shadow-10"
+                                                    data-aos="fade-up" data-aos-delay="900">
                                                     <div class="card-body">
                                                         <span title="System Memory (Available / Total)"
                                                             v-tippy="{ theme : 'mytheme' }">
@@ -392,8 +392,8 @@
                                                         </span>
                                                     </div>
                                                 </li>
-                                                <li class="swiper-slide card card-slide blur" data-aos="fade-up"
-                                                    data-aos-delay="1000">
+                                                <li class="swiper-slide card card-slide blur box-shadow-10"
+                                                    data-aos="fade-up" data-aos-delay="1000">
                                                     <div class="card-body">
                                                         <span title="Node.js version" v-tippy="{ theme : 'mytheme' }">
                                                             <div class="progress-widget">
@@ -414,7 +414,8 @@
                                 </div>
                                 <!-- start with test  -->
                                 <div class="col-md-12 col-xl-6">
-                                    <div class="card aos-init aos-animate blur" data-aos="fade-up" data-aos-delay="900">
+                                    <div class="card aos-init aos-animate blur box-shadow-10" data-aos="fade-up"
+                                        data-aos-delay="900">
                                         <div class="card-body">
                                             <div class="flex-wrap d-flex align-items-center justify-content-between">
                                                 <div id="testmy"></div>
@@ -447,19 +448,13 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- end with test -->
                                 <!-- start -->
                                 <div class="col-md-12 col-lg-12">
-                                    <div class="overflow-hidden card blur" data-aos="fade-up" data-aos-delay="600">
-                                        <div class="flex-wrap card-header blur d-flex justify-content-between">
-                                            <div class="header-title">
-                                                <h4 class="card-title">Server</h4>
-                                            </div>
-                                        </div>
+                                    <div class="overflow-hidden card " data-aos="fade-up" data-aos-delay="600">
                                         <div class="p-0 card-body">
                                             <div class="table-responsive">
-                                                <div class="stats-panel-row blur">
+                                                <div class="stats-panel-row">
                                                     <span class="app-name-wrap" title="App Name"
                                                         v-tippy="{ theme : 'mytheme' }">
                                                         <i class="app-icon iconfont icon-hexagonoutline"></i>
@@ -494,7 +489,7 @@
                                                         <table id="basic-table" class="table mb-0 table-striped"
                                                             role="grid">
                                                             <thead>
-                                                                <tr class="blur">
+                                                                <tr>
                                                                     <td>id</td>
                                                                     <td>App name</td>
                                                                     <td>mode</td>
@@ -508,7 +503,8 @@
                                                                     <td>remote control</td>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody></tbody>
+                                                            <tbody>
+                                                            </tbody>
                                                         </table>
                                                     </div>
                                                 </transition>
@@ -520,15 +516,15 @@
                             </div>
                         </div>
                         <!-- Footer Section Start -->
-                        <footer class="footer blur">
-                            <div class="footer-body blur">
+                        <footer class="footer blur box-shadow-10">
+                            <div class="footer-body blur box-shadow-10">
                                 <ul class="left-panel list-inline mb-0 p-0">
-                                    <li class="list-inline-item"><a href="extra/privacy-policy.html">Privacy
+                                    <!-- <li class="list-inline-item"><a href="extra/privacy-policy.html">Privacy
                                             Policy</a>
                                     </li>
                                     <li class="list-inline-item"><a href="extra/terms-of-service.html">Terms of
                                             Use</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <div class="right-panel">
                                     Copyright © {{year}}
@@ -545,8 +541,9 @@
                         </footer>
                         <!-- Footer Section End -->
                     </main>
-                    <a class="btn btn-fixed-end green btn-icon btn-setting blur" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <a class="btn btn-fixed-end green btn-icon btn-setting blur box-shadow-10"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">
                         <svg width="24" viewBox="0 0 24 24" class="animated-rotate" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -559,8 +556,8 @@
                     </a>
                     <!-- Wrapper End-->
                     <!-- offcanvas start -->
-                    <div class="offcanvas offcanvas-end blur" tabindex="-1" id="offcanvasExample" data-bs-scroll="true"
-                        data-bs-backdrop="true" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas offcanvas-end blur box-shadow-10" tabindex="-1" id="offcanvasExample"
+                        data-bs-scroll="true" data-bs-backdrop="true" aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
                             <div class="d-flex align-items-center">
                                 <h3 class="offcanvas-title me-3" id="offcanvasExampleLabel">Settings</h3>
@@ -948,7 +945,7 @@
         <!-- AOS Animation Plugin-->
         <script src="../assets/vendor/aos/dist/aos.js"></script>
         <!-- App Script -->
-        <script src="../assets/js/hope-ui.js" defer></script>
+        <script src="../assets/js/PAD-ui.js" defer></script>
         <script type="module" src="../assets/js/plugins/background.js"></script>
     </body>
 
