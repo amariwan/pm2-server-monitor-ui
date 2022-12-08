@@ -110,7 +110,7 @@ codebook[99] = '—';
 // Each number is the index of the codebook character.
 // If the codebook character is not found, the number is not added to the encoded text.
 
-function encode(text) {
+functionencode(text) {
 	let encoded = [];
 
 	for (let i = 0; i < text.length; i++) {
