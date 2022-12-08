@@ -5,92 +5,46 @@
     pm2 server monitor UI
 	<br>
 </h1>
-
 <div align="center">
-
-Before start, you need to have the following tools installed on computer: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) and/or [Yarn](https://yarnpkg.com/). [MySQl::Workbench](https://www.mysql.com/products/workbench/).
-
-[How To Install MySQL on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
-
-<br>
-	  <a href="https://choosealicense.com/licenses/mit">
-		<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
-	</a>
-	<img src="https://img.shields.io/github/checks-status/amariwan/reactJs-Mysql-Auth/master" alt="Build Status">
-	<a href="https://github.com/amariwan/reactJs-Mysql-Auth">
-		<img src="https://img.shields.io/github/stars/amariwan/reactJs-Mysql-Auth?style=social">
-	</a>
+        <p> <img src="https://i.imgur.com/TScSeRv.png"/> </p>
+        <p><i><b>A Discord dashboard for bots</b></i></p>
 </div>
 
-Requirements / Modules being used
-body-parser
-cookie-parser
-cookie-session
-discord.js Framework being used by #Seday bot sample for working with Discord API
-ejs A templating engine
-express A framework for creating web applications with node.js
-express-session Create sessions for things like login systems
-helmet connection security
-mz Some utilities
-querystring Converts and object to a query string
-rethinkdbdash RethinkDB driver we are using
-session-rethinkdb A module which meant for storing session cookies in a RethinkDB
-socket.io A module we are using for creating our server / websocket server for real-time storing
-socket.io-client Socket.io client
-unirest An HTTP request API
-uuid A temporary module being used for generating Cryptographically string (prefect for cookie secret)
+### Seday
+#Seday is a very small project meant to guide beginner developers to run their first Dashboard for their bot.
 
+### Requirements / Modules being used
+<ul>
+    <li><a href="https://www.npmjs.com/package/body-parser">body-parser</a></li>
+    <li><a href="https://www.npmjs.com/package/cookie-parser">cookie-parser</a></li>
+    <li><a href="https://www.npmjs.com/package/cookie-session">cookie-session</a></li>
+    <li><a href="https://www.npmjs.com/package/discord.js">discord.js</a> Framework being used by #Seday <a href="https://github.com/TheOnlyArtz/Seday/tree/master/src/Bot">bot sample</a> for working with Discord API</li>
+    <li><a href="https://www.npmjs.com/package/ejs">ejs</a> A templating engine</li>
+    <li><a href="https://www.npmjs.com/package/express">express</a> A framework for creating web applications with node.js</li>
+    <li><a href="https://www.npmjs.com/package/express-session">express-session</a> Create sessions for things like login systems</li>
+    <li><a href="https://www.npmjs.com/package/helmet">helmet</a> connection security</li>
+    <li><a href="https://www.npmjs.com/package/mz">mz</a> Some utilities</li>
+    <li><a href="https://www.npmjs.com/package/querystring">querystring</a> Converts and object to a query string</li>
+    <li><a href="https://www.npmjs.com/package/rethinkdbdash">rethinkdbdash</a> RethinkDB driver we are using</li>
+    <li><a href="https://www.npmjs.com/package/session-rethinkdb">session-rethinkdb</a> A module which meant for storing session cookies in a RethinkDB</li>
+    <li><a href="https://www.npmjs.com/package/socket.io">socket.io</a> A module we are using for creating our server / websocket server for real-time storing</li>
+    <li><a href="https://www.npmjs.com/package/socket.io-client">socket.io-client</a> Socket.io client</li>
+    <li><a href="https://www.npmjs.com/package/unirest">unirest</a> An HTTP request API</li>
+    <li><a href="https://www.npmjs.com/package/uuid">uuid</a> A temporary module being used for generating Cryptographically string (prefect for cookie secret)</li>
+</ul>
 
-This is modified as single server instance to run inside docker container, this runs on port specified
+### Introduction
+Why dashboards? why almost any bot developer would like to have one?<br>
+Here are the 2 main reasons:<br>
+<ul>
+    <li>Makes your bot more attractive to the users</li>
+    <li>Makes the "custom config" experience to be such friendly and easier</li>
+</ul>
 
-## Preview
-![image](./sample.png)
-
-## Usage
-
-Install the monitor module with npm, in your project:
-
-```bash
-> npm i --save pm2-server-monitor
-```
-
-Use the module in top of your project code:
-
-```js
-const monitor = require('pm2-server-monitor');
-monitor({
-    // your server name, as a flag
-    name: 'local',
-
-    // your server listening port
-    port: 3001
-});
-```
-*Your can view the `./example` folder for reference.*
-
-Start your server with PM2, don't forget the `--no-treekill` argument:
-
-```bash
-> pm2 start bin/www -i max --no-treekill
-```
-
-Add the servers info in `./UI/config.js` file:
-
-```js
-const servers = {
-    'local': [{
-        ip: '127.0.0.1',
-        port: 3001,
-        show: false
-    }]
-}
-```
-
-Open `./UI/index.html` to see the monitor UI.
-
-**Note:** you can put the `./UI` folder anywhere, it has zero dependencies.
-
-Enjoy it :)
-
-## License
-License (MIT)
+#### Be careful with your actions!!!
+As humans, most of us will never understand the idea behind - "With great power comes huge responsibility"<br>
+When you are getting that access_token which you will get to know later you can get any types of data from the user<br>
+They were many cases of dashboard owners who simply took tokens from victims and spam the API from the token which led the victim to a ban<br>
+#### I'm not responsible for the actions you will take!
+#Seday meant for educational purposes **only!** you can take this guide to the limits but please, don't be asshole without any friends<br>
+Don't you dare to do anything to hurt your dashboards users, because I know you already thought about it (Well... most of you)
