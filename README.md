@@ -22,6 +22,24 @@ Before start, you need to have the following tools installed on computer: [Git](
 	</a>
 </div>
 
+Requirements / Modules being used
+body-parser
+cookie-parser
+cookie-session
+discord.js Framework being used by #Seday bot sample for working with Discord API
+ejs A templating engine
+express A framework for creating web applications with node.js
+express-session Create sessions for things like login systems
+helmet connection security
+mz Some utilities
+querystring Converts and object to a query string
+rethinkdbdash RethinkDB driver we are using
+session-rethinkdb A module which meant for storing session cookies in a RethinkDB
+socket.io A module we are using for creating our server / websocket server for real-time storing
+socket.io-client Socket.io client
+unirest An HTTP request API
+uuid A temporary module being used for generating Cryptographically string (prefect for cookie secret)
+
 
 This is modified as single server instance to run inside docker container, this runs on port specified
 
