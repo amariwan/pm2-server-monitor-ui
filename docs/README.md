@@ -1,7 +1,7 @@
 # Tasio Admin Dashboard
 
 
-Tasio Admin Dashboard is a leading tool for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
+Tasio Admin Dashboard  is software developed in Nodejs for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
 
 Quickly gain a complete view of your IT infrastructure, no matter how complex.
 
