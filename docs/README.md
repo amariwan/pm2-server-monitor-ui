@@ -8,7 +8,11 @@ Quickly gain a complete view of your IT infrastructure, no matter how complex.
 
 Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.
 
-# Why Use Tasio Admin Dashbord?
+## Why Use Tasio Admin Dashbord?
+
+
+## Monitoring core
+Checkmk RE uses Nagios monitoring core. It doesn't offer container monitoring and requires a reboot to apply configuration changes.
 
 
 ## Monitor your entire hybrid IT infrastructure
