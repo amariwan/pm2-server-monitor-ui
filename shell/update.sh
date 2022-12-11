@@ -1,7 +1,7 @@
 #!/bin/bash
 # Reset MineOS git repository to current master
 
-LOG="/var/log/mineos.log"
+LOG="./log/mineos.log"
 
 if [[ $EUID -ne 0 ]]; then
    echo "reset_scripts.sh must be run as root" 1>&2 | tee -a $LOG
