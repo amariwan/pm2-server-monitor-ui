@@ -1,3 +1,5 @@
+const pm2 = require('pm2');
+
 /**
  * It returns a promise that resolves to an array of pm2 processes
  * @returns A promise that resolves to an array of objects.
