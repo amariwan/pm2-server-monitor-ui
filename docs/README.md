@@ -18,7 +18,7 @@ Checkmk RE uses Nagios monitoring core. It doesn't offer container monitoring an
 Livestatus is the main interface in Tasio Admin Dashboard. It provides live access to all data from the monitored hosts and services. The data is fetched directly from the RAM, which avoids slow hard disk access and gives fast access to the information without overloading the system too much. Access is done via a simple protocol and it is possible from all programming languages without requiring a special library.
 
 ### Web-GUI ("Multisite")
-Multisite is Checkmk’s web GUI. In addition to having a quick page layout, it offers user-definable views and dashboards, distributed monitoring by integrating multiple monitoring instances via Livestatus, integration of NagVis[clarification needed], an integrated LDAP connection, access to status data via web services, and much more. Dashboards and views can be differentiated for various users or groups of users, for example vSphere-specific[22] views for VMware admins. The web GUI is available in English and German.
+Multisite is Tasio Admin Dashbord’s web GUI. In addition to having a quick page layout, it offers user-definable views and dashboards, distributed monitoring by integrating multiple monitoring instances via Livestatus, integration of NagVis[clarification needed], an integrated LDAP connection, access to status data via web services, and much more. Dashboards and views can be differentiated for various users or groups of users, for example vSphere-specific[22] views for VMware admins. The web GUI is available in English and German.
 
 ## Monitor your entire hybrid IT infrastructure
 
