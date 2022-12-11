@@ -26,5 +26,5 @@ const pm2List = () => {
 	});
 };
 
-console.log(pm2List())
+console.log(await pm2List())
 module.exports = pm2List;
