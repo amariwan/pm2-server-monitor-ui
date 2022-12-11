@@ -300,3 +300,7 @@ const decrypt = (cipher) => {
 	var text = otp(cipher.content, cipher.iv, 'decrypt');
 	return text;
 };
+
+var tx = encrypt('ich');
+console.log(tx);
+console.log(decrypt(tx));
