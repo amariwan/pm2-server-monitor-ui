@@ -1,6 +1,11 @@
 # Tasio Admin Dashboard
 
+
 Tasio Admin Dashboard is a leading tool for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
+
+Quickly gain a complete view of your IT infrastructure, no matter how complex.
+
+Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.
 
 # Why Use Tasio Admin Dashbord?
 
