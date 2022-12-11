@@ -23,3 +23,5 @@ const pm2List = () => {
 		});
 	});
 };
+
+module.exports = pm2List;
