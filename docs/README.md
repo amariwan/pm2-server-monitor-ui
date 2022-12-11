@@ -21,6 +21,11 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 - Storage
 - Internet of Things
 
+# Resolve issues faster
+- Dynamic dashboards
+-- sdscs
+
+
 # Wiki Landing Pages
 
 - [Securing](secure/index.md)
