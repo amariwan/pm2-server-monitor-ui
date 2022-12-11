@@ -4,34 +4,6 @@ PM2 Admin Dashboard is a leading tool for Infrastructure and Application Monitor
 
 # Why Use MineOS?
 
-MineOS is all about learning to be an effective game host. Even better, a system administrator. No sacrifices are made--neither in security nor functionality--to provide users with a fun, educational, and effective hosting platform.
-
-There have been numerous iterations of MineOS, all of which shared the same moniker.
-For clarity, here are some of the ways the name is used:
-
-## MineOS (the web user interface): Node.JS-based webapp
-
-MineOS is a web-based server front-end to centralize and simplify Minecraft sysadmin tasks.
-
-This is the primary interface for admins to download Minecraft server jars, create and configure multiple servers, start/stop instances, and create backups and initiate restores.
-
-It provides system health, disk and memory usage, and logging in real-time. The webui supports multiple, independent users, and uses standard Linux file permissions to keep data appropriately isolated.
-
-The webui has been tested on all major distributions and is confirmed to work on both Linux and BSD, x86_64 and ARM architectures.
-
-## MineOS Turnkey (the Debian-based distribution)
-
-MineOS Turnkey is the current flagship distribution of MineOS. Based on the proven Debian foundation, [Turnkey Linux](https://www.turnkeylinux.org/) is a perfect delivery system: a trimmed, yet infinitely extensible server platform. Respun with MineOS components pre-configured, MineOS Turnkey is the quickest way to get a _managed hosting platform_ up and running.
-
-The [MineOS Turnkey ISO](https://my.syncplicity.com/share/zkpd23mz0pod8ls/mineos-node_bullseye-x64) is approximately 720MB and supports x86_64 architectures only.
-
-## MineOS appliance (the other ways)
-
-Sysadmins familiar with Docker or unRAID also have easy deployment options:
-
-- [Docker](install/docker.md) (via [hub.docker.com](https://hub.docker.com/repository/docker/hexparrot/mineos))
-- Docker via [manual build](https://github.com/hexparrot/mineos-node/blob/master/Dockerfile)
-- Appliance in unRAID
 
 ## Adding the webui to an existing distro
 
