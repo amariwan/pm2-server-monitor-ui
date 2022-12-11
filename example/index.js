@@ -1,7 +1,7 @@
 const http = require('http');
 const port = 2002;
 const monitor = require('../lib/index');
-const option = {
+const settings= {
 	// Your server name, as a flag
 	name: 'Monitoring',
 	// your server listening port
@@ -82,7 +82,7 @@ const option = {
 	}
 };
 
-monitor(option);
+monitor(settings);
 
 const server = http.createServer((req, res) => {
 	res.end('OK');
