@@ -43,7 +43,6 @@ module.exports = class MemoryMetric {
 	}
 
 	fetch() {
-		console.log('MemoryMetric');
 		const total = os.totalmem();
 		const free = os.freemem();
 		const used = total - free;
