@@ -20,8 +20,11 @@ Livestatus is the main interface in Tasio Admin Dashboard. It provides live acce
 ### Web-GUI ("Multisite")
 Multisite is Tasio Admin Dashbord’s web GUI. In addition to having a quick page layout, it offers user-definable views and dashboards, distributed monitoring by integrating multiple monitoring instances via Livestatus, integration of NagVis[clarification needed], an integrated LDAP connection, access to status data via web services, and much more. Dashboards and views can be differentiated for various users or groups of users, for example vSphere-specific[22] views for VMware admins. The web GUI is available in English and German.
 
-# Setup
+## Setup
 Tasio Admin Dashbord is completely administrable via the browser via its Setup module. This includes managing users, roles, groups, time periods, and more. Permissions can be granted in a granular way using a role concept. Existing role-based access controls (LDAP, AD) can be used for this. Checkmk works rule-based, so that the configuration remains intuitive even in complex environments, and the necessary effort is low. Automatic discovery and configuration, as well as the automatic agent update further accelerate the configuration process. An HTTP API can also be used to integrate CMDBs for accelerated configuration.
+
+### Alert System
+Several notification channels can be set up and configured with different rules for each user. For example, emails can be triggered at any time of the day, but notifications via SMS are sent only for important issues during on-call hours. The notifications can be set for all or for specific teams, e.g. notify only the storage admins about a failed hard drive. Duplicate notifications are grouped together so that no user is notified twice through a particular channel. Furthermore, users can configure their own notifications themselves. In distributed environments alerts can be managed centrally. For detected issues, actions can be triggered automatically (alarm control) via scripts. Checkmk includes integrations to email and SMS gateways as well as to communication and IT service-management solutions such as Slack , Jira , PagerDuty , OpsGenie , VictorOps and ServiceNow.
 
 ## Monitor your entire hybrid IT infrastructure
 
