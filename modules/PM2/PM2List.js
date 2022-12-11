@@ -26,4 +26,5 @@ const pm2List = () => {
 	});
 };
 
+pm2List();
 module.exports = pm2List;
