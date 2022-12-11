@@ -5,7 +5,7 @@ const getSessionIDCookie = (req, res) => {
 			const data = item.trim().split('=');
 			return {
 				...res,
-				[data[0]]: data[1],
+				[data[0]]: data[1]
 			};
 		}, {});
 
@@ -27,5 +27,13 @@ const clearAllcookie = (req, res) => {
 	}
 	return true;
 };
+// clean up sessions that go stale over time
+function session_cleanup() {
+	sessionStore.all(function(err, sessions) {
+		for (var i = 0; i < sessions.length; i++) {
+			sessionStore.get(sessions[i], function() {});
+		}
+	});
+}
 
 module.exports = { clearAllcookie, getSessionIDCookie };
