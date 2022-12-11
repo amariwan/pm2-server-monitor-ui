@@ -27,7 +27,11 @@ ECHO_LOG_N "Pulling master branch..."
 git pull origin master >> $LOG
 if [ $? -eq 0 ]; then ECHO_LOG "OK"; else ECHO_LOG "FAILED" && exit 1; fi
 
-ECHO_LOG_N "Updating npm dependencies..."
+ECHO_LOG_N "Delete node_modules..."
+rm -rf node_modules >> $LOG
+if [ $? -eq 0 ]; then ECHO_LOG "OK"; else ECHO_LOG "FAILED" && exit 1; fi
+
+ECHO_LOG_N "installing npm"
 npm install --no-spin --unsafe-perm >> $LOG
 if [ $? -eq 0 ]; then ECHO_LOG "OK"; else ECHO_LOG "FAILED" && exit 1; fi
 
