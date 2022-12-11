@@ -29,4 +29,5 @@ const pm2List = () => {
 const t = async () => {
 	console.log(await pm2List());
 };
+t();
 module.exports = pm2List;
