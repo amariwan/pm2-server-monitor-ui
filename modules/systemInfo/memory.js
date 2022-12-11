@@ -16,7 +16,7 @@ function memoryString(byteLen) {
 	}
 	mem = mem.toFixed(2);
 	return `${mem}MB`;
-}
+};
 module.exports = class MemoryMetric {
 	constructor(io, conf) {
 		this.io = io;
@@ -54,4 +54,4 @@ module.exports = class MemoryMetric {
 		this.usedMemory.set(usedGB);
 		this.freeMemory.set(freePercent);
 	}
-};
+}, memoryString
