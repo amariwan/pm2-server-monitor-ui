@@ -32,6 +32,9 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 - > Efficient processing and analysis of logs
 - Availability and SLA reporting
 - > Precise availability and SLA fulfillment reporting
+- Notifications and alerts
+- > Advanced notification system with many integrations
+- Simple, flexible configuration
 
 
 
