@@ -1,5 +1,5 @@
 /**
- * PM2 monitor servers
+ * Tasio monitor servers
  */
 const servers = {
 	local: [
