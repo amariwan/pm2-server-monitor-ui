@@ -28,6 +28,8 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 - > Interactive and dynamic visualitation options
 - Infrastructure monitoring
 - > Hosts and Services overviews that enable fast drill downs
+- log and event Monitoring
+- > Efficient processing and analysis of logs
 -
 
 
