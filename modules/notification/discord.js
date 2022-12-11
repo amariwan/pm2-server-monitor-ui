@@ -1,4 +1,4 @@
-const config = require('../.config/config.json');
+const config = require('../../.config/config.json');
 const { Client, Events, GatewayIntentBits } = require('discord.js');
 
 const client = new Client({

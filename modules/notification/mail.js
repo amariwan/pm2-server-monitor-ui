@@ -3,7 +3,7 @@
 'use strict';
 
 const nodemailer = require('nodemailer');
-const config = require('../.config/config.json');
+const config = require('../../.config/config.json');
 
 const sendMail = async (to, subject, text) => {
 	var auth = config.mailAuth;
