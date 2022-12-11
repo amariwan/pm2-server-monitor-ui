@@ -18,6 +18,15 @@ if (loginSystem === false) {
 } else {
 	isLoginSystem = true;
 }
+
+app.post(
+	'/auth',
+	passport.authenticate('local-signin', {
+		successRedirect: '/admin/index.html',
+		failureRedirect: '/admin/login.html'
+	})
+);
+
 /* This is a post request that is used to register a user. */
 router.post('/register', (req, res) => {
 	/* This is getting the data from the request body. */
