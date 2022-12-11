@@ -15,7 +15,7 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 Checkmk RE uses Nagios monitoring core. It doesn't offer container monitoring and requires a reboot to apply configuration changes.
 
 ## Data Interface ("Livestatus")
-Livestatus is the main interface in Checkmk. It provides live access to all data from the monitored hosts and services. The data is fetched directly from the RAM, which avoids slow hard disk access and gives fast access to the information without overloading the system too much. Access is done via a simple protocol and it is possible from all programming languages without requiring a special library.
+Livestatus is the main interface in Tasio Admin Dashboard. It provides live access to all data from the monitored hosts and services. The data is fetched directly from the RAM, which avoids slow hard disk access and gives fast access to the information without overloading the system too much. Access is done via a simple protocol and it is possible from all programming languages without requiring a special library.
 
 ## Monitor your entire hybrid IT infrastructure
 
