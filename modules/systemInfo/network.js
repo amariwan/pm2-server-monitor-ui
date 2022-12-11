@@ -1,8 +1,8 @@
 'use strict';
 
 const os = require('os');
-const IfConfigNetworkMetric = require('./network/ifconfig');
-const IPNetworkMetric = require('./network/ip');
+const IfConfigNetworkMetric = require('../network/ifconfig');
+const IPNetworkMetric = require('../network/ip');
 
 module.exports = class NetworkMetrics {
 	constructor(io, conf) {
