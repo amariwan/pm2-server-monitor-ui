@@ -9,7 +9,15 @@ const config_data = require('../.config/config.json');
 const isLocalOrDB = config_data.loginsystem;
 const { checkDBTable, createUserTable } = require('../modules/check_db');
 const saltRounds = 10; // The number of rounds to use when generating a salt
-
+global.sessionUser = null;
+var loginSystem = config_data.loginsystem;
+loginSystem = loginSystem || false;
+var isLoginSystem;
+if (loginSystem === false) {
+	isLoginSystem = false;
+} else {
+	isLoginSystem = true;
+}
 /* This is a post request that is used to register a user. */
 router.post('/register', (req, res) => {
 	/* This is getting the data from the request body. */
