@@ -23,7 +23,10 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 
 # Resolve issues faster
 - Dynamic dashboards
-- > Flexible, real-time
+- > Flexible, real-time dashboards
+- Powerful visualizations
+- >
+
 
 
 # Wiki Landing Pages
