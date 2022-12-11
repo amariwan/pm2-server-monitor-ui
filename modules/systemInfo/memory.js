@@ -21,7 +21,6 @@ module.exports = class MemoryMetric {
 	constructor(io, conf) {
 		this.io = io;
 		this.conf = conf;
-		console.log('MemoryMetric');
 		this.freeMemory = io.metric({
 			name: 'Free memory',
 			type: 'os/memory/usage/free',
@@ -44,6 +43,7 @@ module.exports = class MemoryMetric {
 	}
 
 	fetch() {
+		console.log('MemoryMetric');
 		const total = os.totalmem();
 		const free = os.freemem();
 		const used = total - free;
