@@ -1,20 +1,20 @@
-# PM2 Admin Dashboard
+# Tasio Admin Dashboard
 
-PM2 Admin Dashboard is a leading tool for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
+Tasio Admin Dashboard is a leading tool for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
 
-# Why Use MineOS?
+# Why Use Tasio Admin Dashbord?
 
 
-## Adding the webui to an existing distro
+## Monitor your entire hybrid IT infrastructure
 
-- [Debian 10](install/debian_10.md)
-- [CentOS 8](install/centos_8.md)
-- [Fedora 36](install/fedora_36.md)
-- [Ubuntu 20](install/ubuntu_20.md)
-- [Archlinux](install/archlinux.md)
-- [Alpine](install/alpine.md)
-- [FreeBSD](install/freebsd.md)
-- [rootless, distro-agnostic](install/rootless.md)
+- Server
+- Networks
+- Applications
+- Database
+- Cloud
+- Containers
+- Storage
+- Internet of Things
 
 # Wiki Landing Pages
 

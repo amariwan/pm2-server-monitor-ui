@@ -2,12 +2,12 @@
 
 
 <h1 align="center">
-    PM2 Admin Dashboard
+    Tasio Admin Dashboard
 	<br>
 </h1>
 <div align="center">
         <p> <img src="https://i.imgur.com/TScSeRv.png"/> </p>
-        <p><i><b>PM2 Admin Dashboard</b></i></p>
+        <p><i><b>Tasio Admin Dashboard</b></i></p>
 </div>
 
 ### Seday
