@@ -25,8 +25,8 @@ switch (process.argv[2]) {
 		break;
 	case 'status':
 		var pid = daemon.status();
-		if (pid) console.log('MineOS running. PID: ' + pid);
-		else console.log('MineOS is not running.');
+		if (pid) console.log('PAD running. PID: ' + pid);
+		else console.log('PAD is not running.');
 		break;
 	default:
 		console.log('Usage: [start|stop|restart|status]');
