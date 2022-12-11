@@ -35,6 +35,7 @@ Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds
 - Notifications and alerts
 - > Advanced notification system with many integrations
 - Simple, flexible configuration
+- > Modern, efficient and automatic configuration system
 
 
 
