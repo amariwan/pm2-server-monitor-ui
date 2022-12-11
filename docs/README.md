@@ -1,7 +1,6 @@
 # PM2 Admin Dashboard
 
-PM2 Admin Dashboard is an entire ecosystem of web applications, shell scripts, wikis, and support forums
-designed to help Minecraft enthusiasts successfully host servers on *nix platforms.
+PM2 Admin Dashboard is a leading tool for Infrastructure and Application Monitoring. Simple configuration, scalable, flexible.
 
 # Why Use MineOS?
 
