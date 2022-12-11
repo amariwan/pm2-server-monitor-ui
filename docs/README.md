@@ -9,6 +9,7 @@ Quickly gain a complete view of your IT infrastructure, no matter how complex.
 Tasio Admin Dashboard  provides powerful monitoring of networks, servers, clouds, containers and applications. Fast. Effective.
 
 ## Why Use Tasio Admin Dashbord?
+Checkmk is an all-in-one IT monitoring system that helps SysAdmins and DevOps teams identify and resolve issues across their entire IT infrastructure—from simple to the most complex environments. Users are able to effectively monitor applications, servers, and networks to ensure they stay up and running through features such as state-based monitoring, log- and event-based monitoring, graphing and analytics, a customizable GUI, reporting, business intelligence, hardware and software inventory, notifications, and more.
 
 
 ## Monitoring core
