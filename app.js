@@ -31,6 +31,8 @@ const SESSION_SECRET = uuidv4();
 
 // Session
 const session = require('express-session');
+// const sessionStore = new session.MemoryStore();
+
 app.use(
 	session({
 		name: 'session_id',
@@ -58,7 +60,6 @@ app.use(
 );
 const cookieParser = require('cookie-parser');
 app.use(cookieParser(SESSION_SECRET));
-const sessionStore = new session.MemoryStore();
 app.use(methodOverride());
 app.use(compression());
 app.use(responseTime());
