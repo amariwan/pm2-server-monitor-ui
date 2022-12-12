@@ -4,6 +4,8 @@
  */
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
+const app = express();
+
 const helmet = require('helmet');
 const sessionstore = require('sessionstore');
 const flash = require('connect-flash');
@@ -27,7 +29,6 @@ const SESSION_SECRET = uuidv4();
 //-------------------------------------------------------
 // || ======== *** SECURITY MIDDLEWARE *** ========= ||
 //-------------------------------------------------------
-const app = express();
 
 // Session
 const session = require('express-session');
