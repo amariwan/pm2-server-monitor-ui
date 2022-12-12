@@ -1,6 +1,6 @@
 const http = require('http');
 const port = 2002;
-const monitor = require('../lib/index');
+const monitor = require('../index');
 const settings = {
 	// Your server name, as a flag
 	name: 'Monitoring',
