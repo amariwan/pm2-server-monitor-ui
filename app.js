@@ -48,6 +48,7 @@ app.use(
 );
 app.use(methodOverride());
 app.use(compression());
+app.use(responseTime());
 app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,12 +60,12 @@ app.use(express.json());
 app.use(cookieParser(SESSION_SECRET));
 app.use(flash());
 app.use(
-	responseTime(function(req, res, time) {
+	responseTime((req, res, time)0> {
 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
 		stats.timing(stat, time);
 	})
-);
-app.use(haltOnTimedout);
+	);
+	app.use(haltOnTimedout);
 
 //setting CSP
 
