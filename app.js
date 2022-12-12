@@ -56,10 +56,6 @@ app.use(flash());
 app.use(express.json());
 app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
-
-app.use((req, res, next) => {
-	if (!req.timedout) next();
-});
 app.use(morgan('combined'));
 app.use(
 	responseTime(function(req, res, time) {
