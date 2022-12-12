@@ -42,7 +42,7 @@ function line(num = 2) {
 }
 
 const index = async (config, callback = () => {}) => {
-	const configPath = path.join(__dirname, '../.config/config.json');
+	const configPath = path.join(__dirname, './.config/config.json');
 	var config_data = await checkJsonFile(config, configPath);
 	if (!config_data) {
 		process.exit();
