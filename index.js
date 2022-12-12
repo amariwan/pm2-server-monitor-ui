@@ -47,7 +47,7 @@ const index = async (config, callback = () => {}) => {
 	if (!config_data) {
 		process.exit();
 	}
-	web_configPath = path.join(__dirname, '../UI/config_test.js');
+	web_configPath = path.join(__dirname, './UI/config_test.js');
 
 	var web_configData = 'const servers = ' + JSON.stringify(config.web_config);
 
