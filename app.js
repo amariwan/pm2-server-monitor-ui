@@ -5,7 +5,7 @@
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const helmet = require('helmet');
-const session = require('express-session');
+// const session = require('express-session');
 const sessionstore = require('sessionstore');
 const passport = require('passport');
 const passportSocketIo = require('passport.socketio');
@@ -97,24 +97,24 @@ app.disable('x-powered-by');
 // Sessions allow us to Contact data on visitors from request to request
 // This keeps admins logged in and allows us to send flash messages
 // store: new FileStore(),
-app.use(
-	session({
-		name: 'session_id',
-		saveUninitialized: true,
-		resave: false,
-		rolling: false,
-		secret: SESSION_SECRET,
-		// store: sessionstore.createSessionStore(),
-		cookie: {
-			path: '/',
-			httpOnly: true,
-			maxAge: 1000 * 60 * 60 * 24,
-			sameSite: 'none',
-			secure: true,
-			HostOnly: true
-		}
-	})
-);
+// app.use(
+// 	session({
+// 		name: 'session_id',
+// 		saveUninitialized: true,
+// 		resave: false,
+// 		rolling: false,
+// 		secret: SESSION_SECRET,
+// 		// store: sessionstore.createSessionStore(),
+// 		cookie: {
+// 			path: '/',
+// 			httpOnly: true,
+// 			maxAge: 1000 * 60 * 60 * 24,
+// 			sameSite: 'none',
+// 			secure: true,
+// 			HostOnly: true
+// 		}
+// 	})
+// );
 
 // This code parses the request body into a JSON object and assigns it to the request object
 // as req.body
