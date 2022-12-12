@@ -116,7 +116,7 @@ app.use(
 // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
 
-app.use('/assets', express.static(path.join(__dirname, '../UI/assets')));
+app.use('/assets', express.static(path.join(__dirname, './UI/assets')));
 //-------------------------------------------------------
 // || ======== *** Routers *** ========= ||
 //-------------------------------------------------------
@@ -126,9 +126,9 @@ app.use('/', urlRouter);
 const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
-// app.use(function(req, res, next) {
-// 	res.status(404).sendFile(path.join(__dirname, '../UI/errors/error404.html'));
-// });
+app.use(function(req, res, next) {
+	res.status(404).sendFile(path.join(__dirname, '../UI/errors/error404.html'));
+});
 
 // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
