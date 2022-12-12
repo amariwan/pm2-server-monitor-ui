@@ -5,26 +5,22 @@
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const app = express();
+
 const helmet = require('helmet');
-const session = require('express-session');
 const sessionstore = require('sessionstore');
-const passport = require('passport');
-const passportSocketIo = require('passport.socketio');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const responseTime = require('response-time');
 const flash = require('connect-flash');
+const responseTime = require('response-time');
+const passportSocketIo = require('passport.socketio');
+const passport = require('passport');
 const timeout = require('connect-timeout');
 const path = require('path');
 const cors = require('cors');
-const { clearAllcookie, getSessionIDCookie } = require('./modules/cookie');
 const uuidv4 = require('./modules/uuidv4');
 const errorHandlers = require('./handlers/errorHandlers');
 const compression = require('compression');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
-const sessionStore = new session.MemoryStore();
 //-------------------------------------------------------
 // || ======== *** Veriabl *** ========= ||
 //-------------------------------------------------------
