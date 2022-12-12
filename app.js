@@ -188,7 +188,7 @@ app.use(function(req, res, next) {
 
 // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
-module.exports = app;
+// module.exports = app;
 
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
