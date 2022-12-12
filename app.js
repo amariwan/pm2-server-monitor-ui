@@ -48,6 +48,7 @@ app.use(
 );
 app.use(methodOverride());
 app.use(compression());
+app.use(responseTime());
 app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
