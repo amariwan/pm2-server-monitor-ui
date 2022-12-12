@@ -3,7 +3,7 @@ const ps = require('ps-node');
 const pm2 = require('pm2');
 const path = require('path');
 const fs = require('fs');
-const { checkJsonFile } = require('../modules/createJsonFile');
+const { checkJsonFile } = require('./modules/createJsonFile');
 
 /**
  * Initialize monitor module
