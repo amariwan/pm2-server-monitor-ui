@@ -234,5 +234,5 @@ if (isHttps) {
 }
 module.exports = httpServer;
 
-require('./lib/http');
+// require('./lib/http');
 require('./lib/sockt');
