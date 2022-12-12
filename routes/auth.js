@@ -18,8 +18,7 @@ if (loginSystem === false) {
 } else {
 	isLoginSystem = true;
 }
-
-app.post(
+router.post(
 	'/auth',
 	passport.authenticate('local-signin', {
 		successRedirect: '/admin/index.html',
