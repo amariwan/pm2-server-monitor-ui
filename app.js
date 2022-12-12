@@ -6,6 +6,7 @@ require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const helmet = require('helmet');
 const sessionstore = require('sessionstore');
