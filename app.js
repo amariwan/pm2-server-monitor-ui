@@ -53,6 +53,7 @@ app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(haltOnTimedout);
 app.use(morgan('combined'));
 app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
@@ -60,12 +61,11 @@ app.use(express.json());
 app.use(cookieParser(SESSION_SECRET));
 app.use(flash());
 app.use(
-	responseTime((req, res, time) => {
+	responseTime(function(req, res, time) {
 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
 		stats.timing(stat, time);
 	})
 );
-app.use(haltOnTimedout);
 
 //setting CSP
 
