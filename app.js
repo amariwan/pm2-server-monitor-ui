@@ -179,8 +179,8 @@ app.use('/assets', express.static(path.join(__dirname, '../UI/assets')));
 // || ======== *** Routers *** ========= ||
 //-------------------------------------------------------
 
-const urlRouter = require('./routes/url');
-app.use('/', urlRouter);
+// const urlRouter = require('./routes/url');
+// app.use('/', urlRouter);
 const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
