@@ -21,7 +21,6 @@ const compression = require('compression');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
-const sessionStore = new session.MemoryStore();
 //-------------------------------------------------------
 // || ======== *** Veriabl *** ========= ||
 //-------------------------------------------------------
@@ -59,6 +58,7 @@ app.use(
 );
 const cookieParser = require('cookie-parser');
 app.use(cookieParser(SESSION_SECRET));
+const sessionStore = new session.MemoryStore();
 app.use(methodOverride());
 app.use(compression());
 app.use(responseTime());
