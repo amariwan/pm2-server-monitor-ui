@@ -53,11 +53,13 @@ app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-// Add your routes here, etc.
-const haltOnTimedout = (req, res, next) => {
+app.use(express.json());
+app.set('trust proxy', true); // trust first proxy
+app.disable('x-powered-by');
+
+app.use((req, res, next) => {
 	if (!req.timedout) next();
-};
-app.use(haltOnTimedout);
+});
 app.use(morgan('combined'));
 app.use(
 	responseTime(function(req, res, time) {
@@ -87,8 +89,7 @@ app.use(
 // 		maxAge: 5184000
 // 	})
 // );
-app.set('trust proxy', true); // trust first proxy
-app.disable('x-powered-by');
+
 app.use(
 	session({
 		name: 'session_id',
@@ -107,7 +108,6 @@ app.use(
 		}
 	})
 );
-app.use(express.json());
 app.use(
 	cors({
 		// origin: [ `https://${hostname}:${port}` ], //frontend server localhost:8080
