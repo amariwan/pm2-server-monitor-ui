@@ -2,7 +2,7 @@
  * Each service (such as node_pro, ssr) will have an independent god process for monitoring
  * The parameter passed in: pmExecPath, matches the data returned by the PM2 api to determine which service it is
  */
-require('../modules/systemInfo/checkSystem');
+require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const helmet = require('helmet');
 const session = require('express-session');
@@ -16,9 +16,9 @@ const flash = require('connect-flash');
 const timeout = require('connect-timeout');
 const path = require('path');
 const cors = require('cors');
-const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
-const uuidv4 = require('../modules/uuidv4');
-const errorHandlers = require('../handlers/errorHandlers');
+const { clearAllcookie, getSessionIDCookie } = require('./modules/cookie');
+const uuidv4 = require('./modules/uuidv4');
+const errorHandlers = require('./handlers/errorHandlers');
 const compression = require('compression');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
@@ -179,9 +179,9 @@ app.use('/assets', express.static(path.join(__dirname, '../UI/assets')));
 // || ======== *** Routers *** ========= ||
 //-------------------------------------------------------
 
-const urlRouter = require('../routes/url');
+const urlRouter = require('./routes/url');
 app.use('/', urlRouter);
-const authRouter = require('../routes/auth');
+const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
 app.use(function(req, res, next) {
@@ -195,5 +195,5 @@ module.exports = app;
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
 //-------------------------------------------------------
-require('./http');
-require('./sockt');
+require('./lib/http');
+require('./lib/sockt');
