@@ -5,7 +5,6 @@
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const helmet = require('helmet');
-const session = require('express-session');
 const sessionstore = require('sessionstore');
 const flash = require('connect-flash');
 const responseTime = require('response-time');
@@ -29,6 +28,26 @@ const SESSION_SECRET = uuidv4();
 // || ======== *** SECURITY MIDDLEWARE *** ========= ||
 //-------------------------------------------------------
 const app = express();
+const session = require('express-session');
+
+app.use(
+	session({
+		name: 'session_id',
+		saveUninitialized: true,
+		resave: false,
+		rolling: false,
+		secret: SESSION_SECRET,
+		// store: sessionstore.createSessionStore(),
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			maxAge: 1000 * 60 * 60 * 24,
+			sameSite: 'none',
+			secure: true,
+			HostOnly: true
+		}
+	})
+);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(
@@ -37,6 +56,7 @@ app.use(
 	})
 );
 const cookieParser = require('cookie-parser');
+app.use(cookieParser(SESSION_SECRET));
 app.use(methodOverride());
 app.use(compression());
 app.use(responseTime());
@@ -46,7 +66,6 @@ app.use(passport.session());
 app.use(flash());
 app.use(express.json());
 app.use(morgan('combined'));
-app.use(cookieParser(SESSION_SECRET));
 app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
 app.use(
@@ -78,24 +97,6 @@ app.use(
 // 	})
 // );
 
-app.use(
-	session({
-		name: 'session_id',
-		saveUninitialized: true,
-		resave: false,
-		rolling: false,
-		secret: SESSION_SECRET,
-		// store: sessionstore.createSessionStore(),
-		cookie: {
-			path: '/',
-			httpOnly: true,
-			maxAge: 1000 * 60 * 60 * 24,
-			sameSite: 'none',
-			secure: true,
-			HostOnly: true
-		}
-	})
-);
 app.use(
 	cors({
 		// origin: [ `https://${hostname}:${port}` ], //frontend server localhost:8080
