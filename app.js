@@ -5,7 +5,7 @@
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const helmet = require('helmet');
-// const session = require('express-session');
+const session = require('express-session');
 const sessionstore = require('sessionstore');
 const passport = require('passport');
 const passportSocketIo = require('passport.socketio');
@@ -48,6 +48,7 @@ app.use(
 );
 app.use(methodOverride());
 app.use(compression());
+app.use(responseTime());
 app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -58,12 +59,37 @@ const haltOnTimedout = (req, res, next) => {
 };
 app.use(haltOnTimedout);
 app.use(morgan('combined'));
-app.use(
-	responseTime(function(req, res, time) {
-		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
-		stats.timing(stat, time);
-	})
-);
+// var stats = new StatsD();
+
+// stats.socket.on('error', function(error) {
+// 	console.error(error.stack);
+// });
+// app.use(
+// 	responseTime(function(req, res, time) {
+// 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
+// 		stats.timing(stat, time);
+// 	})
+// );
+// async function cpuData() {
+// 	try {
+// 		const data = await si.cpu();
+// 		console.log(data);
+// 		const te = await si.cpuTemperature();
+// 		console.log(te);
+// 		const wd = await si.battery();
+// 		console.log(wd);
+// 		const bb = await si.bios();
+// 		console.log(bb);
+// 		const ll = await si.fullLoad();
+// 		console.log(ll);
+// 		const ooo = await si.networkInterfaces();
+// 		console.log(ooo);
+// 	} catch (e) {
+// 		console.log(e);
+// 	}
+// }
+// cpuData();
+//
 
 //setting CSP
 
@@ -97,24 +123,24 @@ app.disable('x-powered-by');
 // Sessions allow us to Contact data on visitors from request to request
 // This keeps admins logged in and allows us to send flash messages
 // store: new FileStore(),
-// app.use(
-// 	session({
-// 		name: 'session_id',
-// 		saveUninitialized: true,
-// 		resave: false,
-// 		rolling: false,
-// 		secret: SESSION_SECRET,
-// 		// store: sessionstore.createSessionStore(),
-// 		cookie: {
-// 			path: '/',
-// 			httpOnly: true,
-// 			maxAge: 1000 * 60 * 60 * 24,
-// 			sameSite: 'none',
-// 			secure: true,
-// 			HostOnly: true
-// 		}
-// 	})
-// );
+app.use(
+	session({
+		name: 'session_id',
+		saveUninitialized: true,
+		resave: false,
+		rolling: false,
+		secret: SESSION_SECRET,
+		// store: sessionstore.createSessionStore(),
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			maxAge: 1000 * 60 * 60 * 24,
+			sameSite: 'none',
+			secure: true,
+			HostOnly: true
+		}
+	})
+);
 
 // This code parses the request body into a JSON object and assigns it to the request object
 // as req.body
@@ -153,8 +179,8 @@ app.use('/assets', express.static(path.join(__dirname, '../UI/assets')));
 // || ======== *** Routers *** ========= ||
 //-------------------------------------------------------
 
-// const urlRouter = require('./routes/url');
-// app.use('/', urlRouter);
+const urlRouter = require('./routes/url');
+app.use('/', urlRouter);
 const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
@@ -164,75 +190,10 @@ app.use(function(req, res, next) {
 
 // If that above routes didnt work, we 404 them and forward to error handler
 // app.use(errorHandlers.notFound);
-// module.exports = app;
+module.exports = app;
 
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
 //-------------------------------------------------------
-
-const https = require('https');
-const http = require('http');
-const fs = require('fs');
-const os = require('os');
-const config_data = require('./.config/config.json');
-// Add some values to the port as the port number for http and ws
-const hostname = os.hostname();
-const name = config_data.name;
-const port = config_data.port || portAppend;
-// const app = require('../app');
-const isHttps = config_data.https;
-//-------------------------------------------------------
-//|| ===== *** Initiate http or https server *** ====== ||
-//-------------------------------------------------------
-var httpServer;
-
-if (isHttps) {
-	// set https
-	var ssl_keys = config_data.ssl_keys;
-	var ssl_cert = '';
-	var ssl_key = '';
-	// console.log(ssl_keys);
-	if (ssl_keys === undefined || ssl_keys.length <= null) {
-		exec('bash ./generate-ssl.bash', (err, stdout, stderr) => {
-			if (err) {
-				// console.log(err);
-				return;
-			}
-			// the *entire* stdout and stderr (buffered)
-			console.log(`stdout: ${stdout}`);
-			console.log(`stderr: ${stderr}`);
-		});
-		ssl_cert = path.join(__dirname, '../.config/ssl/server.crt');
-		ssl_key = path.join(__dirname, '../.config/ssl/server.key');
-	} else {
-		ssl_keys = ssl_keys[0];
-		ssl_cert = ssl_keys.cert || path.join(__dirname, '../.config/ssl/server.crt');
-		ssl_key = ssl_keys.key || path.join(__dirname, '../.config/ssl/server.key');
-	}
-	// console.log(`ss ssl_cert: ${ssl_cert}`, ssl_key);
-	httpServer = https.createServer(
-		// Provide the private and public key to the server by reading each
-		// file's content with the readFileSync() method.
-		{
-			key: fs.readFileSync(ssl_key, 'utf8'),
-			cert: fs.readFileSync(ssl_cert, 'utf8')
-		},
-		app
-	);
-	httpServer.listen(port, (err) => {
-		if (err) {
-			throw err;
-		} else {
-			console.log(`🛰️ Monitor Server running in the https://${hostname}:${port}`);
-		}
-	});
-} else {
-	httpServer = http.createServer(app);
-	httpServer.listen(port, () => {
-		console.log(`🛰️  Monitor Server running in the http://${hostname}:${port}`);
-	});
-}
-// module.exports = httpServer;
-
-// require('./lib/http');
-// require('./lib/sockt');
+require('./lib/http');
+require('./lib/sockt');
