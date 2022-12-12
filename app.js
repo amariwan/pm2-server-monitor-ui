@@ -54,9 +54,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(express.json());
+app.use(morgan('combined'));
+app.use(cookieParser(SESSION_SECRET));
 app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
-app.use(morgan('combined'));
 app.use(
 	responseTime(function(req, res, time) {
 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
@@ -114,8 +115,6 @@ app.use(
 		credentials: true
 	})
 );
-app.use(cookieParser(SESSION_SECRET));
-app.use(flash());
 //-------------------------------------------------------
 // pass variables to our templates + all requests
 
