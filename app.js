@@ -23,7 +23,7 @@ const compression = require('compression');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
-// const sessionStore = new session.MemoryStore();
+const sessionStore = new session.MemoryStore();
 //-------------------------------------------------------
 // || ======== *** Veriabl *** ========= ||
 //-------------------------------------------------------
