@@ -28,8 +28,9 @@ const SESSION_SECRET = uuidv4();
 // || ======== *** SECURITY MIDDLEWARE *** ========= ||
 //-------------------------------------------------------
 const app = express();
-const session = require('express-session');
 
+// Session
+const session = require('express-session');
 app.use(
 	session({
 		name: 'session_id',
