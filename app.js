@@ -193,5 +193,5 @@ module.exports = app;
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
 //-------------------------------------------------------
-require('./lib/http');
+// require('./lib/http');
 require('./lib/sockt');
