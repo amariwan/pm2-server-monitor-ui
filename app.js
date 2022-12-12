@@ -71,12 +71,12 @@ app.use(express.json());
 app.use(morgan('combined'));
 app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
-app.use(
-	responseTime(function(req, res, time) {
-		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
-		stats.timing(stat, time);
-	})
-);
+// app.use(
+// 	responseTime(function(req, res, time) {
+// 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
+// 		stats.timing(stat, time);
+// 	})
+// );
 
 //setting CSP
 
