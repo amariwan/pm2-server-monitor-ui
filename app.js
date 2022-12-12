@@ -53,43 +53,19 @@ app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-// Add your routes here, etc.
-const haltOnTimedout = (req, res, next) => {
-	if (!req.timedout) next();
-};
 app.use(haltOnTimedout);
 app.use(morgan('combined'));
-// var stats = new StatsD();
-
-// stats.socket.on('error', function(error) {
-// 	console.error(error.stack);
-// });
-// app.use(
-// 	responseTime(function(req, res, time) {
-// 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
-// 		stats.timing(stat, time);
-// 	})
-// );
-// async function cpuData() {
-// 	try {
-// 		const data = await si.cpu();
-// 		console.log(data);
-// 		const te = await si.cpuTemperature();
-// 		console.log(te);
-// 		const wd = await si.battery();
-// 		console.log(wd);
-// 		const bb = await si.bios();
-// 		console.log(bb);
-// 		const ll = await si.fullLoad();
-// 		console.log(ll);
-// 		const ooo = await si.networkInterfaces();
-// 		console.log(ooo);
-// 	} catch (e) {
-// 		console.log(e);
-// 	}
-// }
-// cpuData();
-//
+app.set('trust proxy', true); // trust first proxy
+app.disable('x-powered-by');
+app.use(express.json());
+app.use(cookieParser(SESSION_SECRET));
+app.use(flash());
+app.use(
+	responseTime(function(req, res, time) {
+		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
+		stats.timing(stat, time);
+	})
+);
 
 //setting CSP
 
@@ -113,16 +89,6 @@ app.use(morgan('combined'));
 // 	})
 // );
 
-// This code is used to set the 'trust proxy' value to true.
-app.set('trust proxy', true); // trust first proxy
-// This code disables the x-powered-by header, which would otherwise
-// provide information about the server software that is running the
-// application.
-app.disable('x-powered-by');
-
-// Sessions allow us to Contact data on visitors from request to request
-// This keeps admins logged in and allows us to send flash messages
-// store: new FileStore(),
 app.use(
 	session({
 		name: 'session_id',
@@ -141,13 +107,10 @@ app.use(
 		}
 	})
 );
-
-// This code parses the request body into a JSON object and assigns it to the request object
-// as req.body
-app.use(express.json());
-
-/* This is a middleware that is used to parse the body of the request. */
-// enabling CORS for all requests
+// Add your routes here, etc.
+const haltOnTimedout = (req, res, next) => {
+	if (!req.timedout) next();
+};
 app.use(
 	cors({
 		// origin: [ `https://${hostname}:${port}` ], //frontend server localhost:8080
@@ -159,15 +122,6 @@ app.use(
 	})
 );
 
-// This code is used to parse cookies for the express app
-// The cookie parser is imported from the cookie-parser module
-// The cookie parser is used to parse cookies for the express app
-// The cookie parser is used to parse cookies to extract the session id
-app.use(cookieParser(SESSION_SECRET));
-// flash is a function that stores a message in the session and makes it available on the next request
-// flash is used to show a message after a post request
-// flash is used to display success messages or error messages
-app.use(flash());
 //-------------------------------------------------------
 // pass variables to our templates + all requests
 
