@@ -5,8 +5,6 @@
 require('./modules/systemInfo/checkSystem');
 const express = require('express');
 const helmet = require('helmet');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const session = require('express-session');
 const sessionstore = require('sessionstore');
 const flash = require('connect-flash');
@@ -31,12 +29,14 @@ const SESSION_SECRET = uuidv4();
 // || ======== *** SECURITY MIDDLEWARE *** ========= ||
 //-------------------------------------------------------
 const app = express();
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(
 	bodyParser.urlencoded({
 		extended: true
 	})
 );
+const cookieParser = require('cookie-parser');
 app.use(methodOverride());
 app.use(compression());
 app.use(responseTime());
