@@ -202,7 +202,7 @@ const config_data = require('../.config/config.json');
 const hostname = os.hostname();
 const name = config_data.name;
 const port = config_data.port || portAppend;
-const app = require('../app');
+// const app = require('../app');
 const isHttps = config_data.https;
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
