@@ -128,7 +128,7 @@ app.use(
 		resave: false,
 		rolling: false,
 		secret: SESSION_SECRET,
-		store: sessionstore.createSessionStore(),
+		// store: sessionstore.createSessionStore(),
 		cookie: {
 			path: '/',
 			httpOnly: true,
