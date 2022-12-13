@@ -79,7 +79,12 @@ const settings = {
 				show: true
 			}
 		]
-	}
+	},
+	discord: [
+		{
+			Token_bot: 'ODc1Nzg4OTc1MTgzMzg4NzUz.GrzOx5.KbezlnXH0i0JUYN_LhPye630wVLIpV6IzW5Kw8'
+		}
+	]
 };
 
 monitor(settings);
