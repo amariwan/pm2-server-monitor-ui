@@ -2,7 +2,7 @@ const pm2 = require('pm2');
 
 const PM2Control = (appName, Type) => {
 	switch (Type) {
-		case value:
+		case "stop":
 			pm2.stop(appName, (err, x) => {
 				if (err) return socket.emit('serverInfo', 'error', err);
 				else socket.emit('serverInfo', 'success', x[0].name + ' ' + x[0].status);
