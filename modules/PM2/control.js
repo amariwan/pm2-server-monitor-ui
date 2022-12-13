@@ -39,6 +39,7 @@ const PM2Control = (appName, type) => {
 		default:
 			break;
 	}
+	return result;
 };
 
 module.exports = PM2Control;
