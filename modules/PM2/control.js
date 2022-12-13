@@ -9,36 +9,37 @@ const PM2Control = (appName, type) => {
 	switch (type) {
 		case 'stop':
 			pm2.stop(appName, (err, x) => {
-				if (err) return (result = 'serverInfo'), 'error', err;
-				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
+				if (err) return result = err;
+				else (result = x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
 		case 'start':
 			pm2.start(appName, (err, x) => {
-				if (err) return (result = 'serverInfo'), 'error', err;
-				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
+ 				if (err) return result = err;
+				else (result = x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
 
 		case 'restart':
 			pm2.restart(appName, (err, x) => {
-				if (err) return (result = 'serverInfo'), 'error', err;
-				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
+				if (err) return result = err;
+				else (result = x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
 		case 'delete':
 			pm2.delete(appName, (err, x) => {
-				if (err) return (result = 'serverInfo'), 'error', err;
-				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
+				if (err) return result = err;
+				else (result = x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
 		default:
 			break;
 	}
+
 };
 
 module.exports = PM2Control;
