@@ -8,3 +8,8 @@
 
 ![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_1.png)
 ## Functions of Middleware
+- Executes any code
+- We can make changes to the request-response objects
+- Middleware can also End the request-response cycle
+- Middleware can call the next middleware function in a stack
+We use these functions to modify our middleware to perform many tasks. If we want to block our site for some country or if we're going to check the authentication of a user etc., we use middleware for that.
