@@ -1,8 +1,9 @@
 const pm2 = require('pm2');
 
-const PM2Control = (appName, Type) => {
+const PM2Control = (appName, type) => {
 	if (typeof appName != 'string') return false;
-	switch (Type) {
+	if (typeof type != 'string') return false;
+	switch (type) {
 		case 'stop':
 			pm2.stop(appName, (err, x) => {
 				if (err) return socket.emit('serverInfo', 'error', err);
