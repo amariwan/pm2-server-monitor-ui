@@ -61,6 +61,11 @@ client.on('messageCreate', async (message) => {
 	}
 });
 
+const sendMsg = async (msg) => {
+	const user = await client.users.fetch('449846575561441280');
+	user.send(msg);
+};
+
 client.login(config.discord[0].tokenBot);
 
 module.exports = client;
