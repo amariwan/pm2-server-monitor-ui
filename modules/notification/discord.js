@@ -62,7 +62,7 @@ client.on('messageCreate', async (message) => {
 	}
 });
 
-console.log(config.discord);
+console.log(config.discord[0]);
 client.login(config.discord);
 
 module.exports = client;
