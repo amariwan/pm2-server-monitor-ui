@@ -18,8 +18,6 @@ const client = new Client({
 
 client.on('ready', async () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-	const user = await client.users.fetch('449846575561441280');
-	console.log(user);
 	user.send('Hey ' + user.username);
 	user.send("I'm now online");
 	client.user.setPresence({
