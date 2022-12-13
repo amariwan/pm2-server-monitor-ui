@@ -15,7 +15,6 @@ module.exports = class FSMetric {
 		this._worker = setInterval(this.fetch.bind(this), this.refreshInterval * 1000);
 		this.fetch();
 	}
-
 	fetch() {
 		const columnPattern = /(\S+)/gm;
 		fs.readFile('/proc/sys/fs/file-nr', (err, out) => {
