@@ -5,7 +5,6 @@ const PM2Control = (appName, type) => {
 	var result;
 	if (typeof appName != 'string' || appName == null) return false;
 	if (typeof type != 'string' || type == null) return false;
-	console.log(pm2);
 	switch (type) {
 		case 'stop':
 			pm2.stop(appName, (err, x) => {
