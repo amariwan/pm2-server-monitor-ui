@@ -255,7 +255,7 @@ if (isHttps) {
 		console.log(`🛰️  Monitor Server running in the http://${hostname}:${port}`);
 	});
 }
-module.exports = httpServer;
+// module.exports = httpServer;
 
 // require('./lib/http');
 require('./lib/sockt');
