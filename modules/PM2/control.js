@@ -2,7 +2,7 @@ const pm2 = require('pm2');
 
 const PM2Control = (appName, type) => {
 	if (typeof appName != 'string' || appName == null) return false;
-	if (typeof type != 'string') return false;
+	if (typeof type != 'string' || type == null) return false;
 	switch (type) {
 		case 'stop':
 			pm2.stop(appName, (err, x) => {
