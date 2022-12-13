@@ -25,3 +25,4 @@ So to create middleware, we need to install all the packages to run express midd
 - In express framework, next is a function
 ![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_3.png)![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_4.png)
 Now we will go to the home page that we have created.
+![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_5.png)
