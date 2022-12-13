@@ -1,6 +1,7 @@
 const http = require('http');
 const port = 2002;
 const monitor = require('../index');
+var cookieSession = require('cookie-session');
 const settings = {
 	// Your server name, as a flag
 	name: 'Monitoring',
