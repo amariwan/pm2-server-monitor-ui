@@ -33,7 +33,6 @@ const PM2Control = (appName, type) => {
 					else result = x[0].name + ' ' + x[0].status;
 					sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 				});
-
 				break;
 			default:
 				break;
