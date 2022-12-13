@@ -17,4 +17,8 @@ function memoryString(byteLen) {
 	mem = mem.toFixed(2);
 	return `${mem}MB`;
 }
+// const si = require('systeminformation');
+// si.mem().then((data) => console.log(data));
+// si.memLayout().then((data) => console.log(data));
+
 module.exports = memoryString;
