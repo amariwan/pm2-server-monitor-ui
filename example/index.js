@@ -93,11 +93,12 @@ const settings = {
 
 monitor(settings);
 app.set('trust proxy', 1); // trust first proxy
+const uuidv4 = require('../modules/uuidv4');
 
 app.use(
 	cookieSession({
 		name: 'session',
-		keys: [ 'key1', 'key2' ]
+		keys: [ uuidv4(), uuidv4() ]
 	})
 );
 app.get('/', function(req, res, next) {
