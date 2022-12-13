@@ -14,15 +14,15 @@ if (loginSystem === false) {
 }
 /* Telling the server to serve the static files in the webUI folder. */
 router.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '../UI/auth/sign-in.html'));
-	// if (isLoginSystem) {
-	// 	if (sessionUser) {
-	// 		res.sendFile(path.join(__dirname, '../UI/index.html'));
-	// 	} else {
-	// 	}
-	// } else {
-	// 	res.sendFile(path.join(__dirname, '../UI/' + 'index.html'));
-	// }
+	if (isLoginSystem) {
+		if (sessionUser) {
+			res.sendFile(path.join(__dirname, '../UI/index.html'));
+		} else {
+			res.sendFile(path.join(__dirname, '../UI/auth/sign-in.html'));
+		}
+	} else {
+		res.sendFile(path.join(__dirname, '../UI/' + 'index.html'));
+	}
 });
 
 /* This is exporting the router object. */
