@@ -15,3 +15,6 @@
 We use these functions to modify our middleware to perform many tasks. If we want to block our site for some country or if we're going to check the authentication of a user etc., we use middleware for that.
 
 ## Creating Middleware
+Now we will create an Express middleware for that we will create a simple Express API. We can create middleware in a router file, but the easiest method is to create a separate middleware file and then execute it; creating and using middleware is very simple.
+
+So to create middleware, we need to install all the packages to run express middleware.
