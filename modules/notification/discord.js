@@ -68,7 +68,7 @@ client.on('ready', async () => {
 	const user = await client.users.fetch('449846575561441280');
 	user.send('Hey ' + user.username);
 	user.send("I'm now online");
-	user.send(data);
+	user.(data);
 	client.user.setPresence({
 		activities: [ { name: `discord.js v14`, type: `WATCHING` } ],
 		status: 'dnd',
