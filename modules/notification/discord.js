@@ -28,3 +28,5 @@ client.on(Events.message, (message) => {
 });
 
 client.login(config.BOT_TOKEN);
+
+module.exports = client;
