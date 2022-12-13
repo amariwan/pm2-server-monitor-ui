@@ -54,12 +54,12 @@ app.set('trust proxy', true); // trust first proxy
 // provide information about the server software that is running the
 // application.
 app.disable('x-powered-by');
-app.use(
-	cookieSession({
-		name: 'session',
-		keys: [ uuidv4(), uuidv4() ]
-	})
-);
+// app.use(
+// 	cookieSession({
+// 		name: 'session',
+// 		keys: [ uuidv4(), uuidv4() ]
+// 	})
+// );
 // Sessions allow us to Contact data on visitors from request to request
 // This keeps admins logged in and allows us to send flash messages
 // store: new FileStore(),
