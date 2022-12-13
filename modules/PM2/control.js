@@ -23,7 +23,8 @@ const PM2Control = (appName, Type) => {
 				else socket.emit('serverInfo', 'success', x[0].name + ' ' + x[0].status);
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
-
+break;
+case ""
 		default:
 			break;
 	}
