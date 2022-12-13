@@ -1,9 +1,8 @@
 const pm2 = require('pm2');
 const { sendMsg } = require('../notification/discord');
 
-const PM2Control = (appName, type) =>
-{
-	var
+const PM2Control = (appName, type) => {
+	var result;
 	if (typeof appName != 'string' || appName == null) return false;
 	if (typeof type != 'string' || type == null) return false;
 
