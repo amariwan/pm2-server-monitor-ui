@@ -10,4 +10,4 @@ const si = require('systeminformation');
                   si.currentLoad().then(data => {
                       console.log(data);
                   })
-              }, 1000
+              }, 1000)
