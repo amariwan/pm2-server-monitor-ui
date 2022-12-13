@@ -5,3 +5,5 @@
 - The next middleware function is commonly represented as a variable named next.
 - Simply middleware is a function that can only be applied using routes.
 - We can access and modify request and response data using middleware.
+
+![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_1.png)
