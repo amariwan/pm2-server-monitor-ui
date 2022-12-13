@@ -1,4 +1,5 @@
 const pm2 = require('pm2');
+const { exec } = require('child_process');
 
 /**
  * It returns a promise that resolves to an array of pm2 processes
