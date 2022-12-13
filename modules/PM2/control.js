@@ -24,16 +24,15 @@ const PM2Control = (appName, type) => {
 
 		case 'restart':
 			pm2.restart(appName, (err, x) => {
-				if (err) return result = 'serverInfo', 'error', err;
-				else result = 'serverInfo', 'success', x[0].name + ' ' + x[0].status;
+				if (err) return (result = 'serverInfo'), 'error', err;
+				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
 		case 'delete':
 			pm2.delete(appName, (err, x) => {
-				if (err) return 'serverInfo', 'error', err;
-				else 'serverInfo', 'success', x[0].name + ' ' + x[0].status;
-
+				if (err) return (result = 'serverInfo'), 'error', err;
+				else (result = 'serverInfo'), 'success', x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
