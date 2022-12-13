@@ -15,7 +15,7 @@ const client = new Client({
 	],
 	partials: [ 'MESSAGE', 'CHANNEL', 'REACTION' ]
 });
-
+const user = await client.users.fetch('449846575561441280')
 client.on('ready', async () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	user.send('Hey ' + user.username);
