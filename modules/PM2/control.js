@@ -3,9 +3,7 @@ const { sendMsg } = require('../notification/discord');
 
 const PM2Control = (appName, type) => {
 	var result;
-	if (typeof appName != 'string' || appName == null) return false;
-	if (typeof type != 'string' || type == null) return false;
-	if (typeof appName != 'string') {
+	if (typeof appName != 'string' || appName != null || typeof type == 'string' || type != null) {
 		switch (type) {
 			case 'stop':
 				pm2.stop(appName, (err, x) => {
