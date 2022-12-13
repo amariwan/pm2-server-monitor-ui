@@ -23,3 +23,4 @@ So to create middleware, we need to install all the packages to run express midd
 - After this, go to the local server and type localhost:4000
 - Now we will call our next parameter,
 - In express framework, next is a function
+![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_3.png)![Alt text](https://www.simplilearn.com/ice9/free_resources_article_thumb/ExpressJS_Middleware_4.png)
