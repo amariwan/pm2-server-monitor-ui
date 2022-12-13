@@ -2,6 +2,9 @@ const http = require('http');
 const port = 2002;
 const monitor = require('../index');
 var cookieSession = require('cookie-session');
+var express = require('express');
+
+var app = express();
 const settings = {
 	// Your server name, as a flag
 	name: 'Monitoring',
