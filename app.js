@@ -89,7 +89,6 @@ const haltOnTimedout = (req, res, next) => {
 };
 app.use(haltOnTimedout);
 app.use(morgan('combined'));
-var stats = new StatsD();
 
 // app.use(
 // 	responseTime(function(req, res, time) {
