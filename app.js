@@ -130,6 +130,11 @@ app.use(
 // The cookie parser is used to parse cookies for the express app
 // The cookie parser is used to parse cookies to extract the session id
 app.use(cookieParser(SESSION_SECRET));
+app.use(
+	cookieSession({
+		keys: [ SESSION_SECRET, SESSION_SECRET ]
+	})
+);
 // flash is a function that stores a message in the session and makes it available on the next request
 // flash is used to show a message after a post request
 // flash is used to display success messages or error messages
