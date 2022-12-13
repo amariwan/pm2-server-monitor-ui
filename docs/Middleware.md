@@ -13,3 +13,5 @@
 - Middleware can also End the request-response cycle
 - Middleware can call the next middleware function in a stack
 We use these functions to modify our middleware to perform many tasks. If we want to block our site for some country or if we're going to check the authentication of a user etc., we use middleware for that.
+
+## Creating Middleware
