@@ -62,7 +62,7 @@ client.on('messageCreate', async (message) => {
 	}
 });
 
-console.log(config.discord[0]);
+console.log(config.discord[0].tokenBot);
 client.login(config.discord);
 
 module.exports = client;
