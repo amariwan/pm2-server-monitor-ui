@@ -25,7 +25,7 @@ const PM2Control = (appName, type) => {
 		case 'restart':
 			pm2.restart(appName, (err, x) => {
 				if (err) return result = 'serverInfo', 'error', err;
-				else socket.emit('serverInfo', 'success', x[0].name + ' ' + x[0].status);
+				else result = 'serverInfo', 'success', x[0].name + ' ' + x[0].status;
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
 			break;
