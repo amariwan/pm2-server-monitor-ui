@@ -68,4 +68,4 @@ const sendMsg = async (msg) => {
 
 client.login(config.discord[0].tokenBot);
 
-module.exports = client;
+module.exports = { client, sendMsg };
