@@ -89,34 +89,6 @@ const haltOnTimedout = (req, res, next) => {
 };
 app.use(haltOnTimedout);
 app.use(morgan('combined'));
-var stats = new StatsD();
-
-app.use(
-	responseTime(function(req, res, time) {
-		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
-		stats.timing(stat, time);
-	})
-);
-// async function cpuData() {
-// 	try {
-// 		const data = await si.cpu();
-// 		console.log(data);
-// 		const te = await si.cpuTemperature();
-// 		console.log(te);
-// 		const wd = await si.battery();
-// 		console.log(wd);
-// 		const bb = await si.bios();
-// 		console.log(bb);
-// 		const ll = await si.fullLoad();
-// 		console.log(ll);
-// 		const ooo = await si.networkInterfaces();
-// 		console.log(ooo);
-// 	} catch (e) {
-// 		console.log(e);
-// 	}
-// }
-// cpuData();
-//
 
 //setting CSP
 
