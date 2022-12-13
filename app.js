@@ -129,7 +129,6 @@ app.use(
 // The cookie parser is imported from the cookie-parser module
 // The cookie parser is used to parse cookies for the express app
 // The cookie parser is used to parse cookies to extract the session id
-app.use(cookieParser(SESSION_SECRET));
 app.use(
 	cookieSession({
 		keys: [ SESSION_SECRET, SESSION_SECRET ]
