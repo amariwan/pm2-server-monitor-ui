@@ -58,6 +58,7 @@
 		"nodemailer": "^6.8.0",
 		"nodemon": "^2.0.16",
 		"os-utils": "0.0.14",
+		"osx-temperature-sensor": "^1.0.8",
 		"passport": "^0.6.0",
 		"passport-local": "^1.0.0",
 		"passport.socketio": "^3.7.0",
