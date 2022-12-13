@@ -16,7 +16,13 @@ const PM2Control = (appName, Type) => {
 				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
 			});
             break;
-            casa "restart";
+
+        case "restart";
+        			pm2.re(appName, (err, x) => {
+				if (err) return socket.emit('serverInfo', 'error', err);
+				else socket.emit('serverInfo', 'success', x[0].name + ' ' + x[0].status);
+				sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
+			});
 
 
 		default:
