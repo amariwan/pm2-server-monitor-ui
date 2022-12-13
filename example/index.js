@@ -92,19 +92,21 @@ const settings = {
 };
 
 monitor(settings);
-app.set('trust proxy', 1) // trust first proxy
+app.set('trust proxy', 1); // trust first proxy
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}))
-app.get('/', function (req, res, next) {
-  // Update views
-  req.session.views = (req.session.views || 0) + 1
+app.use(
+	cookieSession({
+		name: 'session',
+		keys: [ 'key1', 'key2' ]
+	})
+);
+app.get('/hh', function(req, res, next) {
+	// Update views
+	req.session.views = (req.session.views || 0) + 1;
 
-  // Write response
-  res.end(req.session.views + ' views')
-})
+	// Write response
+	res.end(req.session.views + ' views');
+});
 
 const server = http.createServer((req, res) => {
 	res.end('OK');
