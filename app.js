@@ -30,6 +30,9 @@ const SESSION_SECRET = uuidv4();
 //-------------------------------------------------------
 // || ======== *** SECURITY MIDDLEWARE *** ========= ||
 //-------------------------------------------------------
+// This code parses the request body into a JSON object and assigns it to the request object
+// as req.body
+app.use(express.json());
 // using bodyParser to parse JSON bodies into JS objects
 app.use(bodyParser.json());
 /*
@@ -86,11 +89,8 @@ const haltOnTimedout = (req, res, next) => {
 };
 app.use(haltOnTimedout);
 app.use(morgan('combined'));
-// var stats = new StatsD();
+var stats = new StatsD();
 
-// stats.socket.on('error', function(error) {
-// 	console.error(error.stack);
-// });
 // app.use(
 // 	responseTime(function(req, res, time) {
 // 		var stat = (req.method + req.url).toLowerCase().replace(/[:\.]/g, '').replace(/\//g, '_');
@@ -139,10 +139,6 @@ app.use(morgan('combined'));
 // 		maxAge: 5184000
 // 	})
 // );
-
-// This code parses the request body into a JSON object and assigns it to the request object
-// as req.body
-app.use(express.json());
 
 /* This is a middleware that is used to parse the body of the request. */
 // enabling CORS for all requests
