@@ -44,6 +44,35 @@ app.use(
 		extended: true
 	})
 );
+// This code is used to set the 'trust proxy' value to true.
+app.set('trust proxy', true); // trust first proxy
+// This code disables the x-powered-by header, which would otherwise
+// provide information about the server software that is running the
+// application.
+app.disable('x-powered-by');
+
+// Sessions allow us to Contact data on visitors from request to request
+// This keeps admins logged in and allows us to send flash messages
+// store: new FileStore(),
+app.use(
+	session({
+		name: 'session_id',
+		saveUninitialized: true,
+		resave: false,
+		rolling: false,
+		secret: SESSION_SECRET,
+		// store: sessionstore.createSessionStore(),
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			maxAge: 1000 * 60 * 60 * 24,
+			sameSite: 'none',
+			secure: true,
+			HostOnly: true
+		}
+	})
+);
+
 app.use(methodOverride());
 app.use(compression());
 app.use(responseTime());
@@ -110,35 +139,6 @@ app.use(morgan('combined'));
 // 		maxAge: 5184000
 // 	})
 // );
-
-// This code is used to set the 'trust proxy' value to true.
-app.set('trust proxy', true); // trust first proxy
-// This code disables the x-powered-by header, which would otherwise
-// provide information about the server software that is running the
-// application.
-app.disable('x-powered-by');
-
-// Sessions allow us to Contact data on visitors from request to request
-// This keeps admins logged in and allows us to send flash messages
-// store: new FileStore(),
-app.use(
-	session({
-		name: 'session_id',
-		saveUninitialized: true,
-		resave: false,
-		rolling: false,
-		secret: SESSION_SECRET,
-		// store: sessionstore.createSessionStore(),
-		cookie: {
-			path: '/',
-			httpOnly: true,
-			maxAge: 1000 * 60 * 60 * 24,
-			sameSite: 'none',
-			secure: true,
-			HostOnly: true
-		}
-	})
-);
 
 // This code parses the request body into a JSON object and assigns it to the request object
 // as req.body
