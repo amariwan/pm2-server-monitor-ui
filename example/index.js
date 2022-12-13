@@ -111,5 +111,5 @@ app.get('/hh', function(req, res, next) {
 const server = http.createServer((req, res) => {
 	res.end('OK');
 });
-server.listen(port);
+app.listen(port);
 console.log(`Example server is running on http://127.0.0.1:${port}`);
