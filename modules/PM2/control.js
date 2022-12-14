@@ -15,8 +15,8 @@ const PM2Control = (appName, type) => {
 			case 'start':
 				pm2.start(appName, (err, x) => {
 					if (err) return (result = err);
-					else result = x[0].name + ' ' + x[0].status;
-					sendMsg('serverInfo ' + 'success ' + x[0].name + ' ' + x[0].status);
+					else result = x;
+					sendMsg('serverInfo ' + 'success ' + x);
 				});
 				break;
 
