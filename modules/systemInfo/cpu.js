@@ -27,3 +27,4 @@ const totalUptimeString = (time) => {
 	const days = Math.round(diff / 1000 / 60 / 60 / 24);
 	return `${days}d`;
 };
+module.exports = totalUptimeString;
