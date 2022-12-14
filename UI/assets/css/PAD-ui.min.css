@@ -29065,3 +29065,25 @@ i.iconfont {
 	display: inline-block;
 	clear: both;
 }
+.stats-panel-title {
+    font-size: 20px;
+    padding: 16px 0 16px 0;
+    background: #171e27;
+}
+
+.stats-panel-title > span:not(:first-child) {
+    margin-left: 24px;
+}
+
+.stats-panel-title span.ipAddress {
+    float: right;
+}
+
+.stats-panel-title .mem-icon {
+    font-size: 20px;
+    top: 0;
+}
+
+.stats-panel-title .pm2v-icon {
+    top: 0;
+}
