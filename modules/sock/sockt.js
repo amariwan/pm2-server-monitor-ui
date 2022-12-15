@@ -2,13 +2,13 @@ const socketIo = require('socket.io');
 const pm2 = require('pm2');
 const os = require('os');
 const fs = require('fs');
-const db = require('../database/index');
+const db = require('../../database/index');
 const si = require('systeminformation');
-const pm2List = require('../modules/PM2/PM2List');
-const memoryString = require('../modules/systemInfo/memory');
-const getCpuUsage = require('../modules/systemInfo/cpuUsage');
-const timeString = require('../modules/time');
-const httpServer = require('./http');
+const pm2List = require('../PM2/PM2List
+const memoryString = require('../systemInfo/memory
+const getCpuUsage = require('../systemInfo/cpuUsage
+const timeString = require('../time
+const httpServer = require('../../lib/http');
 const hostname = os.hostname();
 const cpus = os.cpus().length;
 const totalmemNum = os.totalmem();
@@ -17,9 +17,9 @@ const nodev = process.version;
 const godid = process.pid;
 const cpuThreshold = 90; // CPU Threshold (System)
 const { exec } = require('child_process');
-const { sendMsg } = require('../modules/notification/discord');
-const PM2Control = require('../modules/PM2/control');
-const totalUptimeString = require('../modules/systemInfo/cpu');
+const { sendMsg } = require('../notification/discord
+const PM2Control = require('../PM2/control
+const totalUptimeString = require('../systemInfo/cpu
 //-------------------------------------------------------
 // Socket.io
 //-------------------------------------------------------
