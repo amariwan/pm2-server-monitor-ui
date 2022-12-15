@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 	// console.log(socket.handshake.headers);
 	if (sessionUser) {
 		const timer = setInterval(async () => {
-			Promise.all([ pm2List(), getCpuUsage(), si.osInfo() ]).then((val) => {
+			Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo() ]).then((val) => {
 				const data = val[0];
 				const totalData = {
 					hostname,
