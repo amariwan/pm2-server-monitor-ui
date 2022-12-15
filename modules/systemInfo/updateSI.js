@@ -2,27 +2,24 @@ var si = require('systeminformation');
 var ip = require('ip');
 
 function updateSi() {
-	// Gather params
-	var systemMonitor = {};
-	var sysInfo = { cpu: 0, mem: 0, temp: 0 };
+	// Calling process.cpuUsage() method
+	var usage = process.cpuUsage();
+	// Printing returned value
+	console.log('cpu usage before: ', usage);
 
-	si.currentLoad(function(data) {
-		sysInfo.cpu = data.currentload;
-		si.mem(function(data) {
-			console.log((data.total / (1024 * 1024)).toString());
-			// sysInfo.mem =;
+	// Current time
+	const now = Date.now();
 
-			si.cpuTemperature(function(data) {
-				sysInfo.temp = data.main;
+	// Loop to delay almost 100 milliseconds
+	while (Date.now() - now < 100);
 
-				// systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
-				// systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
-				// systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
-				// systemMonitor.system.ip = ip.address();
-			});
-		});
-	});
-	// console.log(systemMonitor);
+	// After using the cpu for nearly equal to
+	// 100 milliseconds
+	// Calling process.cpuUsage() method
+	usage = process.cpuUsage(usage);
+
+	// Printing returned value
+	console.log('Cpu usage by this process: ', usage);
 }
 
 // Schedule update
