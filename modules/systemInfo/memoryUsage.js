@@ -1,8 +1,9 @@
 'use strict';
 const si = require('systeminformation');
-
- si.mem()
-  .then(data => var memoryString= (((data.used/data.total)*100).toString()))
-  .catch(error => res.status(404).send(siError))
+const memoryUsage = async () => {
+	return new Promise(async (resolve, reject) => {
+		var data = await si.mem();
+	});
+};
 
 module.exports = memoryString;
