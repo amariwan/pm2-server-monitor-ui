@@ -8,7 +8,7 @@ function updateSi() {
 
 	si.currentLoad(function(data) {
 		sysInfo.cpu = data.currentload;
-		console.log(data);
+		console.log(sysInfo.cpu);
 		si.mem(function(data) {
 			sysInfo.mem = data.active / data.total * 100;
 
