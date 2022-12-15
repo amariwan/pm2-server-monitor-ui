@@ -15,10 +15,10 @@ function updateSi() {
 			si.cpuTemperature(function(data) {
 				sysInfo.temp = data.main;
 
-				system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
-				system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
-				system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
-				system.ip = ip.address();
+				sysInfo.cpu.toPrecision(3).toString() + ' %';
+				sysInfo.mem.toPrecision(2).toString() + ' %';
+				sysInfo.temp.toPrecision(3).toString() + ' °C';
+				sysInfo.ip = ip.address();
 			});
 		});
 	});
