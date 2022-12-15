@@ -9,7 +9,7 @@ function updateSi() {
 	si.currentLoad(function(data) {
 		sysInfo.cpu = data.currentload;
 		si.mem(function(data) {
-			console.log(data.toPrecision(3).toString() + ' %');
+			console.log(data.total.toPrecision(3).toString() + ' %');
 			sysInfo.mem = data.active / data.total * 100;
 
 			si.cpuTemperature(function(data) {
