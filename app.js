@@ -179,5 +179,5 @@ app.use(errorHandlers.productionErrors);
 
 module.exports = app;
 
-require('./lib/http');
+require('./modules/http/http');
 require('./lib/sockt');

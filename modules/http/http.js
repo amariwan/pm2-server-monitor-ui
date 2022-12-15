@@ -2,12 +2,12 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const os = require('os');
-const config_data = require('../.config/config.json');
+const config_data = require('../../.config/config.json');
 // Add some values to the port as the port number for http and ws
 const hostname = os.hostname();
 const name = config_data.name;
 const port = config_data.port || portAppend;
-const app = require('../app');
+const app = require('../../app');
 const isHttps = config_data.https;
 //-------------------------------------------------------
 //|| ===== *** Initiate http or https server *** ====== ||
