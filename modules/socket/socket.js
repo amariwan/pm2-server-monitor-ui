@@ -28,10 +28,7 @@ const io = socketIo(httpServer); // Creating a socket.io server and attaching it
 
 // Printing os.platform() value
 var platform = os.platform();
-si
-	.mem()
-	.then((data) => console.log((data.used / data.total * 100).toString()))
-	.catch((error) => res.status(404).send(siError));
+
 // new connection received
 io.on('connection', (socket) => {
 	console.log('websocket server connect!');
