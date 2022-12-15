@@ -9,8 +9,8 @@ const getInfo = async () => {
 
 	// CPU Info
 	let info = {};
-	info.cpu = `CPU: ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
-	info += `Cores: ${cpu.cores} (${cpu.physicalCores} Physical)\n`;
+	info.cpu = `${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
+	info += `${cpu.cores} (${cpu.physicalCores} Physical)\n`;
 
 	// RAM Info
 	const totalRam = Math.round(ram.total / 1024 / 1024 / 1024);
