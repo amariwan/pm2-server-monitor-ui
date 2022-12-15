@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const config_data = require('../.config/config.json');
+const config_data = require('../../.config/config.json');
 // db is optional
 /* Getting the database information from the config.json file. */
 const config_db = config_data.databank[0];
