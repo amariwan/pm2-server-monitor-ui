@@ -22,4 +22,8 @@ function updateSi() {
 			});
 		});
 	});
+	console.log(sysInfo);
 }
+
+// Schedule update
+setInterval(updateSi, 500);
