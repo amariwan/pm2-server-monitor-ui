@@ -1,4 +1,4 @@
-const getinfo = async () => {
+const getInfo = async () => {
 	const cpu = await si.cpu();
 	const disk = (await si.diskLayout())[0];
 	const os = await si.osInfo();
