@@ -28,7 +28,7 @@ const io = socketIo(httpServer); // Creating a socket.io server and attaching it
 
 // Printing os.platform() value
 var platform = os.platform();
-
+console.log(process.memoryUsage());
 // new connection received
 io.on('connection', (socket) => {
 	console.log('websocket server connect!');
@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 					cpuUsageCls: val[1] >= cpuThreshold ? true : false,
 					totalmem,
 					freemem: memoryString(os.freemem()),
-					memUsage: process.memoryUsage(),
+					memUsage: `${Math.round(os.freemem() * 100 / os.totalmem())}`,
 					node_version: nodev,
 					godid,
 					memory: 0,
