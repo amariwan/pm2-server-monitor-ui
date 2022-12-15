@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
 	// console.log(socket.handshake.headers);
 	if (sessionUser) {
 		const timer = setInterval(async () => {
-			Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo() ]).then((val) => {
+			Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo(), memoryUsage() ]).then((val) => {
 				const data = val[0];
 				const totalData = {
 					hostname,
@@ -56,6 +56,7 @@ io.on('connection', (socket) => {
 				};
 				let systemInfo = {};
 				systemInfo.osInfo = val[2];
+				systemInfo.getInfo = val[3];
 				systemInfo.getInfo = val[3];
 				if (data && data.length > 0) {
 					const processData = [];
