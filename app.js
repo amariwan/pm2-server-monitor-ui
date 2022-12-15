@@ -91,18 +91,18 @@ app.use(
 // 	})
 // );
 
-// app.use(methodOverride());
-// app.use(compression());
-// app.use(responseTime());
-// app.use(timeout('5s'));
-// app.use(passport.initialize());
-// app.use(passport.session());
-// app.use(flash());
-// Add your routes here, etc.
-// const haltOnTimedout = (req, res, next) => {
-// 	if (!req.timedout) next();
-// };
-// app.use(haltOnTimedout);
+app.use(methodOverride());
+app.use(compression());
+app.use(responseTime());
+app.use(timeout('5s'));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+Add your routes here, etc.
+const haltOnTimedout = (req, res, next) => {
+	if (!req.timedout) next();
+};
+app.use(haltOnTimedout);
 // app.use(morgan('combined'));
 
 //setting CSP
