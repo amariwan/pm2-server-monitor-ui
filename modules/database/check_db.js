@@ -1,4 +1,4 @@
-const db = require('../database/index');
+const db = require('./index');
 
 const checkDBTable = (table) => {
 	if (table == null || table.length === 0) return null;
