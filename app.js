@@ -99,11 +99,11 @@ app.use(
 // app.use(passport.session());
 // app.use(flash());
 // Add your routes here, etc.
-const haltOnTimedout = (req, res, next) => {
-	if (!req.timedout) next();
-};
-app.use(haltOnTimedout);
-app.use(morgan('combined'));
+// const haltOnTimedout = (req, res, next) => {
+// 	if (!req.timedout) next();
+// };
+// app.use(haltOnTimedout);
+// app.use(morgan('combined'));
 
 //setting CSP
 
