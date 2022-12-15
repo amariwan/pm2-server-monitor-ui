@@ -180,4 +180,4 @@ app.use(errorHandlers.productionErrors);
 module.exports = app;
 
 require('./modules/http/http');
-require('./modules/socket/socket');
+require('./modules/so');
