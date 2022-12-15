@@ -1,18 +1,25 @@
-var sysInfo = { cpu: 0, mem: 0, temp: 0 };
+var si = require('systeminformation');
+var ip = require('ip');
 
-si.currentLoad(function(data) {
-	sysInfo.cpu = data.currentload;
+function updateSi() {
+	// Gather params
 
-	si.mem(function(data) {
-		sysInfo.mem = data.active / data.total * 100;
+	var sysInfo = { cpu: 0, mem: 0, temp: 0 };
 
-		si.cpuTemperature(function(data) {
-			sysInfo.temp = data.main;
+	si.currentLoad(function(data) {
+		sysInfo.cpu = data.currentload;
 
-			systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
-			systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
-			systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
-			systemMonitor.system.ip = ip.address();
+		si.mem(function(data) {
+			sysInfo.mem = data.active / data.total * 100;
+
+			si.cpuTemperature(function(data) {
+				sysInfo.temp = data.main;
+
+				systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
+				systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
+				systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
+				systemMonitor.system.ip = ip.address();
+			});
 		});
 	});
-});
+}
