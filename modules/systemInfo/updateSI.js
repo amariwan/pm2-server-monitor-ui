@@ -22,7 +22,7 @@ function updateSi() {
 			});
 		});
 	});
-	console.log(sysInfo);
+	console.log(systemMonitor);
 }
 
 // Schedule update
