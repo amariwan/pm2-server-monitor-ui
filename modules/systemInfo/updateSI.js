@@ -3,7 +3,7 @@ var ip = require('ip');
 
 function updateSi() {
 	// Gather params
-
+	var systemMonitor = {};
 	var sysInfo = { cpu: 0, mem: 0, temp: 0 };
 
 	si.currentLoad(function(data) {
@@ -15,10 +15,10 @@ function updateSi() {
 			si.cpuTemperature(function(data) {
 				sysInfo.temp = data.main;
 
-				sysInfo.cpu.toPrecision(3).toString() + ' %';
-				sysInfo.mem.toPrecision(2).toString() + ' %';
-				sysInfo.temp.toPrecision(3).toString() + ' °C';
-				sysInfo.ip = ip.address();
+				systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
+				systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
+				systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
+				systemMonitor.system.ip = ip.address();
 			});
 		});
 	});
