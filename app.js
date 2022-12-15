@@ -98,7 +98,7 @@ app.use(timeout('5s'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-Add your routes here, etc.
+// Add your routes here, etc.
 const haltOnTimedout = (req, res, next) => {
 	if (!req.timedout) next();
 };
