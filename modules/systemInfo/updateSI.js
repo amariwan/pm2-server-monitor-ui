@@ -8,17 +8,17 @@ function updateSi() {
 
 	si.currentLoad(function(data) {
 		sysInfo.cpu = data.currentload;
-
+		console.log(data);
 		si.mem(function(data) {
 			sysInfo.mem = data.active / data.total * 100;
 
 			si.cpuTemperature(function(data) {
 				sysInfo.temp = data.main;
 
-				systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
-				systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
-				systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
-				systemMonitor.system.ip = ip.address();
+				// systemMonitor.system.cpu = sysInfo.cpu.toPrecision(3).toString() + ' %';
+				// systemMonitor.system.mem = sysInfo.mem.toPrecision(2).toString() + ' %';
+				// systemMonitor.system.temp = sysInfo.temp.toPrecision(3).toString() + ' °C';
+				// systemMonitor.system.ip = ip.address();
 			});
 		});
 	});
