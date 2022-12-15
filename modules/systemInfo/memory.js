@@ -20,7 +20,7 @@ function memoryString(byteLen) {
 	arr.reverse();
 	const used = process.memoryUsage().heapUsed / 1024 / 1024;
 	console.log(`The script uses approximately ${used.toFixed(2)} MB`);
-	return `${mem}MB`;
+	return `${used.toFixed(2)}MB`;
 }
 // const si = require('systeminformation');
 // si.mem().then((data) => console.log(data));
