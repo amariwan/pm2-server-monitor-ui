@@ -8,7 +8,8 @@ const getInfo = async () => {
 	const ram = await si.mem();
 
 	// CPU Info
-	let info = `CPU: ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
+	let info = {};
+	info.cpu = `CPU: ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
 	info += `Cores: ${cpu.cores} (${cpu.physicalCores} Physical)\n`;
 
 	// RAM Info
