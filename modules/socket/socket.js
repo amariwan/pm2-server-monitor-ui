@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 					cpuUsageCls: val[1] >= cpuThreshold ? true : false,
 					totalmem,
 					freemem: memoryString(os.freemem()),
-					memUsage: `${Math.round(os.freemem() * 100 / os.totalmem())}`,
+					memUsage: process.memoryUsage(),
 					node_version: nodev,
 					godid,
 					memory: 0,
