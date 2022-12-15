@@ -24,9 +24,6 @@ const getInfo = async () => {
 	info.os = `${os.distro} ${os.codename} (${os.platform})\n`;
 	info.kernel = `${os.kernel} ${os.arch}\n`;
 
-	// Node Info
-	info += `Node: v${versions.node}\n`;
-	info += `V8: ${versions.v8}`;
 	return info;
 };
 module.exports = getInfo;
