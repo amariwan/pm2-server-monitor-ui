@@ -7,20 +7,16 @@ const os = require('os');
  * @returns A string with the memory size in MB or GB.
  */
 function memoryString(byteLen) {
-	// // get MB
-	// let mem = byteLen / 1024 / 1024;
-	// if (mem.toFixed() >= 1000) {
-	// 	// Convert to GB
-	// 	mem = (mem / 1024).toFixed(2);
-	// 	return `${mem}GB`;
-	// }
-	// mem = mem.toFixed(2);
+	// get MB
+	let mem = byteLen / 1024 / 1024;
+	if (mem.toFixed() >= 1000) {
+		// Convert to GB
+		mem = (mem / 1024).toFixed(2);
+		return `${mem}GB`;
+	}
+	mem = mem.toFixed(2);
 
-	let arr = Array(1e6).fill('some string');
-	arr.reverse();
-	const used = process.memoryUsage().heapUsed / 1024 / 1024;
-	console.log(`The script uses approximately ${used.toFixed(2)} MB`);
-	return `${used.toFixed(2)}MB`;
+	return `${mem}MB`;
 }
 // const si = require('systeminformation');
 // si.mem().then((data) => console.log(data));
