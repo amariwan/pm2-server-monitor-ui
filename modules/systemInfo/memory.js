@@ -15,15 +15,15 @@ function memoryString(byteLen) {
 		return `${mem}GB`;
 	}
 	mem = mem.toFixed(2);
+
+	let arr = Array(1e6).fill('some string');
+	arr.reverse();
+	const used = process.memoryUsage().heapUsed / 1024 / 1024;
+	console.log(`The script uses approximately ${used} MB`);
 	return `${mem}MB`;
 }
 // const si = require('systeminformation');
 // si.mem().then((data) => console.log(data));
 // si.memLayout().then((data) => console.log(data));
-
-let arr = Array(1e6).fill('some string');
-arr.reverse();
-const used = process.memoryUsage().heapUsed / 1024 / 1024;
-console.log(`The script uses approximately ${used} MB`);
 
 module.exports = memoryString;
