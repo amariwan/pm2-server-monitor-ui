@@ -1,3 +1,5 @@
+const si = require('systeminformation');
+
 const getInfo = async () => {
 	const cpu = await si.cpu();
 	const disk = (await si.diskLayout())[0];
