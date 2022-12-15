@@ -54,6 +54,7 @@ io.on('connection', (socket) => {
 				};
 				let systemInfo = {};
 				systemInfo.osInfo = val[2];
+				getInfo = val[3];
 				if (data && data.length > 0) {
 					const processData = [];
 					let totalUptime;
@@ -110,7 +111,7 @@ io.on('connection', (socket) => {
 					totalData.release = os.release();
 					totalData.version = os.version();
 					totalData.networkInterFaces = os.networkInterfaces();
-					socket.emit('stats', { totalData, processData, systemInfo });
+					socket.emit('stats', { totalData, processData, systemInfo, getInfo });
 				} else {
 					socket.emit('stats', { totalData, systemInfo });
 				}
