@@ -1,6 +1,7 @@
 var si = require('systeminformation');
-var ip = require('ip');
 
+// Allocating process module
+const process = require('process');
 function updateSi() {
 	// Calling process.cpuUsage() method
 	var usage = process.cpuUsage();
