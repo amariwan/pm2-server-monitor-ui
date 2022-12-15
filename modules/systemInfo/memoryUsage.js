@@ -7,4 +7,4 @@ const memoryUsage = async () => {
 	});
 };
 
-module.exports = memoryString;
+module.exports = memoryUsage;
