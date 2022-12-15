@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router(); // Creating a router object.
-const db = require('../database/index');
+const db = require('../modules/database/index');
 const bcrypt = require('bcrypt'); // A library that is used to hash passwords.
 const { encrypt, decrypt } = require('../modules/crpyto');
 const { isEmail, checkUsername } = require('../modules/check_userOrEmail');
