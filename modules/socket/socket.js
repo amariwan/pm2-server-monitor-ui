@@ -20,6 +20,7 @@ const { exec } = require('child_process');
 const { sendMsg } = require('../notification/discord');
 const PM2Control = require('../PM2/control');
 const totalUptimeString = require('../systemInfo/cpu');
+const getInfo = require('../systemInfo/getInfo');
 //-------------------------------------------------------
 // Socket.io
 //-------------------------------------------------------
