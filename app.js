@@ -75,15 +75,6 @@ app.use(
 		}
 	})
 );
-// This code is used to parse cookies for the express app
-// The cookie parser is imported from the cookie-parser module
-// The cookie parser is used to parse cookies for the express app
-// The cookie parser is used to parse cookies to extract the session id
-// app.use(
-// 	cookieSession({
-// 		keys: [ uuidv4(), uuidv4() ]
-// 	})
-// );
 
 app.use(methodOverride());
 app.use(compression());
@@ -102,7 +93,7 @@ app.use(haltOnTimedout);
 //setting CSP
 
 // adding Helmet to enhance your API's security
-// app.use(helmet());
+app.use(helmet());
 // app.use(helmet.contentSecurityPolicy({
 // 	defaultSrc: [ `'none'` ],
 // 	styleSrc: [ `'self'`, `'unsafe-inline'` ],
