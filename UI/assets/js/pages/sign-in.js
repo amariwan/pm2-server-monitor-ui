@@ -39,6 +39,28 @@ const app = createApp({
 				.catch((error) => {
 					console.error(error);
 				});
+			axios
+				.get('https://localhost:4003/login', {
+					withCredentials: true,
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Content-Type': 'application/json'
+					},
+					withCredentials: true,
+					method: 'GET'
+				})
+				.then((response) => {
+					if (response.data.islogged) {
+						this.UserId = response.data.UserId;
+						this.UserRole = response.data.UserRole;
+						this.UserName = response.data.UserName;
+						this.Userlast = response.data.Userlast;
+						window.location.href = '/';
+					}
+				})
+				.catch((error) => {
+					console.error(error);
+				});
 		},
 		doLogin() {
 			console.log('doLogin');
