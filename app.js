@@ -7,6 +7,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
 const session = require('express-session');
 const helmet = require('helmet');
 const sessionstore = require('sessionstore');
@@ -53,7 +54,12 @@ app.set('trust proxy', true); // trust first proxy
 // provide information about the server software that is running the
 // application.
 app.disable('x-powered-by');
-
+// app.use(
+// 	cookieSession({
+// 		name: 'session',
+// 		keys: [ uuidv4(), uuidv4() ]
+// 	})
+// );
 // Sessions allow us to Contact data on visitors from request to request
 // This keeps admins logged in and allows us to send flash messages
 // store: new FileStore(),
@@ -75,6 +81,15 @@ app.use(
 		}
 	})
 );
+// This code is used to parse cookies for the express app
+// The cookie parser is imported from the cookie-parser module
+// The cookie parser is used to parse cookies for the express app
+// The cookie parser is used to parse cookies to extract the session id
+// app.use(
+// 	cookieSession({
+// 		keys: [ uuidv4(), uuidv4() ]
+// 	})
+// );
 
 app.use(methodOverride());
 app.use(compression());
