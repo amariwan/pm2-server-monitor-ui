@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); // Creating a router object.
 const path = require('path');
-// const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
+const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
 const config_data = require('../.config/config.json');
 // Add some values to the port as the port number for http and ws
 var loginSystem = config_data.loginsystem;
@@ -25,24 +25,6 @@ router.get('/', (req, res) => {
 		res.sendFile(path.join(__dirname, '../UI/' + 'index.html'));
 	}
 });
-
-const getSessionIDCookie = (req, res) => {
-	const { headers: { cookie } } = req;
-	if (cookie) {
-		const item = cookie.split(';').reduce((res, item) => {
-			const data = item.trim().split('=');
-			return {
-				...res,
-				[data[0]]: data[1]
-			};
-		}, {});
-
-		const values = Object.values(item);
-		res.locals.cookie = item;
-		req.session.cookie = values;
-		return values;
-	} else return false;
-};
 
 /* This is exporting the router object. */
 module.exports = router;
