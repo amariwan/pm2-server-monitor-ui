@@ -36,4 +36,4 @@ function session_cleanup() {
 	});
 }
 
-module.exports = { clearAllcookie, getSessionIDCookie };
+module.exports = cookie;
