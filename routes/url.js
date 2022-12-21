@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router(); // Creating a router object.
 const path = require('path');
-const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
+// const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
 const config_data = require('../.config/config.json');
 // Add some values to the port as the port number for http and ws
 var loginSystem = config_data.loginsystem;
