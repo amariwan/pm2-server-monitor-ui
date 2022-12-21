@@ -50,13 +50,7 @@ const app = createApp({
 					method: 'GET'
 				})
 				.then((response) => {
-					if (response.data.islogged) {
-						this.UserId = response.data.UserId;
-						this.UserRole = response.data.UserRole;
-						this.UserName = response.data.UserName;
-						this.Userlast = response.data.Userlast;
-						window.location.href = '/';
-					}
+					console.log(response);
 				})
 				.catch((error) => {
 					console.error(error);
