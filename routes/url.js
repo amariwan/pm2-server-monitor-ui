@@ -27,5 +27,29 @@ router.get('/', (req, res) => {
 	}
 });
 
+router.get('/login', (req, res) => {
+	var x = getSessionIDCookie(req, res);
+	console.log(x, '32');
+	if (req.session.user) {
+		global.sessionUser = req.session.user;
+		req.session.user.isFirst = ++index_kk;
+		res.status(200).send({
+			msg: 'User already logged in',
+			user: req.session.user,
+			isFirst: req.session.user.isFirst,
+			islogged: true,
+			code: 200
+		});
+	} else {
+		console.log('User not logged in');
+		global.sessionUser = null;
+		res.status(203).send({
+			msg: 'User not logged in',
+			islogged: false,
+			code: 102
+		});
+	}
+});
+
 /* This is exporting the router object. */
 module.exports = router;
