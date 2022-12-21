@@ -208,7 +208,8 @@ router.post('/login', (req, res, next) => {
 	} else if (isLocalOrDB === 'localstorage') {
 		const user = findUser(config_data.users, username, password);
 		if (typeof user === 'object') {
-			getSessionIDCookie(req, res);
+			var x = getSessionIDCookie(req, res);
+			console.log(xa)
 			req.session.user = user;
 			req.session.user.isFirst = true;
 			global.sessionUser = user;
