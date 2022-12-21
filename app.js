@@ -56,7 +56,8 @@ app.set('trust proxy', true); // trust first proxy
 app.disable('x-powered-by');
 app.use(
 	cookieSession({
-		name: 'session_id'
+		name: 'session',
+		keys: [ uuidv4(), uuidv4() ]
 	})
 );
 // Sessions allow us to Contact data on visitors from request to request
