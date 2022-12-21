@@ -7,9 +7,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-// const cookieSession =x require('cookie-session');
+const cookieSession = require('cookie-session');
 const session = require('express-session');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 const sessionstore = require('sessionstore');
 const flash = require('connect-flash');
 const responseTime = require('response-time');
@@ -143,7 +143,7 @@ app.use(
 // flash is a function that stores a message in the session and makes it available on the next request
 // flash is used to show a message after a post request
 // flash is used to display success messages or error messages
-// app.use(flash());
+app.use(flash());
 //-------------------------------------------------------
 // pass variables to our templates + all requests
 
