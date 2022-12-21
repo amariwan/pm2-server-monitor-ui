@@ -26,5 +26,23 @@ router.get('/', (req, res) => {
 	}
 });
 
+const getSessionIDCookie = (req, res) => {
+	const { headers: { cookie } } = req;
+	if (cookie) {
+		const item = cookie.split(';').reduce((res, item) => {
+			const data = item.trim().split('=');
+			return {
+				...res,
+				[data[0]]: data[1]
+			};
+		}, {});
+
+		const values = Object.values(item);
+		res.locals.cookie = item;
+		req.session.cookie = values;
+		return values;
+	} else return false;
+};
+
 /* This is exporting the router object. */
 module.exports = router;
