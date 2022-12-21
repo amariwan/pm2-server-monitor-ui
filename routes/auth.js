@@ -209,7 +209,7 @@ router.post('/login', (req, res, next) => {
 		const user = findUser(config_data.users, username, password);
 		if (typeof user === 'object') {
 			var x = getSessionIDCookie(req, res);
-			console.log(x);
+			console.log(x, '212');
 			req.session.user = user;
 			req.session.user.isFirst = true;
 			global.sessionUser = user;
