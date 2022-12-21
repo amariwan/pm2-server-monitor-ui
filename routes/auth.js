@@ -116,6 +116,8 @@ router.post('/register', (req, res) => {
 var index_kk = 0;
 
 router.get('/login', (req, res) => {
+	var x = getSessionIDCookie(req, res);
+	console.log(x, '212');
 	if (req.session.user) {
 		global.sessionUser = req.session.user;
 		req.session.user.isFirst = ++index_kk;
