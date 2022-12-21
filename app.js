@@ -93,7 +93,7 @@ app.use(haltOnTimedout);
 //setting CSP
 
 // adding Helmet to enhance your API's security
-app.use(helmet());
+// app.use(helmet());
 // app.use(helmet.contentSecurityPolicy({
 // 	defaultSrc: [ `'none'` ],
 // 	styleSrc: [ `'self'`, `'unsafe-inline'` ],
