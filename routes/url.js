@@ -14,7 +14,7 @@ if (loginSystem === false) {
 }
 /* Telling the server to serve the static files in the webUI folder. */
 router.get('/', (req, res) => {
-	console.log(getSessionIDCookie(req, res));
+	console.log(getSessionIDCookie(req, res), '17');
 	if (isLoginSystem) {
 		if (sessionUser) {
 			res.sendFile(path.join(__dirname, '../UI/index.html'));
