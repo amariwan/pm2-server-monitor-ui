@@ -208,9 +208,9 @@ router.post('/login', (req, res, next) => {
 		const user = findUser(config_data.users, username, password);
 		if (typeof user === 'object') {
 			var x = getSessionIDCookie(req, res);
-			console.log(x, '212');
+			// console.log(x, '212');
+			// console.log(req.session);
 			req.session.user = user;
-			console.log(req.session);
 			res.send({
 				msg: 'successfully',
 				islogged: true,
