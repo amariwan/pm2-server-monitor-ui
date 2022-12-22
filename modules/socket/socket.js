@@ -35,10 +35,11 @@ io.on('connection', (socket) => {
 	var handshake = socket.handshake;
 	if (handshake.headers.cookie) {
 		var str = handshake.headers.cookie;
-		console.log(str, "38");
+		console.log(str, '38');
 	} else {
 		console.log('Missing Cookies');
 	}
+	console.log(socket);
 	console.log('websocket server connect!');
 	// console.log(socket.handshake.headers.cookie);
 	// console.log(socket.handshake.headers);
