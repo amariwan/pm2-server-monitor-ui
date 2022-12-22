@@ -24,7 +24,6 @@ const app = createApp({
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
 					},
-					withCredentials: true,
 					method: 'GET'
 				})
 				.then((response) => {
@@ -46,7 +45,6 @@ const app = createApp({
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
 					},
-					withCredentials: true,
 					method: 'GET'
 				})
 				.then((response) => {
