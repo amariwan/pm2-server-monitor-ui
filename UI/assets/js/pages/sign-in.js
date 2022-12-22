@@ -18,7 +18,7 @@ const app = createApp({
 	methods: {
 		checklogger() {
 			axios
-				.get('https://localhost:4003/auth/login', {
+				.get(`${window.location.origin}/auth/login`, {
 					withCredentials: true,
 					headers: {
 						'Access-Control-Allow-Origin': '*',
@@ -39,7 +39,7 @@ const app = createApp({
 					console.error(error);
 				});
 			axios
-				.get('https://localhost:4003/login', {
+				.get(`${window.location.origin}/login`, {
 					withCredentials: true,
 					headers: {
 						'Access-Control-Allow-Origin': '*',
@@ -70,7 +70,7 @@ const app = createApp({
 					password = encrypt(password);
 					axios
 						.post(
-							'https://localhost:4003/auth/login',
+							`${window.location.origin}/auth/login`,
 							{
 								username: username,
 								password: password
