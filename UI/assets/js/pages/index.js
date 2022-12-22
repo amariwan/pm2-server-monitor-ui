@@ -53,7 +53,6 @@ const app = createApp({
 		checkLogger() {
 			axios
 				.get('https://localhost:4003/auth/login', {
-					withCredentials: true,
 					headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
@@ -84,7 +83,6 @@ const app = createApp({
 		logout() {
 			axios
 				.get('https://localhost:4003/auth/logout', {
-					withCredentials: true,
 					headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
