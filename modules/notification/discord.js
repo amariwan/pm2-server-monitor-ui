@@ -71,5 +71,5 @@ const { Discord, Client, GatewayIntentBits, MessageEmbed } = require('discord.js
 // } else {
 // }
 client = {};
-const sendMSG = (x) => {};
+const sendMsg = (x) => {};
 module.exports = { client, sendMsg };
