@@ -30,8 +30,8 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
 	console.log(req.session, '32');
-	var x = getSessionIDCookie(req, res);
-	console.log(x, '34');
+	// var x = getSessionIDCookie(req, res);
+	// console.log(x, '34');
 	if (req.session.user) {
 		global.sessionUser = req.session.user;
 		req.session.user.isFirst = ++index_kk;
