@@ -1,3 +1,4 @@
+const io = require('./socket');
 const pm2 = require('pm2');
 const os = require('os');
 const fs = require('fs');
