@@ -140,7 +140,12 @@ app.use(
 		credentials: true
 	})
 );
-
+app.use(
+	bodyParser.urlencoded({
+		extended: true
+	})
+);
+app.use(cookieParser(SESSION_SECRET)); // any string ex: 'keyboard cat'
 // flash is a function that stores a message in the session and makes it available on the next request
 // flash is used to show a message after a post request
 // flash is used to display success messages or error messages
