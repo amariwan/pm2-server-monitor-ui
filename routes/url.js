@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+	console.log(req);
 	var x = getSessionIDCookie(req, res);
 	console.log(x, '32');
 	if (req.session.user) {
