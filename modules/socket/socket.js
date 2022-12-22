@@ -32,12 +32,12 @@ var platform = os.platform();
 
 // new connection received
 io.on('connection', (socket) => {
-	// var handshake = socket.handshake;
-	// if (handshake.headers.cookie) {
-	// 	var str = handshake.headers.cookie;
-	// } else {
-	// 	console.log('Missing Cookies');
-	// }
+	var handshake = socket.handshake;
+	if (handshake.headers.cookie) {
+		var str = handshake.headers.cookie;
+	} else {
+		console.log('Missing Cookies');
+	}
 	console.log('websocket server connect!');
 	// console.log(socket.handshake.headers.cookie);
 	// console.log(socket.handshake.headers);
