@@ -1,122 +1,55 @@
-// 'use strict';
+const express = require('express');
+const router = express.Router(); // Creating a router object.
+const path = require('path');
+const { clearAllcookie, getSessionIDCookie } = require('../modules/cookie');
+const config_data = require('../.config/config.json');
+// Add some values to the port as the port number for http and ws
+var loginSystem = config_data.loginsystem;
+loginSystem = loginSystem || false;
+var isLoginSystem;
+if (loginSystem === false) {
+	isLoginSystem = false;
+} else {
+	isLoginSystem = true;
+}
+/* Telling the server to serve the static files in the webUI folder. */
+router.get('/', (req, res) => {
+	console.log(getSessionIDCookie(req, res), '18');
+	if (isLoginSystem) {
+		if (sessionUser) {
+			res.sendFile(path.join(__dirname, '../UI/index.html'));
+		} else {
+			res.sendFile(path.join(__dirname, '../UI/auth/sign-in.html'));
+		}
+	} else {
+		res.sendFile(path.join(__dirname, '../UI/' + 'index.html'));
+	}
+});
 
-// var express = require('express');
-// var router = express.Router();
-// var passport = require('passport');
+router.get('/login', (req, res) => {
+	// console.log(req);
+	var x = getSessionIDCookie(req, res);
+	console.log(x, '32');
+	if (req.session.user) {
+		global.sessionUser = req.session.user;
+		req.session.user.isFirst = ++index_kk;
+		res.status(200).send({
+			msg: 'User already logged in',
+			user: req.session.user,
+			isFirst: req.session.user.isFirst,
+			islogged: true,
+			code: 200
+		});
+	} else {
+		console.log('User not logged in');
+		global.sessionUser = null;
+		res.status(203).send({
+			msg: 'User not logged in',
+			islogged: false,
+			code: 102
+		});
+	}
+});
 
-// var User = require('../models/user');
-// var Room = require('../models/room');
-
-// // Home page
-// router.get('/', function(req, res, next) {
-// 	// If user is already logged in, then redirect to rooms page
-// 	if (req.isAuthenticated()) {
-// 		res.redirect('/rooms');
-// 	} else {
-// 		res.render('login', {
-// 			success: req.flash('success')[0],
-// 			errors: req.flash('error'),
-// 			showRegisterForm: req.flash('showRegisterForm')[0]
-// 		});
-// 	}
-// });
-
-// // Login
-// router.post(
-// 	'/login',
-// 	passport.authenticate('local', {
-// 		successRedirect: '/rooms',
-// 		failureRedirect: '/',
-// 		failureFlash: true
-// 	})
-// );
-
-// // Register via username and password
-// router.post('/register', function(req, res, next) {
-// 	var credentials = { username: req.body.username, password: req.body.password };
-
-// 	if (credentials.username === '' || credentials.password === '') {
-// 		req.flash('error', 'Missing credentials');
-// 		req.flash('showRegisterForm', true);
-// 		res.redirect('/');
-// 	} else {
-// 		// Check if the username already exists for non-social account
-// 		User.findOne({ username: new RegExp('^' + req.body.username + '$', 'i'), socialId: null }, function(err, user) {
-// 			if (err) throw err;
-// 			if (user) {
-// 				req.flash('error', 'Username already exists.');
-// 				req.flash('showRegisterForm', true);
-// 				res.redirect('/');
-// 			} else {
-// 				User.create(credentials, function(err, newUser) {
-// 					if (err) throw err;
-// 					req.flash('success', 'Your account has been created. Please log in.');
-// 					res.redirect('/');
-// 				});
-// 			}
-// 		});
-// 	}
-// });
-
-// // Social Authentication routes
-// // 1. Login via Facebook
-// router.get('/auth/facebook', passport.authenticate('facebook'));
-// router.get(
-// 	'/auth/facebook/callback',
-// 	passport.authenticate('facebook', {
-// 		successRedirect: '/rooms',
-// 		failureRedirect: '/',
-// 		failureFlash: true
-// 	})
-// );
-
-// // 2. Login via Twitter
-// router.get('/auth/twitter', passport.authenticate('twitter'));
-// router.get(
-// 	'/auth/twitter/callback',
-// 	passport.authenticate('twitter', {
-// 		successRedirect: '/rooms',
-// 		failureRedirect: '/',
-// 		failureFlash: true
-// 	})
-// );
-
-// // Rooms
-// router.get('/rooms', [
-// 	User.isAuthenticated,
-// 	function(req, res, next) {
-// 		Room.find(function(err, rooms) {
-// 			if (err) throw err;
-// 			res.render('rooms', { rooms });
-// 		});
-// 	}
-// ]);
-
-// // Chat Room
-// router.get('/chat/:id', [
-// 	User.isAuthenticated,
-// 	function(req, res, next) {
-// 		var roomId = req.params.id;
-// 		Room.findById(roomId, function(err, room) {
-// 			if (err) throw err;
-// 			if (!room) {
-// 				return next();
-// 			}
-// 			res.render('chatroom', { user: req.user, room: room });
-// 		});
-// 	}
-// ]);
-
-// // Logout
-// router.get('/logout', function(req, res, next) {
-// 	// remove the req.user property and clear the login session
-// 	req.logout();
-
-// 	// destroy session data
-// 	req.session = null;
-
-// 	// redirect to homepage
-// 	res.redirect('/');
-// });
-
-// module.exports = router;
+/* This is exporting the router object. */
+module.exports = router;
