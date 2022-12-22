@@ -4,7 +4,7 @@
 const servers = {
 	local: [
 		{
-			host: 'killer.local',
+			host: 'localhost',
 			port: 4003,
 			https: true,
 			show: true
