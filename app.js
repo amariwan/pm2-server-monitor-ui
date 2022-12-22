@@ -140,6 +140,14 @@ app.use(
 		credentials: true
 	})
 );
+// app middleware
+app.use(
+	express.urlencoded({
+		extended: true
+	})
+);
+
+app.use(express.json());
 // using bodyParser to parse JSON bodies into JS objects
 app.use(bodyParser.json());
 app.use(
