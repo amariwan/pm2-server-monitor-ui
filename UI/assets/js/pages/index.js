@@ -82,7 +82,7 @@ const app = createApp({
 		},
 		logout() {
 			axios
-				.get('https://localhost:4003/auth/logout', {
+				.get(`${window.location}/auth/logout`, {
 					headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
