@@ -12,7 +12,7 @@ if (loginSystem === false) {
 } else {
 	isLoginSystem = true;
 }
-/* Telling the server to serve the static files in the webUI folder. */
+/* Telling the server to saerve the static files in the webUI folder. */
 router.get('/', (req, res) => {
 	console.log(getSessionIDCookie(req, res), '18');
 	console.log(req.session, '19');
