@@ -52,7 +52,7 @@ const app = createApp({
 	methods: {
 		checkLogger() {
 			axios
-				.get('https://localhost:4003/auth/login', {
+				.get(`${window.location.origin}/auth/login`, {
 					headers: {
 						'Access-Control-Allow-Origin': '*',
 						'Content-Type': 'application/json'
