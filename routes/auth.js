@@ -269,7 +269,6 @@ router.get('/logout', (req, res, next) => {
 	clearAllcookie(req, res);
 	res.status(200).send('logout');
 	next(); // this will give you the above exception
-	global.sessionUser = null;
 });
 
 /* This is exporting the router object. */
