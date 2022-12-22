@@ -15,7 +15,7 @@ if (loginSystem === false) {
 /* Telling the server to serve the static files in the webUI folder. */
 router.get('/', (req, res) => {
 	console.log(getSessionIDCookie(req, res), '18');
-			console.log(req.session,"19");
+	console.log(req.session, '19');
 
 	if (isLoginSystem) {
 		if (sessionUser) {
@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-	// console.log(req);
+	console.log(req.session, '32');
 	var x = getSessionIDCookie(req, res);
-	console.log(x, '32');
+	console.log(x, '34');
 	if (req.session.user) {
 		global.sessionUser = req.session.user;
 		req.session.user.isFirst = ++index_kk;
