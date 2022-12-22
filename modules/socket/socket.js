@@ -4,6 +4,6 @@ const io = socketIo(httpServer); // Creating a socket.io server and attaching it
 const app = require('../../app');
 app.set('socketio', io);
 
-require('./dashboard');
-
 module.exports = io;
+
+require('./dashboard');
