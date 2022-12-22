@@ -14,8 +14,8 @@ if (loginSystem === false) {
 }
 /* Telling the server to saerve the static files in the webUI folder. */
 router.get('/', (req, res) => {
-	console.log(getSessionIDCookie(req, res), '18');
-	console.log(req.session, '19');
+	// console.log(getSessionIDCookie(req, res), '18');
+	// console.log(req.session, '19');
 
 	if (isLoginSystem) {
 		if (req.session.user != null) {
