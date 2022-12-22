@@ -140,7 +140,6 @@ app.use(
 		credentials: true
 	})
 );
-// app middleware
 app.use(
 	express.urlencoded({
 		extended: true
