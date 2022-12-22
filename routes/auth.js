@@ -119,8 +119,6 @@ router.get('/login', (req, res) => {
 	var x = getSessionIDCookie(req, res);
 	console.log(x, '120');
 	if (req.session.user) {
-		global.sessionUser = req.session.user;
-		req.session.user.isFirst = ++index_kk;
 		res.status(200).send({
 			msg: 'User already logged in',
 			user: req.session.user,
@@ -130,7 +128,6 @@ router.get('/login', (req, res) => {
 		});
 	} else {
 		console.log('User not logged in');
-		global.sessionUser = null;
 		res.status(203).send({
 			msg: 'User not logged in',
 			islogged: false,
@@ -213,8 +210,6 @@ router.post('/login', (req, res, next) => {
 			var x = getSessionIDCookie(req, res);
 			console.log(x, '212');
 			req.session.user = user;
-			req.session.user.isFirst = true;
-			global.sessionUser = user;
 			res.send({
 				msg: 'successfully',
 				islogged: true,
