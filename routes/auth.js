@@ -210,6 +210,7 @@ router.post('/login', (req, res, next) => {
 			var x = getSessionIDCookie(req, res);
 			console.log(x, '212');
 			req.session.user = user;
+			console.log(req.session);
 			res.send({
 				msg: 'successfully',
 				islogged: true,
