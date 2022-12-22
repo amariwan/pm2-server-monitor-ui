@@ -195,7 +195,7 @@ app.use(errorHandlers.productionErrors);
 
 module.exports = app;
 
-require('./modules/http/http');
+const httpServer = require('./modules/http/http');
 require('./modules/socket/socket');
 const socketIo = require('socket.io');
 
