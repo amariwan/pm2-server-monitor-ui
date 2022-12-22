@@ -159,6 +159,8 @@ app.use(cookieParser(SESSION_SECRET)); // any string ex: 'keyboard cat'
 // flash is used to show a message after a post request
 // flash is used to display success messages or error messages
 app.use(flash());
+
+app.set('socketio', io);
 //-------------------------------------------------------
 // pass variables to our templates + all requests
 
