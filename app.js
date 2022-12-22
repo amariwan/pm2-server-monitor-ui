@@ -3,6 +3,7 @@
  * The parameter passed in: pmExecPath, matches the data returned by the PM2 api to determine which service it is
  */
 require('./modules/systemInfo/checkSystem');
+require('./modules/systemInfo/internetConnectivity');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
