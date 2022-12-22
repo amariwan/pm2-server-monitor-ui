@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 	console.log(req.session, '19');
 
 	if (isLoginSystem) {
-		if (sessionUser) {
+		if (req.session.user != null) {
 			res.sendFile(path.join(__dirname, '../UI/index.html'));
 		} else {
 			res.sendFile(path.join(__dirname, '../UI/auth/sign-in.html'));
