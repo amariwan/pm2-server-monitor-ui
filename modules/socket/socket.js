@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
 	console.log('websocket server connect!');
 	// console.log(socket.handshake.headers.cookie);
 	// console.log(socket.handshake.headers);
-	if (sessionUser) {
+	// if (sessionUser) {
 		const timer = setInterval(async () => {
 			Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo(), memoryUsage() ]).then((val) => {
 				const data = val[0];
@@ -159,7 +159,7 @@ io.on('connection', (socket) => {
 			console.log('disconnect!');
 			clearInterval(timer);
 		});
-	} else {
-		console.log('not logger');
-	}
+	// } else {
+	// 	console.log('not logger');
+	// }
 });
