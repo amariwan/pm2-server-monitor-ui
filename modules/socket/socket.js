@@ -5,3 +5,5 @@ const app = require('../../app');
 app.set('socketio', io);
 
 require('./dashboard');
+
+module.exports = io;
