@@ -159,12 +159,7 @@ app.use(cookieParser(SESSION_SECRET)); // any string ex: 'keyboard cat'
 // flash is used to show a message after a post request
 // flash is used to display success messages or error messages
 app.use(flash());
-const httpServer = require('./modules/http/http');
-const socketIo = require('socket.io');
 
-const io = socketIo(httpServer); // Creating a socket.io server and attaching it to the http server.
-
-app.set('socketio', io);
 //-------------------------------------------------------
 // pass variables to our templates + all requests
 
@@ -202,3 +197,9 @@ module.exports = app;
 
 require('./modules/http/http');
 require('./modules/socket/socket');
+const httpServer = require('./modules/http/http');
+const socketIo = require('socket.io');
+
+const io = socketIo(httpServer); // Creating a socket.io server and attaching it to the http server.
+
+app.set('socketio', io);
