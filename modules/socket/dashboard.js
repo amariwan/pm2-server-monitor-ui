@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
 				cpuUsageCls: val[1] >= cpuThreshold ? true : false,
 				totalmem,
 				freemem: memoryString(os.freemem()),
-				memUsage: memoryUsage(),
+				memUsage:val[ 4 ],
 				// memUsage: `${Math.round(os.freemem() * 100 / os.totalmem())}`,
 				node_version: nodev,
 				godid,
@@ -61,7 +61,6 @@ io.on('connection', (socket) => {
 			systemInfo.osInfo = val[2];
 			systemInfo.getInfo = val[3];
 			systemInfo.memoryUsage = val[ 4 ];
-			console.log(systemInfo.memoryUsage)
 			if (data && data.length > 0) {
 				const processData = [];
 				let totalUptime;
