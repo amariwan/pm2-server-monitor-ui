@@ -186,9 +186,9 @@ const app = createApp({
 					notif(type, 'serverInfo', data, true);
 				});
 				socket.on('stats', (data) => {
-					console.log(data);
 					this.hostname = data.totalData.hostname;
 					this.cpuUsage = data.totalData.cpuUsage + '%';
+					console.log(data.totalData.cpuUsage)
 					this.cpus = data.totalData.cpus;
 					this.cpuUsageCls = data.totalData.cpuCls ? 'red' : 'green';
 					this.memUsage = data.totalData.memUsage + '%';
