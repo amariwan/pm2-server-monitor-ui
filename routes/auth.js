@@ -118,7 +118,7 @@ var index_kk = 0;
 router.get('/login', (req, res) => {
 	var x = getSessionIDCookie(req, res);
 	console.log(x, '120');
-	console.log(req.session.user)
+	console.log(req.session.user, "121")
 	if (req.session.user) {
 		res.status(200).send({
 			msg: 'User already logged in',
