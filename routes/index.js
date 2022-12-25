@@ -16,7 +16,7 @@ if (loginSystem === false) {
 router.get('/', (req, res) => {
 	console.log(getSessionIDCookie(req, res), '18');
 	console.log(req.session.user, '19');
-req.session.user = true
+	req.session.user = true;
 	if (isLoginSystem)
 	{
 		if (req.session.user != null) {
