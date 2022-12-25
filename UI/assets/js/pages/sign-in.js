@@ -27,6 +27,7 @@ const app = createApp({
 					method: 'GET'
 				})
 				.then((response) => {
+					console.log(response)
 					if (response.data.islogged) {
 						this.UserId = response.data.UserId;
 						this.UserRole = response.data.UserRole;
