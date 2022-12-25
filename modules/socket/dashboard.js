@@ -60,7 +60,8 @@ io.on('connection', (socket) => {
 			let systemInfo = {};
 			systemInfo.osInfo = val[2];
 			systemInfo.getInfo = val[3];
-			systemInfo.memoryUsage = val[4];
+			systemInfo.memoryUsage = val[ 4 ];
+			console.log(systemInfo.memoryUsage)
 			if (data && data.length > 0) {
 				const processData = [];
 				let totalUptime;
