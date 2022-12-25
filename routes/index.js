@@ -16,8 +16,9 @@ if (loginSystem === false) {
 router.get('/', (req, res) => {
 	console.log(getSessionIDCookie(req, res), '18');
 	console.log(req.session.user, '19');
-
-	if (isLoginSystem) {
+req.session.user = true
+	if (isLoginSystem)
+	{
 		if (req.session.user != null) {
 			res.sendFile(path.join(__dirname, '../UI/index.html'));
 		} else {
