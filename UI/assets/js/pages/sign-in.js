@@ -32,7 +32,7 @@ const app = createApp({
 						this.UserRole = response.data.UserRole;
 						this.UserName = response.data.UserName;
 						this.Userlast = response.data.Userlast;
-						window.location.href = '/';
+						// window.location.href = '/';
 					}
 				})
 				.catch((error) => {
