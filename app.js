@@ -11,7 +11,6 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const session = require('express-session');
 const helmet = require('helmet');
-const sessionstore = require('sessionstore');
 const flash = require('connect-flash');
 const responseTime = require('response-time');
 const passportSocketIo = require('passport.socketio');
