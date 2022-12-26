@@ -28891,7 +28891,7 @@ pre[class*=language-] {
 }
 
 i.iconfont {
-	color: #01cea2;
+	color: var(--bs-primary);
 	font-size: 21px;
 	position: relative;
 	top: 1px;
