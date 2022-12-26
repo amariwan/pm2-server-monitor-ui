@@ -251,7 +251,7 @@
 	left: 0;
 	top: 10px;
 	font-size: 21px;
-	color: #01cea2;
+	color: var(--bs-primary);
 	display: flex;
 	text-align: center;
 	white-space: nowrap;
