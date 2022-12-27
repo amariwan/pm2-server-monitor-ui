@@ -29670,3 +29670,24 @@ i.iconfont {
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
 }
+
+.btn_delete {
+  padding: 2px 13px;
+  color: rgb(19 133 78);
+  background-color: rgb(214 237 226) !important;
+  border-radius: 5px;
+}
+
+.btn_restat {
+  padding: 2px 13px;
+  color: rgb(19 133 78);
+  background-color: rgb(214 237 226) !important;
+  border-radius: 5px;
+}
+
+.btn_stop {
+  padding: 2px 13px;
+  color: rgb(19 133 78);
+  background-color: rgb(214 237 226) !important;
+  border-radius: 5px;
+}
