@@ -28976,10 +28976,14 @@ border-radius: 100px;
 }
 
 .stats-panel-list .stopped {
+	border-radius: 100px;
+    padding: 2px 13px;
 	color: red;
 }
 
 .stats-panel-list .errored {
+	border-radius: 100px;
+    padding: 2px 13px;
 	color: red;
 }
 
