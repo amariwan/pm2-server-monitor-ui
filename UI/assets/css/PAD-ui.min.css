@@ -28970,6 +28970,8 @@ i.iconfont {
 
 .stats-panel-list .online {
 	color: limegreen;
+	    border-radius: 100px;
+    padding: 2px 13px;
 }
 
 .stats-panel-list .stopped {
