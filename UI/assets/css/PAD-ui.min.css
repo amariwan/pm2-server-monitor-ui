@@ -29669,6 +29669,7 @@ i.iconfont {
   color: rgb(19 133 78);
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
+      margin: 0px 5px;
 }
 
 .btn_delete {
@@ -29676,6 +29677,7 @@ i.iconfont {
   color: rgb(19 133 78);
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
+      margin: 0px 5px;
 }
 
 .btn_restart {
@@ -29683,6 +29685,7 @@ i.iconfont {
   color: rgb(19 133 78);
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
+      margin: 0px 5px;
 }
 
 .btn_stop {
@@ -29690,4 +29693,5 @@ i.iconfont {
   color: rgb(19 133 78);
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
+      margin: 0px 5px;
 }
