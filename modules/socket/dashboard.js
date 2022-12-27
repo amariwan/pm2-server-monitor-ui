@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
 	// console.log(socket.handshake.headers);
 	// if (sessionUser) {
 	const timer = setInterval(async () => {
-		Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo(), memoryUsage() ]).then((val) => {
+		Promise.all([ pm2List(), getCpuUsage(), si.osInfo(), getInfo() ]).then((val) => {
 			const data = val[0];
 			const totalData = {
 				hostname,
@@ -49,7 +49,7 @@ io.on('connection', (socket) => {
 				cpuUsageCls: val[1] >= cpuThreshold ? true : false,
 				totalmem,
 				freemem: memoryString(os.freemem()),
-				memUsage:val[ 4 ],
+				memUsage:"35",
 				// memUsage: `${Math.round(os.freemem() * 100 / os.totalmem())}`,
 				node_version: nodev,
 				godid,
