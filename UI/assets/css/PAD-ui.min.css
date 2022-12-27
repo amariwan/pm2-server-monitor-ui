@@ -28979,12 +28979,14 @@ border-radius: 100px;
 	border-radius: 100px;
     padding: 2px 13px;
 	color: red;
+	    background-color: rgb(237 214 214);
 }
 
 .stats-panel-list .errored {
 	border-radius: 100px;
     padding: 2px 13px;
 	color: red;
+	    background-color: rgb(237 214 214);
 }
 
 .tippy-tooltip.mytheme-theme {
