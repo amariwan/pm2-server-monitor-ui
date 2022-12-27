@@ -29669,29 +29669,29 @@ i.iconfont {
   color: rgb(19 133 78);
   background-color: rgb(214 237 226) !important;
   border-radius: 5px;
-      margin: 0px 5px;
+  margin: 0px 5px;
 }
 
 .btn_delete {
   padding: 2px 13px;
-  color: rgb(19 133 78);
-  background-color: rgb(214 237 226) !important;
+  color: red;
+  background-color: rgb(237 214 214) !important;
   border-radius: 5px;
-      margin: 0px 5px;
+  margin: 0px 5px;
 }
 
 .btn_restart {
   padding: 2px 13px;
-  color: rgb(19 133 78);
-  background-color: rgb(214 237 226) !important;
+  color: red;
+  background-color: rgb(237 214 214) !important;
   border-radius: 5px;
-      margin: 0px 5px;
+  margin: 0px 5px;
 }
 
 .btn_stop {
   padding: 2px 13px;
-  color: rgb(19 133 78);
-  background-color: rgb(214 237 226) !important;
+  color: red;
+  background-color: rgb(237 214 214) !important;
   border-radius: 5px;
-      margin: 0px 5px;
+  margin: 0px 5px;
 }
