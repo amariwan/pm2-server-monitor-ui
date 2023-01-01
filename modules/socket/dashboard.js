@@ -166,5 +166,3 @@ io.on('connection', (socket) => {
 	// 	console.log('not logger');
 	// }
 });
-
-Hello world
