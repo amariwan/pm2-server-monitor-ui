@@ -304,5 +304,16 @@ module.exports = {
 };
 
 
-// clone list ?
-// https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
+// clone list of objects
+
+// The function takes a list as an argument and returns a new list with the same items as the original list
+// The function iterates over the original list and maps each item to a new object using Object.assign
+// The new object is a copy of the original object and is pushed to the new list
+// The function returns the new list
+
+
+function cloneList (list) {
+	  return list.map(function (item) {
+	return Object.assign({}, item)
+  })
+}
