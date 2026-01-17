@@ -36,7 +36,7 @@
 	"homepage": "https://github.com/amariwan/pm2-server-monitor-ui#readme",
 	"dependencies": {
 		"@discordjs/rest": "^1.4.0",
-		"bcrypt": "^5.1.0",
+		"bcrypt": "^6.0.0",
 		"body-parser": "^1.20.0",
 		"compression": "^1.7.4",
 		"connect-flash": "^0.1.1",
